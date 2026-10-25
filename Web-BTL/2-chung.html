@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AidMatch - Đăng nhập</title>
+    <link rel="stylesheet" href="2-chung.css">
+    <!-- Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Top Navigation Header -->
+    <header class="phan-dau">
+        <div class="ben-trai-dau-trang">
+            <div class="thuong-hieu">
+                <img src="div.w-10.png" alt="AidMatch logo" class="anh-bieu-tuong">
+                <div class="van-ban-thuong-hieu">
+                    <span class="ten-thuong-hieu">AidMatch</span>
+                    <span class="phu-de-thuong-hieu">CỨU TRỢ THÔNG MINH</span>
+                </div>
+            </div>
+            <nav class="lien-ket-dieu-huong">
+                <a href="#">Projects</a>
+                <a href="#">Organizations</a>
+                <a href="#">About Us</a>
+                <a href="#">News</a>
+            </nav>
+        </div>
+        <div class="ben-phai-dau-trang">
+            <a href="#" class="lien-ket-phu-dieu-huong">← Về trang khám phá</a>
+            <button class="nut-ho-tro">Hỗ trợ</button>
+            <div class="anh-dai-dien-nguoi-dung">
+                <i class="fa-regular fa-user"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Login Section -->
+    <main class="khung-dang-nhap-chinh">
+        <div class="khung-the-dang-nhap">
+            
+            <!-- Left: Form Đăng nhập -->
+            <div class="khung-bieu-mau-dang-nhap">
+                <div class="dau-bieu-mau">
+                    <h2>Chào mừng trở lại</h2>
+                    <p>Dùng email đã đăng ký với tổ chức của bạn.</p>
+                </div>
+
+                <form id="loginForm">
+                    <!-- Email Field -->
+                    <div class="nhom-o-nhap">
+                        <label>Email *</label>
+                        <input type="email" id="emailInput" class="dieu-khien-bieu-mau" value="lan@anbinh.example" required>
+                    </div>
+
+                    <!-- Password Field (Có trạng thái lỗi như ảnh) -->
+                    <div class="nhom-o-nhap loi">
+                        <label>Mật khẩu *</label>
+                        <div class="khung-mat-khau">
+                            <input type="password" id="passwordInput" class="dieu-khien-bieu-mau" value="12345676" required>
+                            <span class="nut-an-hien-mat-khau" id="togglePassword">Hiện</span>
+                            <i class="fa-solid fa-triangle-exclamation bieu-tuong-loi"></i>
+                        </div>
+                        <span class="thong-bao-loi">Mật khẩu chưa đúng. Bạn còn 4 lần thử.</span>
+                    </div>
+
+                    <!-- Remember & Forgot -->
+                    <div class="tuy-chon-bieu-mau">
+                        <label class="nhan-o-chon">
+                            <input type="checkbox" checked>
+                            <span>Ghi nhớ đăng nhập trên thiết bị này</span>
+                        </label>
+                        <a href="#" class="lien-ket-quen-mat-khau">Quên mật khẩu?</a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="nut-gui-bieu-mau">Đăng nhập</button>
+                </form>
+
+                <div class="chan-bieu-mau-dang-ky">
+                    <span>Chưa có tài khoản?</span> <a href="3-chung.html">Đăng ký tham gia →</a>
+                </div>
+            </div>
+
+            <!-- Right: Hình ảnh minh họa -->
+            <div class="khung-anh-dang-nhap">
+                <img src="dangnhap.jpg" alt="Trẻ em nhận cứu trợ">
+            </div>
+
+        </div>
+    </main>
+
+    <script src="2-chung.js"></script>
+</body>
+</html>

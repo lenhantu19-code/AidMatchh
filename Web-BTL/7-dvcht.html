@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AidMatch - Tạo nhu cầu hỗ trợ</title>
+    <link rel="stylesheet" href="7-dvcht.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="phan-dau">
+        <div class="ben-trai-dau-trang">
+            <div class="thuong-hieu">
+                <img src="div.w-10.png" alt="AidMatch logo" class="anh-bieu-tuong">
+                <div class="van-ban-thuong-hieu">
+                    <span class="ten-thuong-hieu">AidMatch</span>
+                    <span class="phu-de-thuong-hieu">CỨU TRỢ THÔNG MINH</span>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="ben-phai-dau-trang">
+            <div class="ho-so-nguoi-dung">
+                <div class="anh-dai-dien">NL</div>
+                <div class="thong-tin-nguoi-dung">
+                    <span class="ten">Nguyễn Lan</span>
+                    <span class="vai-tro">Trạm An Bình (TC-001)</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="khung-chinh">
+        
+        <aside class="thanh-ben">
+            <div class="nhom-danh-muc">
+                <div class="nhan-danh-muc">TỔNG QUAN</div>
+                <a href="6-dvcht.html" class="muc-danh-muc">                
+                    <i class="fa-solid fa-chart-pie"></i> Tổng quan
+                </a>
+                <a href="7-dvcht.html" class="muc-danh-muc dang-chon">
+                    <i class="fa-solid fa-circle-plus"></i> Tạo nhu cầu
+                </a>
+                <a href="8-dvcht.html" class="muc-danh-muc">
+                    <i class="fa-solid fa-list-check"></i> Nhu cầu của tôi
+                </a>
+                <a href="9-dvcht.html" class="muc-danh-muc">
+                    <i class="fa-solid fa-compass"></i> Khám phá nhu cầu
+                </a>
+            </div>
+
+            <div class="nhom-danh-muc">
+                <div class="nhan-danh-muc">HỒ SƠ & CÀI ĐẶT</div>
+                <a href="#" class="muc-danh-muc">
+                    <i class="fa-regular fa-id-card"></i> Hồ sơ
+                </a>
+                <a href="#" class="muc-danh-muc">
+                    <i class="fa-solid fa-gear"></i> Cài đặt
+                </a>
+                <a href="#" class="muc-danh-muc">
+                    <i class="fa-regular fa-message"></i> Trung tâm thông báo
+                </a>
+            </div>
+        </aside>
+
+        <main class="noi-dung-lam-viec">
+            
+            <div class="duong-dan-dieu-huong">
+                KHÔNG GIAN LÀM VIỆC / ĐƠN VỊ CẦN HỖ TRỢ / TẠO NHU CẦU MỚI
+            </div>
+
+            <!-- Main Form Card -->
+            <div class="the-bieu-mau">
+                
+                <div class="dau-the-bieu-mau">
+                    <h1>Tạo mới nhu cầu hỗ trợ</h1>
+                    <span class="nhan-trang-thai-xanh-duong"><i class="fa-solid fa-pen-to-square"></i> Bản nháp mới</span>
+                </div>
+
+                <form id="createNeedForm">
+                    <div class="luoi-bieu-mau">
+                        
+                        <!-- Tên nhu cầu hỗ trợ -->
+                        <div class="nhom-truong-bieu-mau rong-day">
+                            <label>Tên nhu cầu hỗ trợ *</label>
+                            <input type="text" class="dieu-khien-bieu-mau" placeholder="Ví dụ: 500 bộ nhu yếu phẩm cho đồng bào vùng lũ..." required>
+                        </div>
+
+                        <!-- Mã định danh & Danh mục -->
+                        <div class="nhom-truong-bieu-mau nua-rong">
+                            <label>Mã định danh (ID tự động) *</label>
+                            <input type="text" class="dieu-khien-bieu-mau" value="NC-029" readonly>
+                        </div>
+                        <div class="nhom-truong-bieu-mau nua-rong">
+                            <label>Danh mục hỗ trợ *</label>
+                            <select class="dieu-khien-bieu-mau" required>
+                                <option value="">Chọn danh mục</option>
+                                <option value="nhu-yeu-pham">Nhu yếu phẩm</option>
+                                <option value="nuoc-sach">Nước sạch & Đồ uống</option>
+                                <option value="so-cuu">Bộ sơ cứu y tế</option>
+                                <option value="sinh-hoat">Đồ dùng sinh hoạt</option>
+                            </select>
+                        </div>
+
+                        <!-- Đơn vị tiếp nhận -->
+                        <div class="nhom-truong-bieu-mau rong-day">
+                            <label>Đơn vị tiếp nhận / Tổ chức *</label>
+                            <input type="text" class="dieu-khien-bieu-mau" value="Trạm hỗ trợ cộng đồng An Bình (TC-001)" required>
+                        </div>
+
+                        <!-- Số lượng yêu cầu & Mức độ ưu tiên -->
+                        <div class="nhom-truong-bieu-mau nua-rong">
+                            <label>Số lượng yêu cầu *</label>
+                            <input type="text" class="dieu-khien-bieu-mau" placeholder="Ví dụ: 300 bộ / 200 thùng..." required>
+                        </div>
+                        <div class="nhom-truong-bieu-mau nua-rong">
+                            <label>Mức độ ưu tiên *</label>
+                            <select class="dieu-khien-bieu-mau" required>
+                                <option value="khan-cap">Khẩn cấp</option>
+                                <option value="uu-tien-cao">Ưu tiên cao</option>
+                                <option value="binh-thuong" selected>Bình thường</option>
+                            </select>
+                        </div>
+
+                        <!-- Khu vực / Địa bàn -->
+                        <div class="nhom-truong-bieu-mau rong-day">
+                            <label>Khu vực / Địa bàn nhận *</label>
+                            <input type="text" class="dieu-khien-bieu-mau" placeholder="Nhập rõ xã/huyện, tỉnh thành..." value="Xã Hải An, Huyện Hải Lăng, Quảng Trị" required>
+                        </div>
+
+                        <!-- Hạn nhận mong muốn -->
+                        <div class="nhom-truong-bieu-mau nua-rong">
+                            <label>Hạn nhận mong muốn *</label>
+                            <input type="date" class="dieu-khien-bieu-mau" value="2026-10-30" required>
+                        </div>
+                        <div class="nhom-truong-bieu-mau nua-rong">
+                            <label>Thông tin đầu mối liên hệ *</label>
+                            <input type="text" class="dieu-khien-bieu-mau" value="Nguyễn Lan - 0901234567" required>
+                        </div>
+
+                        <!-- Mô tả chi tiết -->
+                        <div class="nhom-truong-bieu-mau rong-day">
+                            <label>Mô tả chi tiết / Quy cách phẩm chất</label>
+                            <textarea class="dieu-khien-bieu-mau vung-van-ban" placeholder="Mô tả cụ thể về nhu cầu, danh sách vật phẩm chi tiết..."></textarea>
+                        </div>
+
+                        <!-- Tài liệu đính kèm -->
+                        <div class="nhom-truong-bieu-mau rong-day">
+                            <label>Tài liệu & Giấy tờ minh chứng đính kèm (Biên bản, đề nghị...)</label>
+                            <div class="khung-tai-tep">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <span>Kéo thả tệp vào đây hoặc <strong>tải lên từ thiết bị</strong> (PDF, Ảnh)</span>
+                                <input type="file" class="o-nhap-tep-an">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="hanh-dong-bieu-mau">
+                        <button type="submit" class="nut-chinh">Gửi xét duyệt ngay</button>
+                        <button type="button" class="nut-toi" id="saveDraftBtn">Lưu bản nháp</button>
+                        <button type="button" class="nut-sang" onclick="history.back()">Hủy bỏ</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="chan-trang">
+        <div>© 2026 AidMatch Platform. Điều phối nhu cầu hỗ trợ và nguồn lực cho minh bạch.</div>
+        <div class="lien-ket-chan-trang">
+            <a href="#">Điều khoản</a>
+            <a href="#">Bảo mật</a>
+            <a href="#">Hỗ trợ 24/7</a>
+        </div>
+    </footer>
+
+    <script src="7-dvcht.js"></script>
+</body>
+</html>
