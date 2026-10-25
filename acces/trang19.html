@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AidMatch - Quản Lý Người Dùng (Admin Dashboard)</title>
+    <!-- FontAwesome & Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../css/trang19.css" />
+  </head>
+  <body>
+    <!-- Main Application Header -->
+    <header class="dau-trang-ung-dung">
+      <div class="khung-dau-trang">
+        <div class="thuong-hieu-dau-trang">
+          <div class="biieu-tieu-thuong-hieu">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <span class="ten-thuong-hieu">AidMatch</span>
+          <span class="the-he-thong">
+            <span class="cham-nhap-nhay"></span> Dữ liệu minh họa
+          </span>
+        </div>
+
+        <div class="thao-tac-dau-trang">
+          <button
+            type="button"
+            id="btnNotifications"
+            class="nut-bieu-tuong"
+            aria-label="Thông báo"
+          >
+            <i class="fa-regular fa-bell"></i>
+            <span class="cham-hieu-so"></span>
+          </button>
+          <div class="vach-ngan-doc"></div>
+          <div class="ho-so-nguoi-dung">
+            <div class="anh-dai-dien">PA</div>
+            <div class="thong-tin-nguoi-dung">
+              <span class="ten-nguoi-dung">Phạm An</span>
+              <span class="vai-tro-nguoi-dung">Quản trị hệ thống</span>
+            </div>
+            <i class="fa-solid fa-chevron-down mũi-ten-ho-so"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Application Body Layout -->
+    <div class="than-ung-dung">
+      <!-- Sidebar Navigation -->
+      <aside class="thanh-ben">
+        <div class="noi-dung-thanh-ben">
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">Không gian làm việc</div>
+            <div class="huy-hieu-vai-tro">
+              <i class="fa-solid fa-user-shield"></i> Quản trị viên
+            </div>
+            <nav class="danh-sach-dieu-huong">
+              <a href="#" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-regular fa-folder"></i>
+                  <span>Danh mục</span>
+                </span>
+              </a>
+              <a href="../acces/trang19.html" class="muc-dieu-huong kich-hoat">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-users"></i>
+                  <span>Người dùng</span>
+                </span>
+                <span class="huy-hieu-dem" id="sidebarBadgeUsers">6</span>
+              </a>
+              <a href="../acces/trang20.html" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-building-user"></i>
+                  <span>Tổ chức</span>
+                </span>
+              </a>
+              <a href="../acces/trang21.html" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-chart-line"></i>
+                  <span>Báo cáo tác động</span>
+                </span>
+              </a>
+            </nav>
+          </div>
+
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">Hệ thống</div>
+            <nav class="danh-sach-dieu-huong">
+              <a href="#" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-sliders"></i>
+                  <span>Hồ sơ & Cài đặt</span>
+                </span>
+              </a>
+            </nav>
+          </div>
+        </div>
+        <div class="chan-thanh-ben">
+          AidMatch v2.4 · Hệ thống Điều phối Khẩn cấp
+        </div>
+      </aside>
+
+      <!-- Main Dashboard View Area -->
+      <main class="noi-dung-chinh">
+        <!-- Breadcrumb & Header Title Row -->
+        <div class="boc-dau-trang-noi-dung">
+          <div class="duong-dan-trang">
+            <span class="duong-dan-kich-hoat">Quản lý người dùng</span>
+          </div>
+          <div class="dau-trang-noi-dung">
+            <div>
+              <h1 class="tieu-de-trang">
+                Quản lý người dùng <span class="nhan-ma-tieu-de">1P</span>
+              </h1>
+              <p class="tieu-de-phu-trang">
+                Phân quyền và quản lý tài khoản. Tất cả thay đổi quyền và trạng
+                thái đều ghi nhật ký.
+              </p>
+            </div>
+            <button type="button" class="nut nut-chinh" id="btnScrollToInvite">
+              <i class="fa-solid fa-plus"></i>
+              <span>Mời / Tạo người dùng</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Controls Bar -->
+        <div class="khung-chua the-bo-loc">
+          <div class="boc-o-tim-kiem">
+            <i class="fa-solid fa-magnifying-glass bieu-tuong-tim-kiem"></i>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Tên, email, tổ chức, tài khoản..."
+            />
+          </div>
+          <div class="bo-dieu-khien-loc">
+            <select id="roleFilter">
+              <option value="all">Vai trò: Tất cả</option>
+              <option value="Đơn vị cần hỗ trợ">Đơn vị cần hỗ trợ</option>
+              <option value="Nhà tài trợ">Nhà tài trợ</option>
+              <option value="Điều phối viên">Điều phối viên</option>
+              <option value="Quản trị viên">Quản trị viên</option>
+            </select>
+            <select id="statusFilter">
+              <option value="all">Trạng thái tài khoản: Tất cả</option>
+              <option value="Hoạt động">Hoạt động</option>
+              <option value="Chờ phê duyệt">Chờ phê duyệt</option>
+              <option value="Đã đình chỉ">Đã đình chỉ</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Workspace Grid Layout -->
+        <div class="luoi-khong-gian-bo-cuc">
+          <!-- Left Main Column (Table, Invite Form, Role Matrix) -->
+          <div class="cot-trai">
+            <!-- User Table Card -->
+            <div class="khung-chua khung-bang-du-lieu">
+              <div class="boc-bang-co-the-cuon">
+                <table class="bang-du-lieu">
+                  <thead>
+                    <tr>
+                      <th>NGƯỜI DÙNG</th>
+                      <th>TỔ CHỨC / VAI TRÒ</th>
+                      <th>TRẠNG THÁI</th>
+                      <th class="can-phai">THAO TÁC</th>
+                    </tr>
+                  </thead>
+                  <tbody id="userTableBody">
+                    <!-- Rendered dynamically from trang19.js -->
+                  </tbody>
+                </table>
+              </div>
+              <div class="chan-khung phan-bo-khoang-cach" id="tableFooterText">
+                <span>Hiển thị 6 bản ghi · Dữ liệu minh họa</span>
+                <span class="so-trang in-dam">Trang 1 / 1</span>
+              </div>
+            </div>
+
+            <!-- Invite Form Card -->
+            <div class="khung-chua khung-bieu-mau" id="inviteSection">
+              <div class="dau-khung">
+                <h2 class="tieu-de-khung">Mời người dùng mới</h2>
+                <p class="mo-ta-khung">
+                  Gửi lời mời tham gia nền tảng kèm phân quyền ban đầu.
+                </p>
+              </div>
+
+              <form id="inviteForm" class="luoi-bieu-mau">
+                <div class="nhom-bieu-mau">
+                  <label class="nhan-bieu-mau">Email *</label>
+                  <input
+                    type="email"
+                    id="inviteEmail"
+                    class="dieu-khien-bieu-mau"
+                    placeholder="nguoidung@tochuc.example"
+                    required
+                  />
+                </div>
+                <div class="nhom-bieu-mau">
+                  <label class="nhan-bieu-mau">Vai trò được mời *</label>
+                  <select id="inviteRole" class="luat-chon-bieu-mau">
+                    <option value="Nhà tài trợ">Nhà tài trợ</option>
+                    <option value="Đơn vị cần hỗ trợ">Đơn vị cần hỗ trợ</option>
+                    <option value="Điều phối viên">Điều phối viên</option>
+                    <option value="Quản trị viên">Quản trị viên</option>
+                  </select>
+                </div>
+                <div class="nhom-bieu-mau">
+                  <label class="nhan-bieu-mau">Tổ chức liên kết *</label>
+                  <select id="inviteOrg" class="luat-chon-bieu-mau">
+                    <option value="Quỹ Đồng Hành - TC-002">
+                      Quỹ Đồng Hành - TC-002
+                    </option>
+                    <option value="Hải Sơn - TC-006">Hải Sơn - TC-006</option>
+                    <option value="An Bình - TC-003">An Bình - TC-003</option>
+                  </select>
+                </div>
+                <div class="nhom-bieu-mau">
+                  <label class="nhan-bieu-mau">Ghi chú lời mời</label>
+                  <input
+                    type="text"
+                    id="inviteNote"
+                    class="dieu-khien-bieu-mau"
+                    placeholder="Đầu mối giao nhận bổ sung."
+                  />
+                </div>
+
+                <div class="o-thong-tin-xanh-duong chieu-rong-day-du">
+                  <div class="tieu-de-o-thong-tin">
+                    <i class="fa-regular fa-lightbulb"></i> Thông tin lời mời
+                  </div>
+                  <p class="mo-ta-o-thong-tin">
+                    Lời mời có thời hạn 72 giờ. Người dùng tự đặt mật khẩu và
+                    xác nhận email. Mời không tự cấp quyền quản trị hoặc quyền
+                    điều phối ngoài phạm vi.
+                  </p>
+                </div>
+
+                <div class="thao-tac-bieu-mau chieu-rong-day-du">
+                  <button type="submit" class="nut nut-chinh">
+                    Mời tài khoản
+                  </button>
+                  <button
+                    type="button"
+                    class="nut nut-vien-ngoai"
+                    id="btnCreateDirect"
+                  >
+                    Tạo hồ sơ tài khoản
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Access Rights Matrix Card -->
+            <div class="khung-chua khung-ma-tran">
+              <div class="dau-khung">
+                <h2 class="tieu-de-khung">Ma trận quyền truy cập</h2>
+                <p class="mo-ta-khung">
+                  Phân quyền chi tiết theo từng nhóm vai trò trên nền tảng.
+                </p>
+              </div>
+              <div class="boc-bang-co-the-cuon">
+                <table class="bang-du-lieu">
+                  <thead>
+                    <tr>
+                      <th>VAI TRÒ</th>
+                      <th>PHẠM VI ĐƯỢC PHÉP</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="in-dam">Đơn vị cần hỗ trợ</td>
+                      <td>Tạo / sửa nhu cầu của mình, xác nhận tiếp nhận</td>
+                    </tr>
+                    <tr>
+                      <td class="in-dam">Nhà tài trợ</td>
+                      <td>
+                        Khai báo nguồn lực của mình, lập cam kết, cập nhật giao
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="in-dam">Điều phối viên</td>
+                      <td>Xét duyệt nhu cầu, phân bổ và theo dõi giao nhận</td>
+                    </tr>
+                    <tr>
+                      <td class="in-dam">Quản trị viên</td>
+                      <td>Danh mục, người dùng, tổ chức và báo cáo</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Sub-Column (Detail View & Action Controls) -->
+          <div class="cot-phai">
+            <!-- Dynamic User Detail Card -->
+            <div class="khung-chua khung-chi-tiet" id="detailPanel">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Suspend / Restore Action Card -->
+            <div class="khung-chua khung-thao-tac">
+              <div class="dau-khung khong-vien-duoi">
+                <h3 class="tieu-de-khung">Đình chỉ / Khôi phục</h3>
+              </div>
+              <div class="than-thao-tac">
+                <div class="nhom-bieu-mau">
+                  <label class="nhan-bieu-mau">Tài khoản cần xử lý</label>
+                  <input
+                    type="text"
+                    id="suspendTargetInput"
+                    class="dieu-khien-bieu-mau nhap-vo-hieu-hoa"
+                    value="Vũ Nam · Đã đình chỉ"
+                    disabled
+                  />
+                </div>
+                <div class="nhom-bieu-mau">
+                  <label class="nhan-bieu-mau">Lý do bắt buộc *</label>
+                  <textarea
+                    id="suspendReasonInput"
+                    class="khung-nhap-van-ban"
+                    rows="2"
+                  >
+Đã hoàn tất xác minh lại đầu mối tổ chức.</textarea
+                  >
+                </div>
+                <div class="nhom-o-checkbox">
+                  <input type="checkbox" id="suspendCheckbox" checked />
+                  <label for="suspendCheckbox" class="nhan-o-checkbox">
+                    Khôi phục quyền nhà tài trợ, không thay vai trò.
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  class="nut nut-chinh chieu-rong-toan-bo"
+                  id="btnExecuteSuspend"
+                >
+                  Xác nhận khôi phục
+                </button>
+                <p class="mo-ta-khung van-ban-sieu-nho khoang-cach-tren-nho">
+                  Đình chỉ khóa đăng nhập, không xóa cam kết. Không thể tự đình
+                  chỉ quản trị viên cuối cùng.
+                </p>
+              </div>
+            </div>
+
+            <!-- Information Card -->
+            <div class="the-thong-tin-xanh">
+              <span class="tieu-de-the-thong-tin">Đã gửi lời mời</span>
+              <p class="mo-ta-the-thong-tin">
+                Lời mời được gửi; chờ người dùng xác nhận email để kích hoạt.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Toast Floating Notifications Container -->
+    <div id="toastContainer" class="khung-thong-bao-noi"></div>
+
+    <!-- Application Script -->
+    <script src="../js/trang19.js"></script>
+  </body>
+</html>

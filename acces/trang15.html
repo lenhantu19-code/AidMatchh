@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AidMatch - Chi Tiết Xét Duyệt (Coordinator Dashboard)</title>
+    <!-- FontAwesome & Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../css/trang15.css" />
+  </head>
+  <body>
+    <!-- Main Application Header -->
+    <header class="dau-trang-ung-dung">
+      <div class="khung-dau-trang">
+        <div class="thuong-hieu-dau-trang">
+          <div class="biieu-tieu-thuong-hieu">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <span class="ten-thuong-hieu">AidMatch</span>
+          <span class="the-he-thong">
+            <span class="cham-nhap-nhay"></span> Dữ liệu minh họa
+          </span>
+        </div>
+
+        <div class="thao-tac-dau-trang">
+          <button
+            type="button"
+            id="notifBtn"
+            class="nut-bieu-tuong"
+            aria-label="Thông báo"
+          >
+            <i class="fa-regular fa-bell"></i>
+            <span class="cham-hieu-so"></span>
+          </button>
+          <div class="vach-ngan-doc"></div>
+          <div class="ho-so-nguoi-dung">
+            <div class="anh-dai-dien">LH</div>
+            <div class="thong-tin-nguoi-dung">
+              <span class="ten-nguoi-dung">Lê Hà</span>
+              <span class="vai-tro-nguoi-dung">Điều phối miền Trung</span>
+            </div>
+            <i class="fa-solid fa-chevron-down mũi-ten-ho-so"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Application Body Layout -->
+    <div class="than-ung-dung">
+      <!-- Sidebar Navigation -->
+      <aside class="thanh-ben">
+        <div class="noi-dung-thanh-ben">
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">Không gian làm việc</div>
+            <div class="huy-hieu-vai-tro">
+              <i class="fa-solid fa-user-gear"></i> Điều phối viên
+            </div>
+            <nav class="danh-sach-dieu-huong">
+              <a href="../acces/trang14.html" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-clipboard-check"></i>
+                  <span>Duyệt nhu cầu</span>
+                </span>
+                <span class="huy-hieu-dem" id="badgePendingCount">4</span>
+              </a>
+              <a href="../acces/trang15.html" class="muc-dieu-huong kich-hoat">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-file-circle-check"></i>
+                  <span>Chi tiết xét duyệt</span>
+                </span>
+              </a>
+              <a href="../acces/trang16.html" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-network-wired"></i>
+                  <span>Bảng ghép & Phân bổ</span>
+                </span>
+              </a>
+              <a href="../acces/trang17.html" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-truck-ramp-box"></i>
+                  <span>Theo dõi phân bổ</span>
+                </span>
+              </a>
+            </nav>
+          </div>
+
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">Hệ thống</div>
+            <nav class="danh-sach-dieu-huong">
+              <a href="#" class="muc-dieu-huong" id="navNoticeCenter">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-regular fa-bell"></i>
+                  <span>Trung tâm thông báo</span>
+                </span>
+              </a>
+              <a href="#" class="muc-dieu-huong" id="navSettings">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-sliders"></i>
+                  <span>Hồ sơ & Cài đặt</span>
+                </span>
+              </a>
+              <a href="#" class="muc-dieu-huong" id="navExplore">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-compass"></i>
+                  <span>Khám phá nhu cầu</span>
+                </span>
+              </a>
+            </nav>
+          </div>
+        </div>
+        <div class="chan-thanh-ben">
+          AidMatch v2.4 · Hệ thống Điều phối Khẩn cấp
+        </div>
+      </aside>
+
+      <!-- Main Dashboard View Area -->
+      <main class="noi-dung-chinh">
+        <!-- Page Header Breadcrumb & Actions -->
+        <div class="thanh-tieu-de-trang">
+          <div class="nhom-tieu-de">
+            <h1 class="tieu-de-trang">Chi tiết xét duyệt</h1>
+            <div class="thong-tin-phu-yeu-cau">
+              <strong id="reqCodeText">NC-033</strong> -
+              <span>200 bộ nhu yếu phẩm cho điểm Hải Sơn</span> -
+              <span class="van-ban-trang-thai-noi-bat"
+                >Đang chờ quyết định</span
+              >
+            </div>
+            <div class="nhom-huy-hieu">
+              <span class="the-nhan nhan-uu-tien-cao">Chờ xét duyệt</span>
+              <span class="the-nhan nhan-khan-cap">
+                <i class="fa-solid fa-triangle-exclamation"></i> Khẩn cấp
+              </span>
+              <span class="the-nhan nhan-binh-thuong">
+                <i class="fa-regular fa-clock"></i> Hạn 15/10
+              </span>
+            </div>
+          </div>
+          <button class="nut nut-vien" id="btnBackQueue">
+            <i class="fa-solid fa-arrow-left"></i> Quay lại hàng đợi
+          </button>
+        </div>
+
+        <!-- Content Grid 2 Columns -->
+        <div class="luoi-chi-tiet">
+          <!-- Left Column: Dossier Information & AI Comparison -->
+          <div class="cot-trai">
+            <!-- CARD 1: Hồ sơ nhu cầu -->
+            <section class="khung-chua khung-the">
+              <div class="dau-the vach-ngan-duoi">
+                <div class="nhom-tieu-de-the">
+                  <span class="buoc-the">CARD 1</span>
+                  <h2>Hồ sơ nhu cầu</h2>
+                </div>
+                <div class="the-to-chuc">
+                  <strong>Điểm cộng đồng Hải Sơn</strong> · TC-006
+                </div>
+              </div>
+
+              <div class="than-the">
+                <div class="luoi-thong-tin">
+                  <div class="muc-thong-tin">
+                    <span class="nhan-thong-tin-chi-tiet">Danh mục:</span>
+                    <span class="gia-tri-thong-tin">Nhu yếu phẩm</span>
+                  </div>
+                  <div class="muc-thong-tin">
+                    <span class="nhan-thong-tin-chi-tiet">Người liên hệ:</span>
+                    <span class="gia-tri-thong-tin">Hoàng Mai</span>
+                  </div>
+                  <div class="muc-thong-tin">
+                    <span class="nhan-thong-tin-chi-tiet">Số lượng:</span>
+                    <span class="gia-tri-thong-tin chu-dam">200 bộ</span>
+                  </div>
+                  <div class="muc-thong-tin">
+                    <span class="nhan-thong-tin-chi-tiet">Điện thoại:</span>
+                    <span class="gia-tri-thong-tin">0906 789 012</span>
+                  </div>
+                  <div class="muc-thong-tin">
+                    <span class="nhan-thong-tin-chi-tiet">Địa bàn:</span>
+                    <span class="gia-tri-thong-tin">Hải Sơn, Quảng Trị</span>
+                  </div>
+                  <div class="muc-thong-tin">
+                    <span class="nhan-thong-tin-chi-tiet">Gửi lúc:</span>
+                    <span class="gia-tri-thong-tin">12/10/2026, 08:15</span>
+                  </div>
+                </div>
+
+                <div class="o-mo-ta">
+                  Cần 200 bộ gạo, dầu ăn, muối và xà phòng cho hộ gia đình tại
+                  điểm Hải Sơn. Danh sách hộ đính kèm chưa có mã hộ để đối chiếu
+                  liên điểm.
+                </div>
+
+                <div class="danh-sach-tep-dinh-kem">
+                  <a href="#" class="muc-tep-dinh-kem">
+                    <i class="fa-regular fa-file-pdf bieu-tuong-pdf"></i>
+                    <span>danh-sach-hai-son.pdf</span>
+                  </a>
+                  <a href="#" class="muc-tep-dinh-kem">
+                    <i class="fa-regular fa-image bieu-tuong-anh"></i>
+                    <span>anh-diem-nhan.jpg</span>
+                  </a>
+                  <a href="#" class="lien-ket-thao-tac" id="btnViewEvidence">
+                    Xem minh chứng <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+
+                <div class="o-da-xac-minh">
+                  <div class="dau-o-xac-minh">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <strong>Tổ chức đã xác minh · TC-006</strong>
+                  </div>
+                  <p>
+                    Giấy xác nhận của đầu mối địa phương được kiểm tra ngày
+                    10/10. Chưa xác minh danh sách người nhận của yêu cầu này.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- CARD 2: AI Assistant Đối chiếu trùng lặp -->
+            <section class="khung-chua khung-the">
+              <div class="dau-the vach-ngan-duoi">
+                <div class="nhom-tieu-de-the">
+                  <span class="buoc-the">CARD 2</span>
+                  <h2>AI Assistant · Đối chiếu nhu cầu trùng lặp</h2>
+                </div>
+                <div class="the-nhan nhan-trung-lap">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> AI Assistant
+                </div>
+              </div>
+
+              <div class="than-the">
+                <div class="banner-ai">
+                  <div class="van-ban-banner-ai">
+                    Đầu vào: Hồ sơ NC-033 và các nhu cầu đang hoạt động cùng khu
+                    vực.
+                  </div>
+                  <div class="nhan-do-tin-cay-ai">
+                    <i class="fa-solid fa-rotate bieu-tuong-xoay"></i> Đang đối
+                    chiếu...
+                    <span class="phan-tram-tin-cay"
+                      >78% tương đồng - Tin cậy vừa</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Comparison Table -->
+                <div class="boc-bang">
+                  <table class="bang-so-sanh">
+                    <thead>
+                      <tr>
+                        <th>Tiêu chí</th>
+                        <th class="cot-kich-hoat">NC-033 · Hải Sơn</th>
+                        <th>NC-024 · An Bình</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="nhan-cot">Tổ chức</td>
+                        <td class="cot-kich-hoat">TC-006 · Hải Sơn</td>
+                        <td>TC-001 · An Bình</td>
+                      </tr>
+                      <tr>
+                        <td class="nhan-cot">Danh mục / Hạn</td>
+                        <td class="cot-kich-hoat">Nhu yếu phẩm · 15/10</td>
+                        <td>Nhu yếu phẩm · 15/10</td>
+                      </tr>
+                      <tr>
+                        <td class="nhan-cot">Địa bàn / Đối tượng</td>
+                        <td class="cot-kich-hoat">Hải Sơn · 200 hộ khai báo</td>
+                        <td>Hải Lăng · 500 hộ được duyệt</td>
+                      </tr>
+                      <tr>
+                        <td class="nhan-cot">Số lượng / Tiến độ</td>
+                        <td class="cot-kich-hoat">200 bộ · chưa duyệt</td>
+                        <td>500 bộ · đã nhận 300</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="giai-thich-ai">
+                  <strong>Giải thích:</strong> Nội dung và quy cách gần giống,
+                  cùng thời hạn; khác tổ chức và điểm tiếp nhận. Khoảng cách gần
+                  không đủ để kết luận trùng người nhận.
+                </div>
+
+                <div class="o-canh-bao-ai">
+                  <h4>
+                    <i class="fa-solid fa-triangle-exclamation"></i> Chưa đủ dữ
+                    liệu xác định trùng
+                  </h4>
+                  <p>
+                    Thiếu mã hộ trong danh sách NC-033. Không tự động gộp. Yêu
+                    cầu bổ sung hoặc đánh dấu không trùng kèm lý do.
+                  </p>
+                </div>
+
+                <div class="thanh-thao-tac-ai">
+                  <div class="nhom-nut-trai">
+                    <button class="nut nut-nho nut-vien" id="btnMarkNotDup">
+                      Đánh dấu không trùng
+                    </button>
+                    <button class="nut nut-nho nut-vien" id="btnLinkRef">
+                      Liên kết tham chiếu
+                    </button>
+                    <button class="nut nut-nho nut-vien" id="btnRejectSuggest">
+                      Từ chối gợi ý
+                    </button>
+                    <button class="nut nut-nho nut-vien" id="btnRecompare">
+                      Tạo lại so sánh
+                    </button>
+                  </div>
+                  <button class="nut nut-nho nut-duyet" id="btnSaveCompare">
+                    Lưu kết luận đối chiếu
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- CARD 3: Lịch sử hồ sơ -->
+            <section class="khung-chua khung-the">
+              <div class="dau-the vach-ngan-duoi">
+                <div class="nhom-tieu-de-the">
+                  <span class="buoc-the">CARD 3</span>
+                  <h2>Lịch sử hồ sơ</h2>
+                </div>
+              </div>
+              <div class="than-the">
+                <ul class="dong-thoi-gian">
+                  <li class="muc-dong-thoi-gian">
+                    <span class="cham-dong-thoi-gian cham-thanh-cong"></span>
+                    <div class="noi-dung-dong-thoi-gian">
+                      <span class="thoi-gian chu-dam">10/10</span> - Tổ chức
+                      TC-006 được xác minh
+                    </div>
+                  </li>
+                  <li class="muc-dong-thoi-gian">
+                    <span class="cham-dong-thoi-gian cham-thong-tin"></span>
+                    <div class="noi-dung-dong-thoi-gian">
+                      <span class="thoi-gian chu-dam">12/10, 08:15</span> -
+                      Hoàng Mai gửi nhu cầu
+                    </div>
+                  </li>
+                  <li class="muc-dong-thoi-gian">
+                    <span class="cham-dong-thoi-gian cham-tim"></span>
+                    <div class="noi-dung-dong-thoi-gian">
+                      <span class="thoi-gian chu-dam">12/10, 08:16</span> - AI
+                      cảnh báo tương đồng
+                    </div>
+                  </li>
+                  <li class="muc-dong-thoi-gian">
+                    <span class="cham-dong-thoi-gian cham-canh-bao"></span>
+                    <div class="noi-dung-dong-thoi-gian">
+                      <span class="thoi-gian chu-dam">12/10, 09:50</span> - Lê
+                      Hà đang xét duyệt
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          <!-- Right Column: Decision Form Panel -->
+          <div class="cot-phai">
+            <section class="khung-chua khung-the the-quyet-dinh">
+              <div class="dau-the vach-ngan-duoi">
+                <div class="nhom-tieu-de-the">
+                  <span class="tieu-de-phu-the">QUYẾT ĐỊNH</span>
+                  <h2>Quyết định xét duyệt</h2>
+                </div>
+              </div>
+
+              <div class="than-the">
+                <form id="decisionForm">
+                  <div class="nhom-bieu-mau">
+                    <label class="nhan-bieu-mau bat-buoc">HÀNH ĐỘNG</label>
+                    <select class="dieu-khien-bieu-mau" id="selectAction">
+                      <option value="request_info" selected>
+                        Yêu cầu bổ sung thông tin
+                      </option>
+                      <option value="approve">Phê duyệt nhu cầu</option>
+                      <option value="reject">Từ chối nhu cầu</option>
+                    </select>
+                    <div class="goi-y-bieu-mau" id="actionHint">
+                      Lựa chọn: <strong>Duyệt</strong> ·
+                      <strong>Yêu cầu bổ sung</strong> ·
+                      <strong>Từ chối</strong>
+                    </div>
+                  </div>
+
+                  <div class="nhom-bieu-mau" id="approvedQtyGroup">
+                    <label class="nhan-bieu-mau"
+                      >SỐ LƯỢNG DUYỆT (NẾU DUYỆT)</label
+                    >
+                    <input
+                      type="text"
+                      class="dieu-khien-bieu-mau"
+                      id="inputApprovedQty"
+                      value="200 bộ"
+                    />
+                    <div class="goi-y-bieu-mau">
+                      Không vượt quá 200 bộ được yêu cầu.
+                    </div>
+                  </div>
+
+                  <div class="nhom-bieu-mau">
+                    <label class="nhan-bieu-mau bat-buoc"
+                      >LÝ DO / YÊU CẦU BẮT BUỘC</label
+                    >
+                    <textarea
+                      class="dieu-khien-bieu-mau"
+                      id="textReason"
+                      rows="3"
+                    >
+Bổ sung mã hộ hoặc danh sách đối tượng để đối chiếu NC-024; xác nhận hai điểm tiếp nhận phục vụ nhóm khác nhau.</textarea
+                    >
+                  </div>
+
+                  <div class="nhom-bieu-mau">
+                    <label class="nhan-bieu-mau">GHI CHÚ NỘI BỘ</label>
+                    <textarea
+                      class="dieu-khien-bieu-mau"
+                      id="textInternalNote"
+                      rows="2"
+                      placeholder="Ưu tiên xử lý ngay sau khi có bổ sung."
+                    >
+Ưu tiên xử lý ngay sau khi có bổ sung.</textarea
+                    >
+                  </div>
+
+                  <div class="o-thong-tin-bo-sung thong-bao-canh-bao">
+                    <div class="dau-o-thong-tin">
+                      <i class="fa-solid fa-triangle-exclamation"></i>
+                      <span>Cần xác nhận trước khi gửi</span>
+                    </div>
+                    <p class="van-ban-o-thong-tin">
+                      NC-033 chuyển sang Cần bổ sung. Đơn vị chưa được ghép
+                      nguồn lực.
+                    </p>
+                  </div>
+
+                  <div class="nhom-o-checkbox">
+                    <input type="checkbox" id="checkConfirmRead" />
+                    <label for="checkConfirmRead"
+                      >Tôi đã đọc hồ sơ và kết quả đối chiếu.</label
+                    >
+                  </div>
+
+                  <div class="xep-chong-thao-tac-bieu-mau">
+                    <button
+                      type="submit"
+                      class="nut nut-duyet nut-khoi-rong"
+                      id="btnConfirmDecision"
+                    >
+                      <i class="fa-solid fa-paper-plane"></i>
+                      <span id="btnSubmitText">Xác nhận yêu cầu bổ sung</span>
+                    </button>
+
+                    <div class="nhom-nut-doi">
+                      <button
+                        type="button"
+                        class="nut nut-vien"
+                        id="btnSaveNote"
+                      >
+                        Lưu ghi chú
+                      </button>
+                      <button
+                        type="button"
+                        class="nut nut-tu-choi"
+                        id="btnCancelDecision"
+                      >
+                        Hủy
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="ghi-chu-chan-quyet-dinh">
+                    Nếu chọn Duyệt: xác nhận số lượng và lý do. Nếu chọn Từ
+                    chối: lý do không được để trống.
+                  </div>
+                </form>
+
+                <!-- Alert Box State -->
+                <div
+                  class="o-canh-bao-trang-thai nen-vang-nhat"
+                  id="statusStateBox"
+                >
+                  <div class="tieu-de-trang-thai">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <strong>Trạng thái đang chờ</strong>
+                  </div>
+                  <p>
+                    Chưa có quyết định cuối cùng. Mọi thao tác gửi chỉ được thực
+                    hiện bởi điều phối viên.
+                  </p>
+                  <div class="canh-bao-xac-thuc" id="validationWarning">
+                    <strong>Lý do không được để trống:</strong> Không thể xác
+                    nhận từ chối nếu thiếu lý do.
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Toast Notifications Floating Container -->
+    <div id="toastContainer" class="khung-thong-bao-noi"></div>
+
+    <!-- Application Script -->
+    <script src="../js/trang15.js"></script>
+  </body>
+</html>

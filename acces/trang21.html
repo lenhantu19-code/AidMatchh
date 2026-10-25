@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AidMatch - Báo Cáo Tác Động (Admin Dashboard)</title>
+
+    <!-- FontAwesome & Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/trang21.css" />
+  </head>
+  <body>
+    <!-- Main Application Header -->
+    <header class="dau-trang-ung-dung">
+      <div class="khung-dau-trang">
+        <div class="thuong-hieu-dau-trang">
+          <div class="biieu-tieu-thuong-hieu">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <div class="van-ban-thuong-hieu">
+            <span class="ten-thuong-hieu">AidMatch</span>
+            <span class="khau-hieu-thuong-hieu">CỨU TRỢ THÔNG MINH</span>
+          </div>
+        </div>
+
+        <div class="thao-tac-dau-trang">
+          <span class="the-he-thong">
+            <span class="cham-nhap-nhay"></span> Hệ thống trực tuyến
+          </span>
+          <button
+            type="button"
+            id="btnNotifications"
+            class="nut-bieu-tuong"
+            aria-label="Thông báo"
+          >
+            <i class="fa-regular fa-bell"></i>
+            <span class="cham-hieu-so"></span>
+          </button>
+          <div class="vach-ngan-doc"></div>
+          <div class="ho-so-nguoi-dung">
+            <div class="anh-dai-dien">PA</div>
+            <div class="thong-tin-nguoi-dung">
+              <span class="ten-nguoi-dung">Phạm An</span>
+              <span class="vai-tro-nguoi-dung">Quản trị hệ thống</span>
+            </div>
+            <i class="fa-solid fa-chevron-down mũi-ten-ho-so"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Application Body Layout -->
+    <div class="than-ung-dung">
+      <!-- Sidebar Navigation -->
+      <aside class="thanh-ben">
+        <div class="noi-dung-thanh-ben">
+          <!-- Nhóm 1: KHÔNG GIAN LÀM VIỆC -->
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">KHÔNG GIAN LÀM VIỆC</div>
+            <nav class="danh-sach-dieu-huong">
+              <a href="trang18.html" class="muc-dieu-huong">
+                <i class="fa-regular fa-folder bieu-tuong-dieu-huong"></i>
+                <span>Danh mục</span>
+              </a>
+              <a href="trang19.html" class="muc-dieu-huong">
+                <i class="fa-solid fa-users bieu-tuong-dieu-huong"></i>
+                <span>Người dùng</span>
+              </a>
+              <a href="trang20.html" class="muc-dieu-huong">
+                <i class="fa-solid fa-building-user bieu-tuong-dieu-huong"></i>
+                <span>Tổ chức</span>
+              </a>
+              <a href="trang21.html" class="muc-dieu-huong kich-hoat">
+                <i class="fa-solid fa-chart-line bieu-tuong-dieu-huong"></i>
+                <span>Báo cáo tác động</span>
+              </a>
+            </nav>
+          </div>
+
+          <!-- Nhóm 2: HỆ THỐNG -->
+          <div class="phan-dieu-huong khoang-cach-tren-4">
+            <div class="tieu-de-phan-dieu-huong">HỆ THỐNG</div>
+            <nav class="danh-sach-dieu-huong">
+              <a href="trang22.html" class="muc-dieu-huong">
+                <i class="fa-solid fa-sliders bieu-tuong-dieu-huong"></i>
+                <span>Hồ sơ & Cài đặt</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Dashboard View Area -->
+      <main class="noi-dung-chinh">
+        <!-- Breadcrumb & Header Title Row -->
+        <div class="boc-dau-trang-noi-dung">
+          <div class="duong-dan-trang">
+            <span class="duong-dan-kich-hoat">Báo cáo tác động</span>
+          </div>
+          <div class="dau-trang-noi-dung">
+            <div>
+              <h1 class="tieu-de-trang">Báo cáo tác động</h1>
+              <p class="tieu-de-phu-trang">
+                Dữ liệu minh họa · Chỉ ghi nhận kết quả đã xác minh, không so
+                sánh cam kết và tác động.
+              </p>
+            </div>
+            <button type="button" class="nut nut-chinh" id="btnExportReport">
+              <i class="fa-solid fa-file-export"></i>
+              <span>Xuất báo cáo</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Panel -->
+        <div class="khung-chua bo-loc-pham-vi">
+          <div class="dau-bo-loc">
+            <span class="tieu-de-bo-loc">PHẠM VI BÁO CÁO</span>
+          </div>
+          <div class="luoi-bo-loc">
+            <div class="nhom-bo-loc">
+              <label class="nhan-bo-loc" for="timeFilter"
+                >Khoảng thời gian</label
+              >
+              <select id="timeFilter" class="luat-chon-bieu-mau">
+                <option value="03/10-12/10/2026">03/10 – 12/10/2026</option>
+                <option value="last30">30 ngày qua</option>
+              </select>
+            </div>
+            <div class="nhom-bo-loc">
+              <label class="nhan-bo-loc" for="provinceScope">Khu vực</label>
+              <select id="provinceScope" class="luat-chon-bieu-mau">
+                <option value="Quảng Trị">Quảng Trị</option>
+                <option value="Đà Nẵng">Đà Nẵng</option>
+                <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+              </select>
+            </div>
+            <div class="nhom-bo-loc">
+              <label class="nhan-bo-loc" for="categoryScope"
+                >Danh mục / Nhu cầu</label
+              >
+              <select id="categoryScope" class="luat-chon-bieu-mau">
+                <option value="NC-024">Nhu yếu phẩm - NC-024</option>
+                <option value="all">Tất cả danh mục</option>
+              </select>
+            </div>
+            <div class="thao-tac-bo-loc">
+              <button type="button" class="nut nut-den" id="btnApplyFilter">
+                Áp dụng bộ lọc
+              </button>
+            </div>
+          </div>
+          <p class="ghi-chu-bo-loc">
+            Phạm vi áp dụng: Điểm tiếp nhận An Bình và Quỹ Đồng Hành tại Quảng
+            Trị.
+          </p>
+        </div>
+
+        <!-- Metrics Overview Grid -->
+        <div class="luoi-chi-so">
+          <div class="the-chi-so">
+            <span class="nhan-chi-so">NHU CẦU ĐÃ DUYỆT</span>
+            <div class="gia-tri-chi-so">
+              500 <span class="don-vi-chi-so">bộ</span>
+            </div>
+            <span class="phu-chi-so">NC-024 · Mức nhu cầu</span>
+          </div>
+          <div class="the-chi-so">
+            <span class="nhan-chi-so">ĐÃ PHÂN BỔ</span>
+            <div class="gia-tri-chi-so">
+              400 <span class="don-vi-chi-so">bộ</span>
+            </div>
+            <span class="phu-chi-so van-ban-xanh-la"
+              >PB-032 · Khoảng phân bổ</span
+            >
+          </div>
+          <div class="the-chi-so">
+            <span class="nhan-chi-so">ĐÃ BÀN GIAO</span>
+            <div class="gia-tri-chi-so">
+              300 <span class="don-vi-chi-so">bộ</span>
+            </div>
+            <span class="phu-chi-so van-ban-vang-cam"
+              >BG-032A · Có bằng chứng</span
+            >
+          </div>
+          <div class="the-chi-so">
+            <span class="nhan-chi-so">ĐÃ XÁC NHẬN NHẬN</span>
+            <div class="gia-tri-chi-so">
+              300 <span class="don-vi-chi-so">bộ</span>
+            </div>
+            <span class="phu-chi-so van-ban-xanh-duong"
+              >Kết quả đối chiếu báo cáo</span
+            >
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="luoi-bieu-do">
+          <!-- Progress Bar Chart -->
+          <div class="khung-chua khung-bieu-do">
+            <div class="dau-khung">
+              <h2 class="tieu-de-khung">Từ kế hoạch đến tiếp nhận</h2>
+              <p class="mo-ta-khung">So sánh từng đoạn trong chuỗi nhu phẩm.</p>
+            </div>
+            <div class="than-bieu-do than-bieu-do-tiien-trinh">
+              <div class="hang-tiien-trinh">
+                <div class="thong-tin-tiien-trinh">
+                  <span>Nhu cầu được duyệt</span>
+                  <span class="in-dam">500 bộ</span>
+                </div>
+                <div class="nen-thanh-tiien-trinh">
+                  <div
+                    class="dien-thanh-tiien-trinh dien-xam"
+                    style="width: 100%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="hang-tiien-trinh">
+                <div class="thong-tin-tiien-trinh">
+                  <span>Đã phân bổ</span>
+                  <span class="in-dam">400 bộ</span>
+                </div>
+                <div class="nen-thanh-tiien-trinh">
+                  <div
+                    class="dien-thanh-tiien-trinh dien-xanh-la"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="hang-tiien-trinh">
+                <div class="thong-tin-tiien-trinh">
+                  <span>Đã bàn giao</span>
+                  <span class="in-dam">300 bộ</span>
+                </div>
+                <div class="nen-thanh-tiien-trinh">
+                  <div
+                    class="dien-thanh-tiien-trinh dien-vang-cam"
+                    style="width: 60%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="hang-tiien-trinh">
+                <div class="thong-tin-tiien-trinh">
+                  <span>Đã xác nhận nhận</span>
+                  <span class="in-dam">300 bộ</span>
+                </div>
+                <div class="nen-thanh-tiien-trinh">
+                  <div
+                    class="dien-thanh-tiien-trinh dien-xanh-duong"
+                    style="width: 60%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="ghi-chu-chan-bieu-do khoang-cach-tren-3">
+                100 bộ đang chờ giao · 100 bộ chưa phân bổ · 300 bộ đã xác nhận.
+              </div>
+            </div>
+          </div>
+
+          <!-- Line Chart -->
+          <div class="khung-chua khung-bieu-do">
+            <div class="dau-khung">
+              <h2 class="tieu-de-khung">Lũy kế số lượng trong kỳ</h2>
+              <p class="mo-ta-khung">03–12/10/2026 · Đơn vị: bộ</p>
+            </div>
+            <div class="than-bieu-do than-bieu-do-duong">
+              <div class="boc-svg-bieu-do-duong">
+                <svg viewBox="0 0 500 150" class="svg-bieu-do-duong">
+                  <line
+                    x1="0"
+                    y1="30"
+                    x2="500"
+                    y2="30"
+                    stroke="#f1f5f9"
+                    stroke-width="1"
+                  />
+                  <line
+                    x1="0"
+                    y1="75"
+                    x2="500"
+                    y2="75"
+                    stroke="#f1f5f9"
+                    stroke-width="1"
+                  />
+                  <line
+                    x1="0"
+                    y1="120"
+                    x2="500"
+                    y2="120"
+                    stroke="#f1f5f9"
+                    stroke-width="1"
+                  />
+                  <polyline
+                    fill="none"
+                    stroke="#2563eb"
+                    stroke-width="3"
+                    points="40,120 150,110 300,50 460,50"
+                  />
+                  <circle cx="40" cy="120" r="4" fill="#2563eb" />
+                  <circle cx="150" cy="110" r="4" fill="#2563eb" />
+                  <circle cx="300" cy="50" r="4" fill="#2563eb" />
+                  <circle cx="460" cy="50" r="4" fill="#2563eb" />
+                </svg>
+                <div class="truc-x-bieu-do">
+                  <span>03/10</span>
+                  <span>05/10</span>
+                  <span>09/10</span>
+                  <span>12/10</span>
+                </div>
+              </div>
+              <div class="hang-chu-giai-bieu-do khoang-cach-tren-3">
+                <span class="muc-chu-giai"
+                  ><span class="cham-tron cham-xanh-duong"></span> Phân bổ:
+                  400</span
+                >
+                <span class="muc-chu-giai"
+                  ><span class="cham-tron cham-xanh-la"></span> Xác nhận nhận:
+                  300</span
+                >
+              </div>
+              <p class="ghi-chu-chan-bieu-do khoang-cach-tren-1">
+                12/10: Bàn giao BG-032A. Đã tiếp nhận 300 bộ. Không ghi nhận dư
+                tồn.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Definition & Audit Log Table Panel -->
+        <div class="khung-chua khung-bang-du-lieu">
+          <div class="dau-khung">
+            <h2 class="tieu-de-khung">Định nghĩa & truy xuất số liệu</h2>
+            <p class="mo-ta-khung">
+              Chi tiết công thức tính toán và nguồn chứng cứ minh bạch.
+            </p>
+          </div>
+          <div class="boc-bang-co-the-cuon">
+            <table class="bang-du-lieu">
+              <thead>
+                <tr>
+                  <th>CHỈ SỐ</th>
+                  <th>ĐỊNH NGHĨA</th>
+                  <th class="can-phai">NGUỒN KIỂM CHỨNG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="in-dam">Đã phân bổ · 400 bộ</td>
+                  <td>Số lượng phân bổ được phê duyệt, chưa hủy.</td>
+                  <td class="can-phai">
+                    <a href="#" class="nut-lien-ket">PB-032 · 10/10/2026</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="in-dam">Đã bàn giao · 300 bộ</td>
+                  <td>Số đã giao có chứng cứ ký nhận.</td>
+                  <td class="can-phai">
+                    <a href="#" class="nut-lien-ket">BG-032A.pdf · 12/10</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="in-dam">Đã xác nhận nhận · 300 bộ</td>
+                  <td>Người nhận xác nhận; không cộng trùng đợt giao.</td>
+                  <td class="can-phai">
+                    <a href="#" class="nut-lien-ket"
+                      >Nguyễn Lan · 12/10, 09:30</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="in-dam">Tỷ lệ đáp ứng đã nhận · 60%</td>
+                  <td>300 đã xác nhận / 500 bộ được duyệt.</td>
+                  <td class="can-phai">
+                    <a href="#" class="nut-lien-ket">NC-024 + BG-032A</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ghi-chu-chan-khung">
+            Hiển thị 4 bản ghi · Dữ liệu minh họa · Trang 1/1
+          </div>
+        </div>
+
+        <!-- AI Draft & Export Options Grid -->
+        <div class="luoi-khong-gian-bo-cuc">
+          <div class="khung-chua khung-bieu-mau">
+            <div class="dau-khung phan-bo-khoang-cach">
+              <div>
+                <h2 class="tieu-de-khung can-chinh-hang">
+                  <i
+                    class="fa-solid fa-wand-magic-sparkles van-ban-vang-cam lề-phai-2"
+                  ></i>
+                  AI-3 · Bản nháp câu chuyện tác động
+                </h2>
+                <p class="mo-ta-khung">
+                  Tổng hợp minh chứng kết quả hoạt động trong phạm vi lọc.
+                </p>
+              </div>
+              <span class="the-nhan-trang-thai nhan-xanh-duong-nhạt"
+                >Dữ liệu vào chỉ dùng chỉ số được duyệt</span
+              >
+            </div>
+
+            <div class="than-nhap-ai">
+              <div class="hang-vien-tom-tat lề-duoi-3">
+                <div class="vien-tom-tat">
+                  <span class="tieu-de-vien">Số liệu chọn để viết</span>
+                  <span class="gia-tri-vien"
+                    ><i class="fa-solid fa-check van-ban-xanh-la lề-phai-1"></i>
+                    300 bộ đã xác nhận · Tỷ lệ 60%</span
+                  >
+                </div>
+                <div class="vien-tom-tat">
+                  <span class="tieu-de-vien">Thời gian & nguồn</span>
+                  <span class="gia-tri-vien"
+                    >03-12/10 · NC-024, PB-032, BG-032A</span
+                  >
+                </div>
+              </div>
+
+              <div class="lề-duoi-3">
+                <button
+                  type="button"
+                  class="nut nut-xanh-duong-mem"
+                  id="btnGenerateDraft"
+                >
+                  <i class="fa-solid fa-arrows-rotate"></i>
+                  <span>Tạo bản nháp</span>
+                  <span class="phu-van-ban"
+                    >· Đang sử dụng chỉ số đã duyệt...</span
+                  >
+                </button>
+              </div>
+
+              <div class="boc-van-ban-nhap">
+                <label class="nhan-bieu-mau lề-duoi-1"
+                  >Bản nháp có thể chỉnh sửa</label
+                >
+                <div class="khung-noi-dung-nhap" contenteditable="true">
+                  <p>
+                    Trong kỳ 03–12/10/2026, Trạm An Bình tại Quảng Trị đã xác
+                    nhận tiếp nhận 300 bộ nhu yếu phẩm từ Quỹ Đồng Hành (1, 2).
+                    Kết quả này đáp ứng 60% nhu cầu 500 bộ đã được duyệt (1, 3).
+                    Phân bổ hiện tại là 400 bộ, trong đó 100 bộ chưa giao; 100
+                    bộ khác chưa được phân bổ. Đây là dữ liệu minh bạch, không
+                    phải báo cáo cứu trợ thực tế.
+                  </p>
+                  <p
+                    class="khoang-cach-tren-2 van-ban-xam-500 van-ban-sieu-nho"
+                  >
+                    Giải thích bản nháp: chỉ gọi 300 bộ đã xác nhận là kết quả;
+                    400 bộ phân bổ là kế hoạch; không đưa dữ liệu so sánh với
+                    người khác; số liệu theo đúng thực tế.
+                  </p>
+                </div>
+              </div>
+
+              <div class="hang-nut-thao-tac khoang-cach-tren-3">
+                <button
+                  type="button"
+                  class="nut nut-xanh-la"
+                  id="btnApproveDraft"
+                >
+                  Chấp nhận bản nháp
+                </button>
+                <button type="button" class="nut nut-vien-ngoai">
+                  Chỉnh sửa
+                </button>
+                <button type="button" class="nut nut-vien-ngoai">
+                  Từ chối
+                </button>
+                <button type="button" class="nut nut-vien-ngoai">
+                  Tạo lại
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Export Settings Panel -->
+          <div class="khung-chua khung-thao-tac">
+            <div class="dau-khung khong-vien-duoi">
+              <h3 class="tieu-de-khung">Lưu / Xuất báo cáo</h3>
+              <p class="mo-ta-khung">● Bản nháp · Chưa công bố</p>
+            </div>
+            <div class="than-thao-tac">
+              <div class="nhom-bieu-mau">
+                <label class="nhan-bieu-mau" for="reportName"
+                  >Tên báo cáo *</label
+                >
+                <input
+                  type="text"
+                  id="reportName"
+                  class="dieu-khien-bieu-mau"
+                  value="An Bình - Nhu yếu phẩm - 03-12/"
+                />
+              </div>
+
+              <div class="nhom-bieu-mau">
+                <label class="nhan-bieu-mau" for="exportFormat"
+                  >Định dạng xuất</label
+                >
+                <select id="exportFormat" class="luat-chon-bieu-mau">
+                  <option>PDF + Bảng dữ liệu CSV</option>
+                  <option>Chỉ file PDF</option>
+                  <option>File Excel / CSV</option>
+                </select>
+              </div>
+
+              <div class="danh-sach-o-checkbox khoang-cach-tren-2">
+                <div class="nhom-o-checkbox">
+                  <input type="checkbox" id="check1" checked />
+                  <label for="check1" class="nhan-o-checkbox"
+                    >Hiển thị nhãn dữ liệu minh họa</label
+                  >
+                </div>
+                <div class="nhom-o-checkbox">
+                  <input type="checkbox" id="check2" checked />
+                  <label for="check2" class="nhan-o-checkbox"
+                    >Kèm định nghĩa chỉ số và nguồn</label
+                  >
+                </div>
+                <div class="nhom-o-checkbox">
+                  <input type="checkbox" id="check3" checked />
+                  <label for="check3" class="nhan-o-checkbox"
+                    >Đã kiểm tra bản nháp AI</label
+                  >
+                </div>
+              </div>
+
+              <div class="xep-chong-thao-tac-bieu-mau khoang-cach-tren-3">
+                <button
+                  type="button"
+                  class="nut nut-den chieu-rong-toan-bo"
+                  id="btnSaveDraft"
+                >
+                  Lưu bản thảo
+                </button>
+                <button
+                  type="button"
+                  class="nut nut-vien-ngoai chieu-rong-toan-bo"
+                  id="btnConfirmExport"
+                >
+                  Xuất bản đã xác nhận
+                </button>
+              </div>
+
+              <p
+                class="van-ban-sieu-nho van-ban-xam-400 khoang-cach-tren-2 can-giua"
+              >
+                Bản nháp lưu trên hệ thống; xuất bản mới chính thức. Không tự
+                động đăng tải.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Failure Warning Note Banner -->
+        <div class="o-thong-tin-vang-cam chieu-rong-day-du">
+          <div class="tieu-de-o-thong-tin">Khi tạo bản nháp thất bại</div>
+          <p class="mo-ta-o-thong-tin">
+            Dịch vụ AI tạm thời gián đoạn. Số liệu vẫn lưu trữ; hồ sơ dự phòng
+            vẫn được giữ; không ghi dữ liệu lỗi.
+            <a href="#" class="nut-lien-ket van-ban-vang-cam lề-trai-1"
+              >Thử tạo lại</a
+            >
+            ·
+            <a href="#" class="nut-lien-ket van-ban-vang-cam"
+              >Viết thủ công từ số liệu</a
+            >
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <!-- App Global Footer -->
+    <footer class="chan-trang-toan-cuc">
+      <div class="khung-chan-trang">
+        <span
+          >© 2026 AidMatch Platform. Bản minh họa, không phải dữ liệu cứu trợ
+          thực tế.</span
+        >
+        <div class="lien-ket-chan-trang">
+          <a href="#">Chính sách bảo mật</a>
+          <a href="#">Điều khoản sử dụng</a>
+          <a href="#">Hỗ trợ kỹ thuật</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast Notifications Container -->
+    <div id="toastContainer" class="khung-thong-bao-noi"></div>
+
+    <script src="../js/trang21.js"></script>
+  </body>
+</html>

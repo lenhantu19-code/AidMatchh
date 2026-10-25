@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AidMatch - Duyệt Nhu Cầu (Coordinator Dashboard)</title>
+    <!-- FontAwesome & Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../css/trang14.css" />
+  </head>
+  <body>
+    <!-- Main Application Header -->
+    <header class="dau-trang-ung-dung">
+      <div class="khung-dau-trang">
+        <div class="thuong-hieu-dau-trang">
+          <div class="biieu-tieu-thuong-hieu">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <span class="ten-thuong-hieu">AidMatch</span>
+          <span class="the-he-thong">
+            <span class="cham-nhap-nhay"></span> Dữ liệu minh họa
+          </span>
+        </div>
+
+        <div class="thao-tac-dau-trang">
+          <button
+            type="button"
+            id="btnNotifications"
+            class="nut-bieu-tuong"
+            aria-label="Thông báo"
+          >
+            <i class="fa-regular fa-bell"></i>
+            <span class="cham-hieu-so"></span>
+          </button>
+          <div class="vach-ngan-doc"></div>
+          <div class="ho-so-nguoi-dung">
+            <div class="anh-dai-dien">LH</div>
+            <div class="thong-tin-nguoi-dung">
+              <span class="ten-nguoi-dung">Lê Hà</span>
+              <span class="vai-tro-nguoi-dung">Điều phối miền Trung</span>
+            </div>
+            <i class="fa-solid fa-chevron-down mũi-ten-ho-so"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Application Body Layout -->
+    <div class="than-ung-dung">
+      <!-- Sidebar Navigation -->
+      <aside class="thanh-ben">
+        <div class="noi-dung-thanh-ben">
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">Không gian làm việc</div>
+            <div class="huy-hieu-vai-tro">
+              <i class="fa-solid fa-user-gear"></i> Điều phối viên
+            </div>
+            <nav class="danh-sach-dieu-huong">
+              <a
+                href="../acces/trang14.html"
+                class="muc-dieu-huong kich-hoat"
+                data-target="approve-requests"
+              >
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-clipboard-check"></i>
+                  <span>Duyệt nhu cầu</span>
+                </span>
+                <span class="huy-hieu-dem" id="sidebarBadgePending">4</span>
+              </a>
+              <a
+                href="../acces/trang15.html"
+                class="muc-dieu-huong"
+                data-target="review-details"
+              >
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-file-circle-check"></i>
+                  <span>Chi tiết xét duyệt</span>
+                </span>
+              </a>
+              <a
+                href="../acces/trang16.html"
+                class="muc-dieu-huong"
+                data-target="allocation-board"
+              >
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-network-wired"></i>
+                  <span>Bảng ghép & Phân bổ</span>
+                </span>
+              </a>
+              <a
+                href="../acces/trang17.html"
+                class="muc-dieu-huong"
+                data-target="tracking"
+              >
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-truck-ramp-box"></i>
+                  <span>Theo dõi phân bổ</span>
+                </span>
+              </a>
+            </nav>
+          </div>
+
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">Hệ thống</div>
+            <nav class="danh-sach-dieu-huong">
+              <a href="#" class="muc-dieu-huong" id="navNoticeCenter">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-regular fa-bell"></i>
+                  <span>Trung tâm thông báo</span>
+                </span>
+              </a>
+              <a href="#" class="muc-dieu-huong" id="navSettings">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-sliders"></i>
+                  <span>Hồ sơ & Cài đặt</span>
+                </span>
+              </a>
+              <a href="#" class="muc-dieu-huong" id="navExplore">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-compass"></i>
+                  <span>Khám phá nhu cầu</span>
+                </span>
+              </a>
+            </nav>
+          </div>
+        </div>
+        <div class="chan-thanh-ben">
+          AidMatch v2.4 · Hệ thống Điều phối Khẩn cấp
+        </div>
+      </aside>
+
+      <!-- Main Dashboard View Area -->
+      <main class="noi-dung-chinh">
+        <!-- Page Heading -->
+        <div class="dau-trang-noi-dung">
+          <h1 class="tieu-de-trang">Duyệt nhu cầu</h1>
+          <p class="tieu-de-phu-trang">
+            Hàng đợi miền Trung · Ưu tiên nhu cầu khẩn cấp và hồ sơ đủ điều
+            kiện.
+          </p>
+        </div>
+
+        <!-- KPI Metric Cards Grid -->
+        <div class="luoi-chi-so-kpi">
+          <div class="the-kpi" id="cardPending" data-kpi="pending">
+            <div class="dau-the-kpi">
+              <span class="nhan-kpi">Chờ xét duyệt</span>
+              <div class="bieu-tuong-kpi kpi-vang-cam">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+            <div class="hang-gia-tri-kpi">
+              <span class="so-kpi" id="cnt-pending">4</span>
+              <span class="don-vi-kpi">hồ sơ</span>
+            </div>
+            <div class="the-nhan-kpi nhan-kpi-vang-cam">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <span id="urgentAlertCount">2 nhu cầu khẩn cấp</span>
+            </div>
+          </div>
+
+          <div class="the-kpi" id="cardInfo" data-kpi="info_needed">
+            <div class="dau-the-kpi">
+              <span class="nhan-kpi">Cần bổ sung thông tin</span>
+              <div class="bieu-tuong-kpi kpi-xanh-duong">
+                <i class="fa-solid fa-file-pen"></i>
+              </div>
+            </div>
+            <div class="hang-gia-tri-kpi">
+              <span class="so-kpi" id="cnt-info">2</span>
+              <span class="don-vi-kpi">hồ sơ</span>
+            </div>
+            <div class="the-nhan-kpi nhan-kpi-xanh-duong">
+              <i class="fa-solid fa-spinner bieu-tuong-xoay"></i>
+              <span>Chờ phản hồi từ tổ chức</span>
+            </div>
+          </div>
+
+          <div class="the-kpi" id="cardDup" data-kpi="duplicate">
+            <div class="dau-the-kpi">
+              <span class="nhan-kpi">Có thể trùng lặp</span>
+              <div class="bieu-tuong-kpi kpi-tim">
+                <i class="fa-solid fa-clone"></i>
+              </div>
+            </div>
+            <div class="hang-gia-tri-kpi">
+              <span class="so-kpi" id="cnt-dup">1</span>
+              <span class="don-vi-kpi">cảnh báo</span>
+            </div>
+            <div class="the-nhan-kpi nhan-kpi-tim">
+              <i class="fa-solid fa-robot"></i>
+              <span>AI chỉ cảnh báo, không gộp</span>
+            </div>
+          </div>
+
+          <div class="the-kpi" id="cardDone" data-kpi="processed">
+            <div class="dau-the-kpi">
+              <span class="nhan-kpi">Đã xử lý hôm nay</span>
+              <div class="bieu-tuong-kpi kpi-xanh-la">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+            </div>
+            <div class="hang-gia-tri-kpi">
+              <span class="so-kpi" id="cnt-done">3</span>
+              <span class="don-vi-kpi">hồ sơ</span>
+            </div>
+            <div class="the-nhan-kpi nhan-kpi-xanh-la" id="kpiDoneSummary">
+              2 duyệt · 1 từ chối
+            </div>
+          </div>
+        </div>
+
+        <!-- Workspace Content Grid -->
+        <div class="luoi-khong-gian-lam-viec">
+          <!-- Left Panel: Filter & Request List -->
+          <div class="khung-chua khung-danh-sach">
+            <!-- Tab Navigation -->
+            <div class="thanh-the-chuyen">
+              <button
+                type="button"
+                class="nut-the-chuyen kich-hoat"
+                id="tab-pending"
+                data-tab="pending"
+              >
+                <span>Chờ duyệt</span>
+                <span
+                  class="huy-hieu-the-chuyen huy-hieu-kich-hoat"
+                  id="badgeTabPending"
+                  >4</span
+                >
+              </button>
+              <button
+                type="button"
+                class="nut-the-chuyen"
+                id="tab-info_needed"
+                data-tab="info_needed"
+              >
+                <span>Cần bổ sung</span>
+                <span class="huy-hieu-the-chuyen" id="badgeTabInfo">2</span>
+              </button>
+              <button
+                type="button"
+                class="nut-the-chuyen"
+                id="tab-approved"
+                data-tab="approved"
+              >
+                <span>Đã duyệt</span>
+                <span class="huy-hieu-the-chuyen" id="badgeTabApproved">2</span>
+              </button>
+              <button
+                type="button"
+                class="nut-the-chuyen"
+                id="tab-rejected"
+                data-tab="rejected"
+              >
+                <span>Đã từ chối</span>
+                <span class="huy-hieu-the-chuyen" id="badgeTabRejected">1</span>
+              </button>
+            </div>
+
+            <!-- Search & Filter Controls -->
+            <div class="thanh-bo-loc">
+              <div class="o-tim-kiem">
+                <i class="fa-solid fa-magnifying-glass bieu-tuong-tim-kiem"></i>
+                <input
+                  type="text"
+                  id="searchInput"
+                  placeholder="Tìm theo mã, tên tổ chức, tiêu đề..."
+                />
+              </div>
+              <div class="bo-dieu-khien-loc">
+                <select id="priorityFilter">
+                  <option value="all">Ưu tiên: Tất cả</option>
+                  <option value="urgent">Khẩn cấp</option>
+                  <option value="high">Ưu tiên cao</option>
+                  <option value="normal">Bình thường</option>
+                </select>
+                <select id="regionFilter">
+                  <option value="all">Khu vực: Tất cả</option>
+                  <option value="Quảng Trị">Quảng Trị</option>
+                  <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+                  <option value="Đà Nẵng">Đà Nẵng</option>
+                  <option value="Quảng Nam">Quảng Nam</option>
+                </select>
+                <select id="categoryFilter">
+                  <option value="all">Danh mục: Tất cả</option>
+                  <option value="Nhu yếu phẩm">Nhu yếu phẩm</option>
+                  <option value="Nước sạch">Nước sạch</option>
+                  <option value="Y tế & Sơ cứu">Y tế & Sơ cứu</option>
+                  <option value="Đồ sinh hoạt">Đồ sinh hoạt</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Request List Container -->
+            <div class="danh-sach-yeu-cau" id="requestList"></div>
+
+            <!-- List Footer Info -->
+            <div class="chan-khung" id="recordCountText">
+              Hiển thị 0 bản ghi
+            </div>
+          </div>
+
+          <!-- Right Panel: Detailed View & Action Panel -->
+          <div class="khung-chua khung-chi-tiet" id="detailPanel">
+            <div class="khung-noi-dung-chi-tiet">
+              <div class="dau-khung-chi-tiet">
+                <div class="boc-ma-chi-tiet">
+                  <div class="huy-hieu-ma" id="detailPanelCode">---</div>
+                  <div class="thong-tin-to-chuc">
+                    <span class="nhan-thong-tin">Chi tiết hồ sơ</span>
+                    <h2 class="ten-to-chuc" id="detailOrg">Chọn một hồ sơ</h2>
+                  </div>
+                </div>
+                <div
+                  class="huy-hieu-trang-thai-chi-tiet"
+                  id="detailBadges"
+                ></div>
+              </div>
+
+              <div class="than-chi-tiet">
+                <h3 class="tieu-de-chi-tiet" id="detailTitle">
+                  Vui lòng chọn hồ sơ từ danh sách bên trái
+                </h3>
+                <p class="mo-ta-chi-tiet" id="detailDesc">
+                  Thông tin mô tả chi tiết của hồ sơ nhu cầu cứu trợ sẽ xuất
+                  hiện tại đây sau khi được chọn.
+                </p>
+
+                <div class="luoi-chi-so-chi-tiet">
+                  <div class="o-chi-so">
+                    <span class="nhan-chi-so">Khu vực / Địa bàn</span>
+                    <span class="gia-tri-chi-so" id="detailLocation">---</span>
+                  </div>
+                  <div class="o-chi-so">
+                    <span class="nhan-chi-so">Số lượng yêu cầu</span>
+                    <span class="gia-tri-chi-so" id="detailQuantity">---</span>
+                  </div>
+                  <div class="o-chi-so">
+                    <span class="nhan-chi-so">Danh mục cứu trợ</span>
+                    <span class="gia-tri-chi-so" id="detailCategory">---</span>
+                  </div>
+                  <div class="o-chi-so">
+                    <span class="nhan-chi-so">Mức độ ưu tiên</span>
+                    <span class="gia-tri-chi-so" id="detailPriority">---</span>
+                  </div>
+                </div>
+
+                <div class="o-thong-tin-bo-sung" id="detailAIWarning">
+                  <div class="dau-o-thong-tin">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Đánh giá & Cảnh báo từ AI System</span>
+                  </div>
+                  <p class="van-ban-o-thong-tin" id="detailAIText">
+                    Chưa phát hiện nguy cơ trùng lặp dữ liệu.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Controls Footer -->
+            <div class="thao-tac-chi-tiet">
+              <button type="button" class="nut nut-duyet" id="btnApprove">
+                <i class="fa-solid fa-check"></i>
+                <span>Duyệt hồ sơ</span>
+              </button>
+              <button
+                type="button"
+                class="nut nut-yeu-cau-sua"
+                id="btnRequestEdit"
+              >
+                <i class="fa-solid fa-file-pen"></i>
+                <span>Yêu cầu sửa</span>
+              </button>
+              <button type="button" class="nut nut-tu-choi" id="btnReject">
+                <i class="fa-solid fa-xmark"></i>
+                <span>Từ chối</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Toast Notifications Floating Container -->
+    <div id="toastContainer" class="khung-thong-bao-noi"></div>
+
+    <!-- Application Script -->
+    <script src="../js/trang14.js"></script>
+  </body>
+</html>

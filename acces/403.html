@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>403 - Truy cập bị từ chối</title>
+    <style>
+      :root {
+        --bg: #f5f7fb;
+        --card: #ffffff;
+        --primary: #2e6df6;
+        --primary-dark: #1e4ec7;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --danger: #ef4444;
+        --danger-soft: #fee2e2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #eef4ff, #f8fafc);
+        color: var(--text);
+      }
+
+      .container {
+        width: 100%;
+        padding: 24px;
+      }
+
+      .card {
+        max-width: 560px;
+        margin: 0 auto;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        box-shadow: 0 20px 45px rgba(31, 41, 55, 0.08);
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .badge {
+        width: 110px;
+        height: 110px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--danger-soft);
+        color: var(--danger);
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(28px, 4vw, 40px);
+        color: var(--text);
+      }
+
+      p {
+        margin: 0 auto 28px;
+        max-width: 440px;
+        line-height: 1.7;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .actions {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 22px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s ease;
+        font-size: 15px;
+      }
+
+      .btn.primary {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .btn.primary:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn.secondary {
+        background: #f3f4f6;
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+
+      .btn.secondary:hover {
+        background: #e5e7eb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="badge">403</div>
+        <h1>Truy cập bị từ chối</h1>
+        <p>
+          Bạn không có quyền truy cập vào tài nguyên này. Vui lòng kiểm tra lại
+          tài khoản, quyền hạn hoặc liên hệ quản trị viên nếu đây là lỗi.
+        </p>
+
+        <div class="actions">
+          <a href="/" class="btn primary">Về trang chủ</a>
+          <button class="btn secondary" onclick="history.back()">
+            Quay lại
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

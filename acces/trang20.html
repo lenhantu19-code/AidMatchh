@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AidMatch - Quản Lý Tổ Chức (Admin Dashboard)</title>
+
+    <!-- FontAwesome & Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../css/trang20.css" />
+  </head>
+  <body>
+    <!-- Main Application Header -->
+    <header class="dau-trang-ung-dung">
+      <div class="khung-dau-trang">
+        <!-- Khối logo trái tim ở Header giao diện -->
+        <div class="thuong-hieu-dau-trang">
+          <div class="biieu-tieu-thuong-hieu">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <span class="ten-thuong-hieu">AidMatch</span>
+          <span class="the-he-thong">
+            <span class="cham-nhap-nhay"></span> Hệ thống trực tuyến
+          </span>
+        </div>
+
+        <div class="thao-tac-dau-trang">
+          <button
+            type="button"
+            id="btnNotifications"
+            class="nut-bieu-tuong"
+            aria-label="Thông báo"
+          >
+            <i class="fa-regular fa-bell"></i>
+            <span class="cham-hieu-so"></span>
+          </button>
+          <div class="vach-ngan-doc"></div>
+          <div class="ho-so-nguoi-dung">
+            <div class="anh-dai-dien">PA</div>
+            <div class="thong-tin-nguoi-dung">
+              <span class="ten-nguoi-dung">Phạm An</span>
+              <span class="vai-tro-nguoi-dung">Quản trị hệ thống</span>
+            </div>
+            <i class="fa-solid fa-chevron-down mũi-ten-ho-so"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Application Body Layout -->
+    <div class="than-ung-dung">
+      <!-- Sidebar Navigation -->
+      <aside class="thanh-ben">
+        <div class="noi-dung-thanh-ben">
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">KHÔNG GIAN LÀM VIỆC</div>
+            <nav class="danh-sach-dieu-huong">
+              <a href="#" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-regular fa-folder"></i>
+                  <span>Danh mục</span>
+                </span>
+              </a>
+              <a href="../acces/trang19.html" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-users"></i>
+                  <span>Người dùng</span>
+                </span>
+              </a>
+              <a href="../acces/trang20.html" class="muc-dieu-huong kich-hoat">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-building-user"></i>
+                  <span>Tổ chức</span>
+                </span>
+              </a>
+              <a href="../acces/trang21.html" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-chart-line"></i>
+                  <span>Báo cáo tác động</span>
+                </span>
+              </a>
+            </nav>
+          </div>
+
+          <!-- Bổ sung khối Hệ thống -> Hồ sơ & Cài đặt -->
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">Hệ thống</div>
+            <nav class="danh-sach-dieu-huong">
+              <a href="#" class="muc-dieu-huong">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-sliders"></i>
+                  <span>Hồ sơ & Cài đặt</span>
+                </span>
+              </a>
+            </nav>
+          </div>
+        </div>
+        <div class="chan-thanh-ben">
+          AidMatch v2.4 · Hệ thống Điều phối Khẩn cấp
+        </div>
+      </aside>
+
+      <!-- Main Dashboard View Area -->
+      <main class="noi-dung-chinh">
+        <!-- Breadcrumb & Header Title Row -->
+        <div class="boc-dau-trang-noi-dung">
+          <div class="duong-dan-trang">
+            <span class="duong-dan-kich-hoat">Quản lý tổ chức</span>
+          </div>
+          <div class="dau-trang-noi-dung">
+            <div>
+              <h1 class="tieu-de-trang">Quản lý tổ chức</h1>
+              <p class="tieu-de-phu-trang">
+                Danh sách đơn vị cần hỗ trợ và nhà tài trợ; xác minh trước khi
+                tham gia điều phối.
+              </p>
+            </div>
+            <button type="button" class="nut nut-chinh" id="btnCreateOrg">
+              <i class="fa-solid fa-plus"></i>
+              <span>Tạo tổ chức</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Tabs & Controls Bar -->
+        <div class="boc-the-va-bo-loc">
+          <div class="danh-sach-the-tab">
+            <button type="button" class="muc-tab kich-hoat" data-tab="all">
+              Tất cả tổ chức
+            </button>
+            <button type="button" class="muc-tab" data-tab="need">
+              Đơn vị cần hỗ trợ
+            </button>
+            <button type="button" class="muc-tab" data-tab="donor">
+              Nhà tài trợ
+            </button>
+            <button type="button" class="muc-tab" data-tab="pending">
+              Chờ xác minh
+            </button>
+          </div>
+
+          <div class="the-bo-loc">
+            <div class="boc-o-tim-kiem">
+              <i class="fa-solid fa-magnifying-glass bieu-tuong-tim-kiem"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Tìm tên tổ chức, mã, người đại diện..."
+              />
+            </div>
+            <div class="bo-dieu-khien-loc">
+              <select id="typeFilter">
+                <option value="all">Loại tổ chức: Tất cả</option>
+                <option value="Đơn vị cần hỗ trợ">Đơn vị cần hỗ trợ</option>
+                <option value="Nhà tài trợ">Nhà tài trợ</option>
+              </select>
+              <select id="statusFilter">
+                <option value="all">Trạng thái xác minh: Tất cả</option>
+                <option value="Đã xác minh">Đã xác minh</option>
+                <option value="Chờ xác minh">Chờ xác minh</option>
+                <option value="Đã khóa">Đã khóa</option>
+              </select>
+              <select id="provinceFilter">
+                <option value="all">Tỉnh / Thành phố</option>
+                <option value="Quảng Trị">Quảng Trị</option>
+                <option value="Đà Nẵng">Đà Nẵng</option>
+                <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workspace Grid Layout -->
+        <div class="luoi-khong-gian-bo-cuc">
+          <!-- Left Column -->
+          <div class="cot-trai">
+            <!-- Organization Table Card -->
+            <div class="khung-chua khung-bang-du-lieu">
+              <div class="boc-bang-co-the-cuon">
+                <table class="bang-du-lieu">
+                  <thead>
+                    <tr>
+                      <th>TỔ CHỨC / MÃ</th>
+                      <th>LOẠI / KHU VỰC</th>
+                      <th>XÁC MINH</th>
+                      <th>LIÊN KẾT</th>
+                      <th class="can-phai">THAO TÁC</th>
+                    </tr>
+                  </thead>
+                  <tbody id="orgTableBody">
+                    <!-- Dynamic Rows -->
+                  </tbody>
+                </table>
+              </div>
+              <div class="chan-khung phan-bo-khoang-cach" id="tableFooterText">
+                <span>Hiển thị 6 bản ghi · Dữ liệu minh họa</span>
+                <span class="so-trang in-dam">Trang 1 / 1</span>
+              </div>
+            </div>
+
+            <!-- Organization Detail Edit Form Card -->
+            <div class="khung-chua khung-bieu-mau" id="orgEditSection">
+              <div class="dau-khung phan-bo-khoang-cach">
+                <div>
+                  <div class="nhom-the-nhan lề-duoi-1">
+                    <span class="the-nhan-trang-thai nhan-xanh-duong"
+                      >Đơn vị cần hỗ trợ</span
+                    >
+                    <span class="the-nhan-trang-thai nhan-xanh-la"
+                      >Đã xác minh · 07/10</span
+                    >
+                  </div>
+                  <h2 class="tieu-de-khung" id="formOrgTitle">
+                    Hồ sơ tổ chức · TC-001
+                  </h2>
+                </div>
+              </div>
+
+              <form id="orgEditForm" class="luoi-bieu-mau">
+                <div class="nhom-bieu-mau chieu-rong-day-du">
+                  <label class="nhan-bieu-mau">Tên tổ chức *</label>
+                  <input
+                    type="text"
+                    id="editOrgName"
+                    class="dieu-khien-bieu-mau"
+                    value="Tạm hỗ trợ Cộng đồng An Bình"
+                    required
+                  />
+                </div>
+                <div class="nhom-bieu-mau">
+                  <label class="nhan-bieu-mau">Người đại diện *</label>
+                  <input
+                    type="text"
+                    id="editOrgRepresentative"
+                    class="dieu-khien-bieu-mau"
+                    value="Nguyễn Lan"
+                    required
+                  />
+                </div>
+                <div class="nhom-bieu-mau">
+                  <label class="nhan-bieu-mau">Điện thoại *</label>
+                  <input
+                    type="text"
+                    id="editOrgPhone"
+                    class="dieu-khien-bieu-mau"
+                    value="0901234567"
+                    required
+                  />
+                </div>
+                <div class="nhom-bieu-mau chieu-rong-day-du">
+                  <label class="nhan-bieu-mau">Email liên hệ *</label>
+                  <input
+                    type="email"
+                    id="editOrgEmail"
+                    class="dieu-khien-bieu-mau"
+                    value="lanhoang@anbinh.example"
+                    required
+                  />
+                </div>
+                <div class="nhom-bieu-mau chieu-rong-day-du">
+                  <label class="nhan-bieu-mau">Địa chỉ / Khu vực *</label>
+                  <input
+                    type="text"
+                    id="editOrgAddress"
+                    class="dieu-khien-bieu-mau"
+                    value="Điểm tiếp nhận An Bình, Hải Lăng, Quảng Trị"
+                    required
+                  />
+                </div>
+                <div class="nhom-bieu-mau chieu-rong-day-du">
+                  <div class="hang-tep-dinh-kem">
+                    <span class="ten-tep"
+                      ><i class="fa-regular fa-file-pdf"></i>
+                      xac-nhan-an-binh.pdf · Giấy xác nhận</span
+                    >
+                    <a href="#" class="nut-lien-ket" id="btnRemoveFile"
+                      >Xóa và tải lên lại &rarr;</a
+                    >
+                  </div>
+                </div>
+
+                <div class="thao-tac-bieu-mau chieu-rong-day-du">
+                  <button type="submit" class="nut nut-chinh">
+                    Lưu chỉnh sửa
+                  </button>
+                  <button
+                    type="button"
+                    class="nut nut-vien-ngoai"
+                    id="btnCancelEdit"
+                  >
+                    Hủy thay đổi
+                  </button>
+                </div>
+
+                <div class="o-thong-tin-vang-cam chieu-rong-day-du">
+                  <div class="tieu-de-o-thong-tin">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Lưu ý định
+                    danh
+                  </div>
+                  <p class="mo-ta-o-thong-tin">
+                    Thay đổi tên, đại diện hoặc giấy tờ sẽ báo Chờ xác minh.
+                    Không xóa liên kết nhu cầu đã gửi.
+                  </p>
+                </div>
+              </form>
+            </div>
+
+            <!-- Linked Users & Data Section -->
+            <div class="khung-chua khung-ma-tran">
+              <div class="dau-khung">
+                <h2 class="tieu-de-khung" id="linkedSectionTitle">
+                  Người dùng & dữ liệu liên quan
+                </h2>
+                <p class="mo-ta-khung">
+                  Danh sách tài khoản và các hoạt động thuộc TC-001.
+                </p>
+              </div>
+              <div class="boc-bang-co-the-cuon">
+                <table class="bang-du-lieu">
+                  <thead>
+                    <tr>
+                      <th>LOẠI LIÊN KẾT</th>
+                      <th>DỮ LIỆU LIÊN KẾT</th>
+                      <th class="can-phai">RÕ QUẢN LÝ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="in-dam">Người dùng · 2</td>
+                      <td>Nguyễn Lan, Trần Hương</td>
+                      <td class="can-phai">
+                        <a href="#" class="nut-lien-ket"
+                          >Xem người dùng &rarr;</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="in-dam">Nhu cầu · 8</td>
+                      <td>NC-024: 500 kg, NC-030...</td>
+                      <td class="can-phai">
+                        <a href="#" class="nut-lien-ket">Xem nhu cầu &rarr;</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="in-dam">Phân bổ đang mở</td>
+                      <td>PB-012: Cần giao 100 bộ</td>
+                      <td class="can-phai">
+                        <a href="#" class="nut-lien-ket">Xem phân bổ &rarr;</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="chan-khung phan-bo-khoang-cach">
+                <span class="van-ban-vang-cam"
+                  ><i class="fa-solid fa-lock"></i> Lời nhắn tổ chức: Không thể
+                  xóa TC-001 khi còn nhu cầu và phân bổ đang hoạt động. Hoàn tất
+                  chuyển giao hoặc hủy trước.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="cot-phai">
+            <!-- Dynamic Verification Card -->
+            <div class="khung-chua khung-chi-tiet" id="verifyPanel">
+              <div class="dau-khung">
+                <h3 class="tieu-de-khung" id="verifyPanelTitle">
+                  Xác minh tổ chức · TC-008
+                </h3>
+                <span
+                  class="the-nhan-trang-thai nhan-vang-cam khoang-cach-tren-1"
+                  >● Chờ xác minh</span
+                >
+              </div>
+
+              <div class="than-xac-minh">
+                <div class="the-thong-tin-chi-tiet">
+                  <span class="ten-chinh-chi-tiet" id="verifyOrgName"
+                    >Nhóm Tiếp Sức</span
+                  >
+                  <p id="verifyOrgType">Nhà tài trợ · Đà Nẵng</p>
+                  <p id="verifyOrgRep">Đại diện: Đỗ Linh</p>
+                  <p id="verifyOrgEmail">Email: linhed@tiepsuc.example</p>
+                  <div class="lien-ket-tep khoang-cach-tren-2">
+                    <a href="#" class="nut-lien-ket hien-thi-khoi lề-duoi-1"
+                      ><i class="fa-regular fa-file-pdf"></i> giay-dang-ky.pdf ·
+                      Xem</a
+                    >
+                    <a href="#" class="nut-lien-ket hien-thi-khoi"
+                      ><i class="fa-regular fa-file-pdf"></i>
+                      uy-quyen-dai-dien.pdf · Xem</a
+                    >
+                  </div>
+                </div>
+
+                <div class="nhom-bieu-mau khoang-cach-tren-3">
+                  <label class="nhan-bieu-mau">Kết quả kiểm tra *</label>
+                  <textarea
+                    id="verifyNoteInput"
+                    class="khung-nhap-van-ban"
+                    rows="2"
+                  >
+Cần bổ sung giấy ủy quyền có dấu đỏ.</textarea
+                  >
+                </div>
+
+                <div class="hang-nut-thao-tac khoang-cach-tren-3">
+                  <button
+                    type="button"
+                    class="nut nut-canh-bao"
+                    id="btnRequestEditVerify"
+                  >
+                    Yêu cầu bổ sung
+                  </button>
+                  <button
+                    type="button"
+                    class="nut nut-thanh-cong"
+                    id="btnApproveVerify"
+                  >
+                    Xác minh
+                  </button>
+                </div>
+
+                <p class="mo-ta-khung van-ban-sieu-nho khoang-cach-tren-2">
+                  Chỉ xác minh khi đầy đủ thông tin pháp lý hoặc ủy quyền hợp
+                  lệ.
+                </p>
+              </div>
+            </div>
+
+            <!-- Safe Storage & Lock Card -->
+            <div class="khung-chua khung-thao-tac">
+              <div class="dau-khung khong-vien-duoi">
+                <h3 class="tieu-de-khung">Tạo / lưu trữ an toàn</h3>
+                <p class="mo-ta-khung">
+                  Tạo tổ chức mới hoặc điều chỉnh tên, đại diện và giấy tờ mà
+                  không thay đổi lịch sử.
+                </p>
+              </div>
+              <div class="than-thao-tac">
+                <div class="nhom-bieu-mau">
+                  <label class="nhan-bieu-mau">Lý do lưu trữ TC-009</label>
+                  <textarea
+                    id="lockReasonInput"
+                    class="khung-nhap-van-ban"
+                    rows="2"
+                  >
+Đã kết thúc hoạt động, không còn nhận hỗ trợ.</textarea
+                  >
+                </div>
+                <div class="nhom-o-checkbox">
+                  <input type="checkbox" id="lockCheckbox" checked />
+                  <label for="lockCheckbox" class="nhan-o-checkbox">
+                    Giữ dữ liệu lịch sử và liên kết người dùng.
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  class="nut nut-den chieu-rong-toan-bo"
+                  id="btnExecuteLock"
+                >
+                  Xem xác nhận lưu trữ
+                </button>
+              </div>
+            </div>
+
+            <!-- Audit Info Card -->
+            <div class="the-thong-tin-xanh">
+              <span class="tieu-de-the-thong-tin">Hồ sơ đã cập nhật</span>
+              <p class="mo-ta-the-thong-tin">
+                Thông tin liên hệ được lưu. Trạng thái xác minh TC-001 không
+                đổi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toastContainer" class="khung-thong-bao-noi"></div>
+
+    <script src="../js/trang20.js"></script>
+  </body>
+</html>

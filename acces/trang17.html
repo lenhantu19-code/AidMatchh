@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AidMatch - Theo dõi phân bổ</title>
+    <!-- FontAwesome Icons & Google Fonts Inter -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Kết nối file CSS riêng của Trang 17 -->
+    <link rel="stylesheet" href="../css/trang17.css" />
+  </head>
+  <body>
+    <!-- HEADER HỆ THỐNG -->
+    <header class="dau-trang-ung-dung">
+      <div class="khung-dau-trang">
+        <div
+          class="thuong-hieu-dau-trang"
+          onclick="showToast('Về trang chủ AidMatch', 'thong-tin')"
+        >
+          <button
+            onclick="toggleMobileSidebar()"
+            class="nut-menu an-man-hinh-lon"
+            aria-label="Mở menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="biieu-tieu-thuong-hieu">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <span class="ten-thuong-hieu">AidMatch</span>
+          <span class="the-he-thong">
+            <span class="cham-nhap-nhay"></span> Dữ liệu minh họa
+          </span>
+        </div>
+
+        <div class="thao-tac-dau-trang">
+          <button
+            type="button"
+            onclick="showToast('Bạn có 3 thông báo phân bổ mới', 'thong-tin')"
+            class="nut-bieu-tuong"
+            aria-label="Thông báo"
+          >
+            <i class="fa-regular fa-bell"></i>
+            <span class="cham-hieu-so"></span>
+          </button>
+          <div class="vach-ngan-doc"></div>
+          <div class="ho-so-nguoi-dung">
+            <div class="anh-dai-dien">LH</div>
+            <div class="thong-tin-nguoi-dung hien-man-hinh-vua">
+              <span class="ten-nguoi-dung">Lê Hà</span>
+              <span class="vai-tro-nguoi-dung">Điều phối miền Trung</span>
+            </div>
+            <i class="fa-solid fa-chevron-down mũi-ten-ho-so"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- APP BODY LAYOUT -->
+    <div class="than-ung-dung">
+      <!-- Backdrop Mobile Sidebar -->
+      <div
+        id="sidebarBackdrop"
+        onclick="toggleMobileSidebar()"
+        class="Lop-nen-mo"
+      ></div>
+
+      <!-- SIDEBAR THANH ĐIỀU HƯỚNG -->
+      <aside id="appSidebar" class="thanh-ben">
+        <div class="noi-dung-thanh-ben">
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">Không gian làm việc</div>
+            <div class="huy-hieu-vai-tro">
+              <i class="fa-solid fa-user-gear"></i> Điều phối viên
+            </div>
+            <nav class="danh-sach-dieu-huong">
+              <a
+                href="../acces/trang14.html"
+                onclick="showToast('Chuyển sang Duyệt nhu cầu', 'thong-tin')"
+                class="muc-dieu-huong"
+              >
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-clipboard-check"></i>
+                  <span>Duyệt nhu cầu</span>
+                </span>
+                <span class="huy-hieu-dem">4</span>
+              </a>
+              <a
+                href="../acces/trang15.html"
+                onclick="
+                  showToast('Chuyển sang Chi tiết xét duyệt', 'thong-tin')
+                "
+                class="muc-dieu-huong"
+              >
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-file-circle-check"></i>
+                  <span>Chi tiết xét duyệt</span>
+                </span>
+              </a>
+              <a
+                href="../acces/trang16.html"
+                onclick="
+                  showToast('Chuyển sang Bảng ghép & Phân bổ', 'thong-tin')
+                "
+                class="muc-dieu-huong"
+              >
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-network-wired"></i>
+                  <span>Bảng ghép & Phân bổ</span>
+                </span>
+              </a>
+              <a href="../acces/trang17.html" class="muc-dieu-huong kich-hoat">
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-truck-ramp-box"></i>
+                  <span>Theo dõi phân bổ</span>
+                </span>
+              </a>
+            </nav>
+          </div>
+
+          <div class="phan-dieu-huong">
+            <div class="tieu-de-phan-dieu-huong">Hệ thống</div>
+            <nav class="danh-sach-dieu-huong">
+              <a
+                href="#"
+                onclick="showToast('Trung tâm thông báo', 'thong-tin')"
+                class="muc-dieu-huong"
+              >
+                <span class="nhan-dieu-huong">
+                  <i class="fa-regular fa-bell"></i>
+                  <span>Trung tâm thông báo</span>
+                </span>
+              </a>
+              <a
+                href="#"
+                onclick="showToast('Hồ sơ & Cài đặt', 'thong-tin')"
+                class="muc-dieu-huong"
+              >
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-sliders"></i>
+                  <span>Hồ sơ & Cài đặt</span>
+                </span>
+              </a>
+              <a
+                href="#"
+                onclick="showToast('Khám phá nhu cầu', 'thong-tin')"
+                class="muc-dieu-huong"
+              >
+                <span class="nhan-dieu-huong">
+                  <i class="fa-solid fa-compass"></i>
+                  <span>Khám phá nhu cầu</span>
+                </span>
+              </a>
+            </nav>
+          </div>
+        </div>
+        <div class="chan-thanh-ben">
+          AidMatch v2.4 · Hệ thống Điều phối Khẩn cấp
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="noi-dung-chinh">
+        <!-- Page Header -->
+        <div class="dau-trang-noi-dung">
+          <h1 class="tieu-de-trang">Theo dõi phân bổ</h1>
+          <p class="tieu-de-phu-trang">
+            Giám sát kế hoạch giao nhận, xử lý chậm trễ và bồi hoàn đã xác nhận.
+          </p>
+        </div>
+
+        <!-- 4 THẺ THỐNG KÊ TỔNG QUAN -->
+        <div class="luoi-chi-so-kpi">
+          <div class="the-kpi">
+            <div class="dau-the-kpi">
+              <span class="nhan-kpi">ĐANG THEO DÕI</span>
+              <div class="bieu-tuong-kpi kpi-xanh-duong">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+            </div>
+            <div class="hang-gia-tri-kpi">
+              <span class="so-kpi">4</span>
+              <span class="don-vi-kpi">phiếu</span>
+            </div>
+            <div class="the-nhan-kpi nhan-kpi-xanh-duong">
+              4 đang giao / hoàn thành
+            </div>
+          </div>
+
+          <div class="the-kpi vien-vang-cam">
+            <div class="dau-the-kpi">
+              <span class="nhan-kpi">CẦN XỬ LÝ CHẬM GIAO</span>
+              <div class="bieu-tuong-kpi kpi-vang-cam">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+            </div>
+            <div class="hang-gia-tri-kpi">
+              <span class="so-kpi van-ban-vang-cam">1</span>
+              <span class="don-vi-kpi">phiếu</span>
+            </div>
+            <div class="the-nhan-kpi nhan-kpi-vang-cam">
+              PB-034 · Chậm trước
+            </div>
+          </div>
+
+          <div class="the-kpi">
+            <div class="dau-the-kpi">
+              <span class="nhan-kpi">ĐỢT ĐÃ NHẬN CỦA PB-032</span>
+              <div class="bieu-tuong-kpi kpi-xanh-la">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+            </div>
+            <div class="hang-gia-tri-kpi">
+              <span class="so-kpi">300</span>
+              <span class="don-vi-kpi">bộ</span>
+            </div>
+            <div class="van-ban-phu-kpi">Đã nhận từ Đ. Nguyễn Lan</div>
+          </div>
+
+          <div class="the-kpi vien-xanh-da-troi">
+            <div class="dau-the-kpi">
+              <span class="nhan-kpi van-ban-xanh-da-troi"
+                >PB-032 CÒN PHẢI GIAO</span
+              >
+              <div class="bieu-tuong-kpi kpi-xanh-duong">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+            </div>
+            <div class="hang-gia-tri-kpi">
+              <span class="so-kpi van-ban-xanh-da-troi">100</span>
+              <span class="don-vi-kpi">bộ</span>
+            </div>
+            <div class="van-ban-phu-kpi">Ngày hạn 14/10</div>
+          </div>
+        </div>
+
+        <!-- KHUNG TÌM KIẾM & BỘ LỌC -->
+        <div class="khung-chua the-bo-loc">
+          <div class="luoi-bo-loc">
+            <div class="boc-o-tim-kiem co-dinh-1">
+              <i class="fa-solid fa-magnifying-glass bieu-tuong-tim-kiem"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Tìm mã phân bổ, nhà tài trợ hoặc đơn vị nhận..."
+                class="dieu-khien-bieu-mau nhap-tim-kiem"
+                oninput="filterTable()"
+              />
+            </div>
+            <div class="nhom-bo-loc">
+              <label>Trạng thái:</label>
+              <select
+                id="statusFilter"
+                class="dieu-khien-bieu-mau"
+                onchange="filterTable()"
+              >
+                <option value="all">Tất cả</option>
+                <option value="shipping">Đang vận chuyển</option>
+                <option value="delayed">Đã chậm trễ</option>
+                <option value="completed">Hoàn thành</option>
+                <option value="cancelled">Đã hủy</option>
+              </select>
+            </div>
+            <div class="nhom-bo-loc">
+              <label>Khu vực:</label>
+              <select
+                id="regionFilter"
+                class="dieu-khien-bieu-mau"
+                onchange="filterTable()"
+              >
+                <option value="all">Tất cả</option>
+                <option value="Quảng Trị">Quảng Trị</option>
+                <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+              </select>
+            </div>
+            <div class="nhom-bo-loc">
+              <label>Hạn giao:</label>
+              <input
+                type="text"
+                placeholder="Tất cả"
+                class="dieu-khien-bieu-mau"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- BỐ CỤC LƯỚI 2 CỘT WORKSPACE -->
+        <div class="luoi-khong-gian-bo-cuc">
+          <!-- CỘT TRÁI: DANH SÁCH PHÂN BỔ & CHI TIẾT TIẾN ĐỘ PB-032 -->
+          <div class="cot-trai xep-chong-linh-hoat">
+            <!-- Bảng Danh Sách Phân Bổ -->
+            <div class="khung-chua">
+              <div class="dau-khung phan-bo-khoang-cach">
+                <h2>Danh sách phiếu phân bổ</h2>
+                <span class="huy-hieu-xanh-da-troi">Hiển thị 6 phiếu</span>
+              </div>
+              <div class="boc-bang-co-the-cuon">
+                <table class="bang-du-lieu" id="allocationTable">
+                  <thead>
+                    <tr>
+                      <th>Phân bổ / Nhu cầu</th>
+                      <th>Đơn giao &rarr; Đơn nhận</th>
+                      <th>Số lượng</th>
+                      <th>Trạng thái / Hạn</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-status="shipping" data-region="Quảng Trị">
+                      <td>
+                        <strong>PB-032</strong><br />
+                        <span class="huy-hieu-xanh-nhat">NC-024</span>
+                      </td>
+                      <td>Đồng Hành &rarr; An Bình</td>
+                      <td><strong>400 bộ</strong></td>
+                      <td>
+                        <span class="huy-hieu-dang-giao"
+                          ><span class="cham-xung-nhung"></span> Đang vận
+                          chuyển</span
+                        ><br /><small>Kịch trước</small>
+                      </td>
+                      <td>
+                        <button
+                          onclick="
+                            showToast('Xem chi tiết PB-032', 'thong-tin')
+                          "
+                          class="nut-lien-ket"
+                        >
+                          Chi tiết &rsaquo;
+                        </button>
+                      </td>
+                    </tr>
+                    <tr data-status="delayed" data-region="Quảng Trị">
+                      <td>
+                        <strong>PB-034</strong><br />
+                        <span class="huy-hieu-xanh-nhat">NC-033</span>
+                      </td>
+                      <td>Đồng Hành &rarr; Ba Minh</td>
+                      <td><strong>64 chân</strong></td>
+                      <td>
+                        <span class="huy-hieu-cham-tre">Đã chậm trễ</span
+                        ><br /><small>Đ15/10</small>
+                      </td>
+                      <td>
+                        <button
+                          onclick="showToast('Mở lịch sử PB-034', 'thong-tin')"
+                          class="nut-lien-ket"
+                        >
+                          Sửa lịch · Xem
+                        </button>
+                      </td>
+                    </tr>
+                    <tr data-status="delayed" data-region="Thừa Thiên Huế">
+                      <td>
+                        <strong>PB-036</strong><br />
+                        <span class="huy-hieu-xanh-nhat">NC-021</span>
+                      </td>
+                      <td>Nhóm Sẻ Chia &rarr; An Bình</td>
+                      <td><strong>20 bộ dở</strong></td>
+                      <td>
+                        <span class="huy-hieu-cham-tre">Chậm 1 ngày</span
+                        ><br /><small>25 dở kế hoạch</small>
+                      </td>
+                      <td>
+                        <button
+                          onclick="
+                            showToast('Xử lý khắc phục PB-036', 'canh-bao')
+                          "
+                          class="nut-lien-ket"
+                        >
+                          Khắc phục...
+                        </button>
+                      </td>
+                    </tr>
+                    <tr data-status="completed" data-region="Quảng Trị">
+                      <td>
+                        <strong>PB-037</strong><br />
+                        <span class="huy-hieu-xanh-nhat">NC-035</span>
+                      </td>
+                      <td>Kho ứng động &rarr; Khoa Bắc</td>
+                      <td><strong>83 bộ</strong></td>
+                      <td>
+                        <span class="huy-hieu-hoan-thanh">Đã giao</span
+                        ><br /><small>Chứt ran</small>
+                      </td>
+                      <td>
+                        <button
+                          onclick="
+                            showToast('Kiểm tra bằng chứng PB-037', 'thong-tin')
+                          "
+                          class="nut-lien-ket"
+                        >
+                          Kiểm tra bằng chứng
+                        </button>
+                      </td>
+                    </tr>
+                    <tr data-status="completed" data-region="Quảng Trị">
+                      <td>
+                        <strong>PB-031</strong><br />
+                        <span class="huy-hieu-xanh-nhat">NC-025</span>
+                      </td>
+                      <td>Quỹ Ấm Áp &rarr; An Bình</td>
+                      <td><strong>100 chiếc</strong></td>
+                      <td>
+                        <span class="huy-hieu-hoan-thanh">Hoàn thành</span
+                        ><br /><small>Chắn</small>
+                      </td>
+                      <td>
+                        <button
+                          onclick="showToast('Xem lịch sử PB-031', 'thong-tin')"
+                          class="nut-lien-ket"
+                        >
+                          Xem lịch sử
+                        </button>
+                      </td>
+                    </tr>
+                    <tr data-status="cancelled" data-region="Thừa Thiên Huế">
+                      <td>
+                        <strong>PB-029</strong><br />
+                        <span class="huy-hieu-xanh-nhat">NC-018</span>
+                      </td>
+                      <td>Đồng Hành &rarr; Hải Sơn</td>
+                      <td><strong>60 dăm/pin</strong></td>
+                      <td><span class="huy-hieu-da-huy">Đã hủy</span></td>
+                      <td>
+                        <button
+                          onclick="
+                            showToast('Xem lý do hủy PB-029', 'thong-tin')
+                          "
+                          class="nut-lien-ket"
+                        >
+                          Xem lý do
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- CHI TIẾT PB-032: TIẾN ĐỘ & BẰNG CHỨNG -->
+            <div class="khung-chua">
+              <div class="dau-khung phan-bo-khoang-cach">
+                <div>
+                  <span class="nhan-nho-mo-ta"
+                    >ĐANG VẬN CHUYỂN · ĐÃ ĐỐI CHỨC NHẬN</span
+                  >
+                  <h2>PB-032 · Tiến độ và bằng chứng</h2>
+                </div>
+                <span class="huy-hieu-xanh-da-troi">Đợt B: Sắp tới hạn</span>
+              </div>
+
+              <div class="o-thong-tin-nha-tai-tro">
+                <p><strong>Nhà tài trợ:</strong> Quỹ Đồng Hành · Trà Minh</p>
+                <p><strong>Đơn vị nhận:</strong> Trạm An Bình · Nguyễn Lan</p>
+                <p>
+                  <strong>Điều phối viên:</strong> Lê Hà · Cam kết CK-019 ·
+                  Người NL-011
+                </p>
+              </div>
+
+              <!-- TIMELINE TIẾN ĐỘ -->
+              <div class="khung-dong-thoi-gian">
+                <div class="muc-dong-thoi-gian hoan-thanh">
+                  <div class="cham-dong-thoi-gian"></div>
+                  <div class="noi-dung-dong-thoi-gian">
+                    <span class="thoi-gian-dong-thoi-gian">10/10</span>
+                    <p>Đã lên kế hoạch 400 bộ</p>
+                  </div>
+                </div>
+                <div class="muc-dong-thoi-gian hoan-thanh">
+                  <div class="cham-dong-thoi-gian"></div>
+                  <div class="noi-dung-dong-thoi-gian">
+                    <span class="thoi-gian-dong-thoi-gian">10/10</span>
+                    <p>Hai bên xác nhận lịch giao</p>
+                  </div>
+                </div>
+                <div class="muc-dong-thoi-gian hoan-thanh">
+                  <div class="cham-dong-thoi-gian"></div>
+                  <div class="noi-dung-dong-thoi-gian">
+                    <span class="thoi-gian-dong-thoi-gian">12/10, 08:30</span>
+                    <p>Đợt A: đang vận chuyển 300 bộ</p>
+                  </div>
+                </div>
+                <div class="muc-dong-thoi-gian hoan-thanh">
+                  <div class="cham-dong-thoi-gian"></div>
+                  <div class="noi-dung-dong-thoi-gian">
+                    <span class="thoi-gian-dong-thoi-gian">12/10, 09:00</span>
+                    <p>Đã giao 300 bộ, BG-031A per</p>
+                  </div>
+                </div>
+                <div class="muc-dong-thoi-gian hoan-thanh">
+                  <div class="cham-dong-thoi-gian"></div>
+                  <div class="noi-dung-dong-thoi-gian">
+                    <span class="thoi-gian-dong-thoi-gian">12/10, 09:20</span>
+                    <p>Nguyễn Lan xác nhận nhận 300 bộ</p>
+                  </div>
+                </div>
+                <div class="muc-dong-thoi-gian cho-xul-y">
+                  <div class="cham-dong-thoi-gian"></div>
+                  <div class="noi-dung-dong-thoi-gian">
+                    <span class="thoi-gian-dong-thoi-gian">14/10</span>
+                    <p>Đợt B: 100 bộ chưa giao</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="o-tom-tat-trang-thai">
+                <h4>Trạng thái phân bổ</h4>
+                <p>
+                  Hoàn tất PB-032: 400/400 bộ (công gộp hoàn thành NC-024 [500
+                  bộ]; nhu cầu đã cân kiểm 100 bộ chưa cân lại).
+                </p>
+              </div>
+
+              <div class="nhom-nut-thao-tac">
+                <button
+                  onclick="showToast('Đang tải biên bản ảnh...', 'thong-tin')"
+                  class="nut nut-xam-nhat"
+                >
+                  <i class="fa-solid fa-image"></i> Xem biên bản ảnh
+                </button>
+                <button
+                  onclick="
+                    showToast('Đang mở mô tả nhu cầu NC-024...', 'thong-tin')
+                  "
+                  class="nut nut-xam-nhat"
+                >
+                  <i class="fa-solid fa-file-lines"></i> Mô nhu cầu NC-024
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CỘT PHẢI: ĐIỀU CHỈNH PHÂN CÔNG & XỬ LÝ SỰ CỐ -->
+          <div class="cot-phai xep-chong-linh-hoat">
+            <!-- Card 1: Điều chỉnh phân công -->
+            <div class="khung-chua">
+              <div class="dau-khung">
+                <h2>Điều chỉnh phân công</h2>
+              </div>
+              <form
+                onsubmit="handleAdjustment(event)"
+                class="boc-bo-cuc-bieu-mau"
+              >
+                <div class="nhom-bieu-mau">
+                  <label>Người giao phụ trách</label>
+                  <input
+                    type="text"
+                    value="Tiến Minh - Đồng Hành"
+                    class="dieu-khien-bieu-mau"
+                  />
+                </div>
+                <div class="nhom-bieu-mau">
+                  <label>Điều phối viên</label>
+                  <input
+                    type="text"
+                    value="Lê Hà"
+                    readonly
+                    class="dieu-khien-bieu-mau nhap-chiduoc-doc"
+                  />
+                </div>
+                <div class="nhom-bieu-mau">
+                  <label>Ngày giao phân bổ lại</label>
+                  <input
+                    type="text"
+                    value="14/10/2026"
+                    class="dieu-khien-bieu-mau"
+                  />
+                </div>
+                <div class="nhom-bieu-mau">
+                  <label>Lý do điều chỉnh</label>
+                  <textarea rows="3" class="dieu-khien-bieu-mau">
+Đổi đầu mối tải xe để đảm bảo giao đúng hạn.</textarea
+                  >
+                </div>
+                <button type="submit" class="nut nut-xanh-ngoc">
+                  <i class="fa-solid fa-paper-plane"></i> Gửi cập nhật & thông
+                  báo
+                </button>
+              </form>
+            </div>
+
+            <!-- Card 2: Chậm giao - PB-036 -->
+            <div class="khung-chua vien-canh-bao-vang-cam">
+              <div class="dau-khung phan-bo-khoang-cach">
+                <h2>Chậm giao · PB-036</h2>
+                <span class="huy-hieu-vang-cam"
+                  ><i class="fa-solid fa-triangle-exclamation"></i> Chậm 1
+                  ngày</span
+                >
+              </div>
+              <p class="mo-ta-khung">
+                20 bộ dở đã chậm giao theo hạn giao. Vẹn nhu cầu NC-021 (13/10).
+              </p>
+              <div class="nhom-nut-thao-tac nhom-nut-doc">
+                <button
+                  onclick="
+                    showToast('Đã gửi nhắc nhở đơn vị giao', 'thanh-cong')
+                  "
+                  class="nut nut-xam-nhat"
+                >
+                  Nhắc đơn vị giao
+                </button>
+                <button
+                  onclick="
+                    showToast('Đã chuyển yêu cầu đổi nguồn lực', 'thong-tin')
+                  "
+                  class="nut nut-xam-den"
+                >
+                  Đề nghị đổi nguồn lực
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 3: Hủy phần chưa giao -->
+            <div class="khung-chua vien-canh-bao-do-hong">
+              <div class="dau-khung">
+                <h2>Hủy phần chưa giao</h2>
+              </div>
+              <div class="nhom-bieu-mau">
+                <label>Lý do hủy</label>
+                <textarea rows="2" class="dieu-khien-bieu-mau">
+Hủy bỏ các phương án cho 100 bộ còn lại...</textarea
+                >
+              </div>
+              <div class="o-canh-bao canh-bao-do-hong">
+                <p>
+                  <strong>Lưu ý dữ liệu được giữ:</strong> Hủy chỉ giải phóng số
+                  chưa giao, không xóa 300 bộ đã xác nhận. Cân đối chuẩn CK-018.
+                </p>
+              </div>
+              <button
+                onclick="
+                  showToast('Đã xác nhận hủy phần phân bổ còn lại', 'canh-bao')
+                "
+                class="nut nut-do-hong"
+              >
+                Xác nhận hủy phân bổ còn lại
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Container chứa Toast Notifications góc phải giống hệt Trang 14 -->
+    <div id="toastContainer" class="khung-thong-bao-noi"></div>
+
+    <!-- Kết nối file JavaScript riêng của Trang 17 -->
+    <script src="../js/trang17.js"></script>
+  </body>
+</html>
