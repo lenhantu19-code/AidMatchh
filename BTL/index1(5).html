@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung tâm thông báo - AidMatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style1(5).css">
+</head>
+<body>
+    
+    <div class="khung-bao-trang">
+        <!-- ĐẦU TRANG -->
+        <header class="dau-trang">
+            <div class="logo">
+                <img src="assets/div.w-10 (1).png" alt="AidMatch Logo" class="anh-logo" onerror="this.src='https://via.placeholder.com/40'">
+                <div>
+                    <div class="chu-logo"><strong>Aid</strong>Match</div>
+                    <div class="chu-phu-logo">CỨU TRỢ THÔNG MINH</div>
+                </div>
+            </div>
+            
+            <div class="khu-vuc-nguoi-dung">
+                <div class="nut-chuc-nang"><i class="fas fa-database"></i> Dữ liệu minh họa</div>
+                <div class="thong-bao-chuong">
+                    <i class="far fa-bell"></i><span class="cham-do"></span>
+                </div>
+                <div class="ho-so-nguoi-dung">
+                    <div class="anh-dai-dien">NL</div>
+                    <div class="thong-tin-ten">
+                        <strong>Nguyễn Lan</strong><span>Trạm An Bình</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- TIÊU ĐỀ TRANG -->
+        <div class="phan-tieu-de-trang">
+            <div class="thong-tin-tieu-de">
+                <div class="duong-dan"><i class="fas fa-briefcase"></i> KHÔNG GIAN LÀM VIỆC / ĐƠN VỊ CẦN HỖ TRỢ</div>
+                <div class="tieu-de-chinh">
+                    <h2>Trung tâm thông báo <span class="nhan-moi" id="demThongBaoMoi">2 mới</span></h2>
+                </div>
+                <p class="mo-ta-tieu-de">Cập nhật công việc, đóng vai trò trong hoạt động điều phối cứu trợ.</p>
+            </div>
+            <div class="hanh-dong-tieu-de">
+                <button class="nut-bam nut-chinh" id="btnDanhDauTatCa"><i class="fas fa-check-double"></i> <span>Đánh dấu tất cả đã đọc</span></button>
+            </div>
+        </div>
+
+        <div class="bo-cuc-noi-dung">
+            <img src="assets/nen.jpg" class="anh-nen" alt="Nền" onerror="this.style.display='none'">
+            
+            <!-- THANH BÊN (SIDEBAR) -->
+            <aside class="thanh-ben">
+                <div class="nhom-menu">
+                    <h3 class="tieu-de-menu">TỔNG QUAN</h3>
+                    <ul class="danh-sach-menu">
+                        <li><a href="#"><i class="fas fa-plus-circle"></i> Tạo nhu cầu</a></li>
+                        <li><a href="#"><i class="fas fa-list-ul"></i> Nhu cầu của tôi</a></li>
+                        <li><a href="#"><i class="fas fa-compass"></i> Khám phá nhu cầu</a></li>
+                    </ul>
+                </div>
+                <div class="nhom-menu">
+                    <h3 class="tieu-de-menu">HỒ SƠ & CÀI ĐẶT</h3>
+                    <ul class="danh-sach-menu">
+                        <li><a href="#"><i class="far fa-id-badge"></i> Hồ sơ</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Cài đặt</a></li>
+                        <li class="muc-dang-chon"><a href="#"><i class="fas fa-bell"></i> Trung tâm thông báo</a></li>
+                    </ul>
+                </div>
+                <div class="the-tro-giup-sidebar">
+                    <i class="fas fa-bullhorn"></i>
+                    <div class="noi-dung-tro-giup"><strong>Hệ thống thông báo thời gian thực</strong></div>
+                </div>
+            </aside>
+
+            <!-- NỘI DUNG CHÍNH -->
+            <main class="vung-noi-dung">
+                
+                <div class="hop-thong-bao thanh-cong" id="thongBaoChinh" style="display: none;">
+                    <i class="fas fa-check-circle bieu-tuong-lon"></i>
+                    <div class="noi-dung-thong-bao">
+                        <strong>Thành công!</strong>
+                        <p id="noiDungThongBaoChinh">Thao tác đã được thực hiện.</p>
+                    </div>
+                </div>
+
+                <!-- BỘ LỌC VÀ TÌM KIẾM -->
+                <div class="hop-the the-bo-loc">
+                    <div class="phan-tabs">
+                        <div class="danh-sach-tab">
+                            <button class="tab-btn dang-hoat-dong" data-tab="all">Tất cả (4)</button>
+                            <button class="tab-btn" data-tab="unread">Chưa đọc (<span id="demChuaDocTab">2</span>)</button>
+                            <button class="tab-btn" data-tab="read">Đã đọc (2)</button>
+                        </div>
+                        <div class="hien-thi-ket-qua">Hiển thị 4 thông báo</div>
+                    </div>
+                    
+                    <div class="phan-tim-kiem">
+                        <div class="o-tim-kiem">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Tìm mã nhu cầu, cam kết hoặc nội dung...">
+                        </div>
+                        <div class="cac-lua-chon">
+                            <select class="hop-chon-loc"><option>Vai trò: Đơn vị cần hỗ trợ</option></select>
+                            <select class="hop-chon-loc"><option>Tất cả loại thông báo</option></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DANH SÁCH THÔNG BÁO -->
+                <div class="danh-sach-thong-bao">
+                    
+                    <!-- Item 1: Bảng xác nhận -->
+                    <div class="the-thong-bao chua-doc" data-status="unread">
+                        <div class="phan-hien-thi-chinh">
+                            <div class="icon-thong-bao bg-xanh"><i class="fas fa-box-open"></i></div>
+                            <div class="noi-dung-tb">
+                                <div class="hang-tieu-de-tb">
+                                    <h3>Xác nhận 300 bộ nhu yếu phẩm đã nhận</h3>
+                                    <div class="trang-thai-tb"><span class="nhan-chua-doc"><span class="cham-xanh"></span> Chưa đọc</span></div>
+                                </div>
+                                <p class="mo-ta-tb">PB-032 · Quỹ Đồng Hành đã gửi biên bản bàn giao cho NC-024. Kiểm tra số lượng trước khi xác nhận.</p>
+                                <span class="thoi-gian-tb">Hôm nay · 09:25</span>
+                                <div class="hanh-dong-tb">
+                                    <button class="nut-bam nut-chinh nut-nho btn-mo-chi-tiet" data-mo="false"><i class="fas fa-eye"></i> <span>Mở chi tiết nhu cầu</span></button>
+                                    <button class="nut-bam nut-phu nut-nho btn-danh-dau-doc"><i class="fas fa-check"></i> <span>Đánh dấu đã đọc</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Nội dung mở rộng nội tuyến -->
+                        <div class="vung-chi-tiet-mo-rong" style="display: none;">
+                            <h4 class="tieu-de-mo-rong">Chi tiết phiếu bàn giao PB-032</h4>
+                            <table class="bang-nho mb-15">
+                                <tr><th>Tên hàng hóa</th><th>Đơn vị</th><th>S.Lượng Giao</th><th>S.Lượng Nhận</th></tr>
+                                <tr><td>Nhu yếu phẩm tổng hợp</td><td>Bộ</td><td>300</td><td><input type="number" class="o-nhap-nho" value="300"></td></tr>
+                            </table>
+                            <div class="can-le-phai">
+                                <button class="nut-bam nut-xanh-la nut-nho btn-xac-nhan-form"><i class="fas fa-check-circle"></i> Xác nhận khớp số lượng</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Biểu đồ tiến độ -->
+                    <div class="the-thong-bao chua-doc" data-status="unread">
+                        <div class="phan-hien-thi-chinh">
+                            <div class="icon-thong-bao bg-cam"><i class="fas fa-handshake"></i></div>
+                            <div class="noi-dung-tb">
+                                <div class="hang-tieu-de-tb">
+                                    <h3>Cam kết CK-018 đã được xác nhận</h3>
+                                    <div class="trang-thai-tb"><span class="nhan-chua-doc"><span class="cham-xanh"></span> Chưa đọc</span></div>
+                                </div>
+                                <p class="mo-ta-tb">400 bộ nhu yếu phẩm · 300 bộ đã giao, 100 bộ dự kiến ngày 14/10. Điều phối viên: Lê Hà.</p>
+                                <span class="thoi-gian-tb">Hôm nay · 08:45</span>
+                                <div class="hanh-dong-tb">
+                                    <button class="nut-bam nut-cam nut-nho btn-mo-chi-tiet" data-mo="false"><i class="fas fa-file-contract"></i> <span>Xem cam kết & phân bổ</span></button>
+                                    <button class="nut-bam nut-phu nut-nho btn-danh-dau-doc"><i class="fas fa-check"></i> <span>Đánh dấu đã đọc</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tiến độ -->
+                        <div class="vung-chi-tiet-mo-rong" style="display: none;">
+                            <h4 class="tieu-de-mo-rong">Tiến độ phân bổ CK-018</h4>
+                            <div class="thanh-tien-do-doc">
+                                <div class="buoc-tien-do hoan-thanh">
+                                    <div class="cham-tien-do"><i class="fas fa-check"></i></div>
+                                    <div class="chu-tien-do"><strong>Đã giao Đợt 1</strong><p>300 bộ (Đã nhận)</p></div>
+                                </div>
+                                <div class="buoc-tien-do dang-cho">
+                                    <div class="cham-tien-do"></div>
+                                    <div class="chu-tien-do"><strong>Dự kiến Đợt 2</strong><p>100 bộ (Dự kiến 14/10)</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Xem quyết định (PDF Mockup) -->
+                    <div class="the-thong-bao da-doc" data-status="read">
+                        <div class="phan-hien-thi-chinh">
+                            <div class="icon-thong-bao bg-xanh-la"><i class="fas fa-check-circle"></i></div>
+                            <div class="noi-dung-tb">
+                                <div class="hang-tieu-de-tb">
+                                    <h3>Nhu cầu NC-024 được phê duyệt</h3>
+                                    <div class="trang-thai-tb"><span class="nhan-da-doc">Đã đọc</span></div>
+                                </div>
+                                <p class="mo-ta-tb">500 bộ nhu yếu phẩm cho Trạm An Bình. Phân bổ, bổ sung định kỳ tiếp nhận từng đợt.</p>
+                                <span class="thoi-gian-tb">08/10 · 14:10</span>
+                                <div class="hanh-dong-tb">
+                                    <button class="nut-bam nut-phu-xanh nut-nho btn-mo-chi-tiet" data-mo="false"><i class="fas fa-file-alt"></i> <span>Xem quyết định</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vung-chi-tiet-mo-rong" style="display: none;">
+                            <div class="hop-tai-lieu">
+                                <i class="fas fa-file-pdf icon-pdf"></i>
+                                <div class="thong-tin-tai-lieu">
+                                    <strong>Quyet-dinh-phe-duyet-NC024.pdf</strong>
+                                    <p>1.2 MB · Đã ký số bởi BĐH AidMatch</p>
+                                </div>
+                                <button class="nut-bam nut-phu nut-nho"><i class="fas fa-download"></i> Tải xuống</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Form chỉnh sửa nội tuyến -->
+                    <div class="the-thong-bao da-doc" data-status="read">
+                        <div class="phan-hien-thi-chinh">
+                            <div class="icon-thong-bao bg-vang"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div class="noi-dung-tb">
+                                <div class="hang-tieu-de-tb">
+                                    <h3>NC-027 cần bổ sung thông tin</h3>
+                                    <div class="trang-thai-tb"><span class="nhan-da-doc">Đã đọc</span></div>
+                                </div>
+                                <p class="mo-ta-tb">Điều phối viên yêu cầu làm rõ địa điểm nhận và người liên hệ trước khi xét duyệt.</p>
+                                <span class="thoi-gian-tb">07/10 · 16:30</span>
+                                <div class="hanh-dong-tb">
+                                    <button class="nut-bam nut-phu-xanh nut-nho btn-mo-chi-tiet" data-mo="false"><i class="fas fa-edit"></i> <span>Chỉnh sửa nhu cầu</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vung-chi-tiet-mo-rong" style="display: none;">
+                            <h4 class="tieu-de-mo-rong">Cập nhật thông tin nhận hàng</h4>
+                            <div class="grid-2-col mb-15">
+                                <div class="nhom-nhap-lieu">
+                                    <label class="nhan-truong">Địa chỉ chính xác <span class="dau-sao">*</span></label>
+                                    <input type="text" class="o-nhap-form" placeholder="VD: Thôn A, Xã B...">
+                                </div>
+                                <div class="nhom-nhap-lieu">
+                                    <label class="nhan-truong">Số ĐT người phụ trách <span class="dau-sao">*</span></label>
+                                    <input type="text" class="o-nhap-form" placeholder="090...">
+                                </div>
+                            </div>
+                            <div class="can-le-phai">
+                                <button class="nut-bam nut-chinh nut-nho btn-xac-nhan-form"><i class="fas fa-save"></i> Gửi cập nhật</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+        
+        <footer class="chan-trang">
+            <div class="ban-quyen">© 2026 AidMatch Platform. Điều phối nhu cầu hỗ trợ và nguồn lực cứu trợ minh bạch.</div>
+            <div class="lien-ket-chan-trang"><a href="#">Điều khoản</a> <a href="#">Bảo mật</a> <a href="#">Hỗ trợ 24/7</a></div>
+        </footer>
+    </div>
+    
+    <script src="js/main1(5).js"></script>
+</body>
+</html>

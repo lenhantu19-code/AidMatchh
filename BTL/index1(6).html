@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý danh mục - AidMatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style1(6).css">
+</head>
+<body>
+    
+    <div class="khung-bao-trang">
+        <!-- ĐẦU TRANG TRÀN VIỀN -->
+        <header class="dau-trang">
+            <div class="logo">
+                <img src="assets/div.w-10 (1).png" alt="AidMatch Logo" class="anh-logo" onerror="this.src='https://via.placeholder.com/40'">
+                <div>
+                    <div class="chu-logo"><strong>Aid</strong>Match</div>
+                    <div class="chu-phu-logo">CỨU TRỢ THÔNG MINH</div>
+                </div>
+            </div>
+            
+            <div class="khu-vuc-nguoi-dung">
+                <span class="trang-thai-he-thong"><span class="cham-trang-thai bg-primary"></span> Hệ thống trực tuyến</span>
+                <div class="ho-so-nguoi-dung">
+                    <div class="anh-dai-dien bg-xanh-dam">PA</div>
+                    <div class="thong-tin-ten">
+                        <strong>Phạm An</strong>
+                        <span>Quản trị hệ thống</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- BỐ CỤC CHÍNH -->
+        <div class="bo-cuc-noi-dung">
+            <!-- ẢNH NỀN GỐC -->
+            <img src="assets/nen.jpg" class="anh-nen" alt="Nền" onerror="this.style.display='none'">
+            
+            <!-- THANH BÊN (SIDEBAR) -->
+            <aside class="thanh-ben">
+                <div class="nhom-menu">
+                    <h3 class="tieu-de-menu">KHÔNG GIAN LÀM VIỆC</h3>
+                    <ul class="danh-sach-menu">
+                        <li class="muc-dang-chon"><a href="#"><i class="fas fa-folder"></i> Danh mục</a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> Người dùng</a></li>
+                        <li><a href="#"><i class="fas fa-sitemap"></i> Tổ chức</a></li>
+                        <li><a href="#"><i class="fas fa-chart-bar"></i> Báo cáo tác động</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- NỘI DUNG CHÍNH -->
+            <main class="vung-noi-dung">
+                
+                <!-- THÔNG BÁO INLINE (Ẩn mặc định) -->
+                <div class="hop-thong-bao thanh-cong" id="thongBaoChinh" style="display: none;">
+                    <i class="fas fa-check-circle bieu-tuong-lon"></i>
+                    <div class="noi-dung-thong-bao">
+                        <strong>Thành công!</strong>
+                        <p id="noiDungThongBaoChinh">Thao tác đã được thực hiện.</p>
+                    </div>
+                </div>
+
+                <!-- TIÊU ĐỀ TRANG -->
+                <div class="phan-tieu-de-trang">
+                    <div class="thong-tin-tieu-de">
+                        <div class="duong-dan">Quản trị viên / HR / <span class="hien-tai">Quản lý danh mục</span></div>
+                        <div class="tieu-de-chinh">
+                            <h2>Quản lý danh mục</h2>
+                        </div>
+                        <p class="mo-ta-tieu-de">Chuẩn hóa loại hỗ trợ và đơn vị để nhu cầu, nguồn lực và báo cáo có thể đối chiếu.</p>
+                    </div>
+                    <div class="hanh-dong-tieu-de">
+                        <button class="nut-bam nut-chinh nut-bo-tron-nhieu"><i class="fas fa-plus"></i> Tạo danh mục</button>
+                    </div>
+                </div>
+
+                <!-- TABS (DẠNG BO TRÒN GIỐNG ẢNH) -->
+                <div class="phan-tabs">
+                    <div class="danh-sach-tab">
+                        <button class="tab-btn dang-hoat-dong">Danh mục hỗ trợ (6)</button>
+                        <button class="tab-btn">Đơn vị tính</button>
+                        <button class="tab-btn">Đã lưu trữ</button>
+                    </div>
+                </div>
+
+                <!-- THANH TÌM KIẾM & BỘ LỌC (DẠNG BO TRÒN) -->
+                <div class="hop-the the-trong-suot mb-20">
+                    <div class="phan-tim-kiem">
+                        <div class="o-tim-kiem">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Tìm tên danh mục hoặc mã...">
+                        </div>
+                        <div class="cac-lua-chon">
+                            <select class="hop-chon-loc"><option>Trạng thái: Tất cả</option></select>
+                            <select class="hop-chon-loc"><option>Có dữ liệu sử dụng</option></select>
+                        </div>
+                    </div>
+
+                    <!-- BẢNG DỮ LIỆU -->
+                    <div class="vung-bang">
+                        <table class="bang-danh-muc">
+                            <thead>
+                                <tr>
+                                    <th>DANH MỤC / MÃ</th>
+                                    <th>ĐƠN VỊ ĐƯỢC PHÉP</th>
+                                    <th>SỐ BẢN GHI LIÊN QUAN</th>
+                                    <th>TRẠNG THÁI</th>
+                                    <th class="text-right">THAO TÁC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Nhu yếu phẩm</strong><br><span class="ma-dm">DM-01</span></td>
+                                    <td>Bộ, kg</td>
+                                    <td>6 nhu cầu · 3 nguồn lực</td>
+                                    <td><span class="nhan-trang-thai nhan-xanh-la">Đang dùng</span></td>
+                                    <td class="text-right"><button class="nut-link btn-sua txt-primary">Sửa</button> <span class="dau-cham">·</span> <button class="nut-link txt-dark">Xem liên kết</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Nước sạch</strong><br><span class="ma-dm">DM-02</span></td>
+                                    <td>Chai, lít</td>
+                                    <td>4 nhu cầu · 2 nguồn lực</td>
+                                    <td><span class="nhan-trang-thai nhan-xanh-la">Đang dùng</span></td>
+                                    <td class="text-right"><button class="nut-link btn-sua txt-primary">Sửa</button> <span class="dau-cham">·</span> <button class="nut-link txt-dark">Xem liên kết</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Đồ dùng sinh hoạt</strong><br><span class="ma-dm">DM-03</span></td>
+                                    <td>Chiếc, bộ</td>
+                                    <td>4 nhu cầu · 2 nguồn lực</td>
+                                    <td><span class="nhan-trang-thai nhan-xanh-la">Đang dùng</span></td>
+                                    <td class="text-right"><button class="nut-link btn-sua txt-primary">Sửa</button> <span class="dau-cham">·</span> <button class="nut-link txt-dark">Xem liên kết</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Y tế cơ bản</strong><br><span class="ma-dm">DM-04</span></td>
+                                    <td>Bộ, hộp</td>
+                                    <td>3 nhu cầu · 2 nguồn lực</td>
+                                    <td><span class="nhan-trang-thai nhan-xanh-la">Đang dùng</span></td>
+                                    <td class="text-right"><button class="nut-link btn-sua txt-primary">Sửa</button> <span class="dau-cham">·</span> <button class="nut-link txt-dark">Xem liên kết</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vận chuyển</strong><br><span class="ma-dm">DM-05</span></td>
+                                    <td>Chuyến, xe</td>
+                                    <td>0 nhu cầu · 0 nguồn lực</td>
+                                    <td><span class="nhan-trang-thai nhan-cam">Chưa sử dụng</span></td>
+                                    <td class="text-right"><button class="nut-link btn-sua txt-primary">Sửa</button> <span class="dau-cham">·</span> <button class="nut-link btn-luu-tru txt-dark">Lưu trữ</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thiết bị cũ</strong><br><span class="ma-dm">DM-06</span></td>
+                                    <td>Chiếc</td>
+                                    <td>2 bản ghi lịch sử</td>
+                                    <td><span class="nhan-trang-thai nhan-xam">Đã lưu trữ</span></td>
+                                    <td class="text-right"><button class="nut-link txt-primary">Xem lịch sử</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="chan-bang">
+                            <span>Hiển thị 6 bản ghi - Dữ liệu minh họa</span>
+                            <span>Trang 1 / 1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BỐ CỤC FORM BÊN DƯỚI (LƯỚI 2 CỘT) -->
+                <div class="bo-cuc-chi-tiet-duoi">
+                    
+                    <!-- Cột Trái: Chỉnh sửa danh mục -->
+                    <div class="hop-the form-chinh-sua" id="khuVucChinhSua">
+                        <h3 class="tieu-de-form">Chỉnh sửa danh mục - DM-01</h3>
+                        <p class="mo-ta-form mb-20">Không thay mã và đơn vị trên các bản ghi đã phát sinh.</p>
+                        
+                        <div class="grid-2-col mb-15">
+                            <div class="nhom-nhap-lieu">
+                                <label class="nhan-truong">Tên danh mục <span class="dau-sao">*</span></label>
+                                <input type="text" class="o-nhap" value="Nhu yếu phẩm">
+                            </div>
+                            <div class="nhom-nhap-lieu">
+                                <label class="nhan-truong">Mã danh mục</label>
+                                <input type="text" class="o-nhap bg-xam" value="DM-01 - Không đổi" disabled>
+                            </div>
+                        </div>
+
+                        <div class="nhom-nhap-lieu mb-15">
+                            <label class="nhan-truong">Đơn vị được phép <span class="dau-sao">*</span></label>
+                            <div class="danh-sach-checkbox">
+                                <label class="hop-kiem-tra"><input type="checkbox" checked> Bộ</label>
+                                <label class="hop-kiem-tra"><input type="checkbox" checked> kg</label>
+                                <label class="hop-kiem-tra"><input type="checkbox"> Hộp</label>
+                                <label class="hop-kiem-tra"><input type="checkbox"> Chiếc</label>
+                            </div>
+                        </div>
+
+                        <div class="nhom-nhap-lieu mb-20">
+                            <label class="nhan-truong">Mô tả quy chuẩn</label>
+                            <textarea class="o-nhap" rows="2">Lương thực và đồ thiết yếu. Với đơn vị Bộ, phải khai rõ quy cách và các thành phần để ghép nguồn lực.</textarea>
+                        </div>
+
+                        <!-- Hộp báo lỗi -->
+                        <div class="hop-loi-mau-hong mb-20">
+                            <strong>Tên đơn vị mới (ví dụ kiểm tra): Bộ</strong>
+                            <p>Đơn vị "Bộ" đã tồn tại. Chọn đơn vị có sẵn hoặc nhập tên khác.</p>
+                        </div>
+
+                        <div class="nhom-nut-hanh-dong mb-20">
+                            <button class="nut-bam nut-chinh nut-bo-tron-nho" id="btnLuuDanhMuc">Lưu danh mục</button>
+                            <button class="nut-bam nut-phu nut-bo-tron-nho" id="btnHuyThayDoi">Hủy thay đổi</button>
+                        </div>
+
+                        <!-- Hộp cảnh báo vàng -->
+                        <div class="hop-canh-bao-vang mb-20">
+                            <strong><i class="fas fa-exclamation-triangle"></i> Lưu ý bản ghi</strong>
+                            <p>Không thể xóa danh mục đang dùng. DM-01 liên kết 6 nhu cầu và 3 nguồn lực. Chỉ lưu trữ để ngừng chọn mới, dữ liệu cũ vẫn giữ nguyên tên và đơn vị.</p>
+                        </div>
+
+                        <a href="#" class="link-xem-them txt-primary">Xem các bản ghi sử dụng <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Cột Phải: Lưu trữ & Thông tin -->
+                    <div class="cot-phai-thong-tin">
+                        <!-- Box Lưu trữ -->
+                        <div class="hop-the form-luu-tru" id="khuVucLuuTru">
+                            <h3 class="tieu-de-form">Xác nhận lưu trữ - DM-05</h3>
+                            <p class="mo-ta-form mb-15 text-sm">Chưa có bản ghi sử dụng</p>
+                            <p class="text-sm mb-15 text-muted">Danh mục Vận chuyển sẽ không còn xuất hiện khi tạo nhu cầu hoặc nguồn lực mới. Có thể khôi phục khi cần.</p>
+                            
+                            <div class="nhom-nhap-lieu mb-15">
+                                <label class="nhan-truong">Lý do <span class="dau-sao">*</span></label>
+                                <select class="hop-chon-vuong w-100">
+                                    <option>Tạm ngừng danh mục để rà soát</option>
+                                </select>
+                            </div>
+
+                            <label class="hop-kiem-tra mb-20">
+                                <input type="checkbox" checked> <span class="text-sm font-medium">Tôi đã kiểm tra dữ liệu liên quan.</span>
+                            </label>
+
+                            <div class="nhom-nut-hanh-dong">
+                                <button class="nut-bam nut-phu nut-bo-tron-nho flex-1">Giữ danh mục</button>
+                                <button class="nut-bam nut-do nut-bo-tron-nho flex-1" id="btnXacNhanLuuTru">Lưu trữ</button>
+                            </div>
+                        </div>
+
+                        <!-- Box Thông tin đơn vị -->
+                        <div class="hop-the hop-don-vi">
+                            <h3 class="tieu-de-form mb-15">Đơn vị tính dùng chung</h3>
+                            <ul class="danh-sach-don-vi mb-15">
+                                <li><strong>Bộ:</strong> Quy cách phải được mô tả</li>
+                                <li><strong>Chiếc:</strong> Số nguyên lớn hơn 0</li>
+                                <li><strong>Chai:</strong> Kèm dung tích mỗi chai</li>
+                                <li><strong>kg, lít:</strong> Có thể dùng số thập phân</li>
+                            </ul>
+                            <a href="#" class="link-xem-them txt-primary">Mở quản lý đơn vị <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+        
+        <!-- CHÂN TRANG TRÀN VIỀN -->
+        <footer class="chan-trang">
+            <div class="ban-quyen">© 2026 AidMatch Platform. Bản minh họa, không phải dữ liệu cứu trợ thực tế.</div>
+            <div class="lien-ket-chan-trang">
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản sử dụng</a>
+                <a href="#">Hỗ trợ kỹ thuật</a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/main1.(6).js"></script>
+</body>
+</html>

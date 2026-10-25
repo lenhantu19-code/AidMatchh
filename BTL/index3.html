@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gợi ý ghép nguồn lực - AidMatch</title>
+    <link rel="stylesheet" href="css/style3.css">
+    <!-- Thêm Font Awesome để dùng icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    
+    <!-- Thanh điều hướng trên cùng (Giữ nguyên) -->
+    <header class="thanh-dieu-huong">
+        <div class="logo">
+            <img src="assets/div.w-10 (1).png" alt="AidMatch Logo" class="anh-logo">
+            <div>
+                <div class="chu-logo"><strong>Aid</strong>Match</div>
+                <div class="chu-phu-logo">CỨU TRỢ THÔNG MINH</div>
+            </div>
+        </div>
+        <div class="thao-tac-nguoi-dung">
+            <span class="trang-thai-he-thong"><span class="cham-trang-thai"></span> Hệ thống trực tuyến</span>
+            <div class="ho-so-nguoi-dung">
+                <div class="anh-dai-dien">NL</div>
+                <div class="thong-tin-nguoi-dung">
+                    <a href="#" class="ten-nguoi-dung">Trần Minh</a>
+                    <span class="vai-tro-nguoi-dung">Quỹ Đồng Hành</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nội dung chính -->
+    <div class="khungvafooter">
+    <div class="khung-chinh">
+        <img src="assets/nen.jpg" class="anh-nen" alt="Nền">
+
+        <!-- Sidebar bên trái (Giữ nguyên) -->
+        <aside class="thanh-ben">
+            <div class="phan-menu">
+                <div class="tieu-de-menu">Không gian làm việc</div>
+                <h4>Nhà tài trợ</h4>
+                <ul class="danh-sach-menu">
+                    <li><a href="index1.html"><i class="fa-solid fa-list-ul"></i> Nguồn lực</a></li>
+                    <li><a href="index2.html"><i class="fa-regular fa-compass"></i> Khai báo nguồn lực</a></li>
+                    
+                    <!-- MENU HIỆN TẠI ĐANG CHỌN -->
+                    <li class="dang-chon"><a href="index3.html"><i class="fa-solid fa-wand-magic-sparkles"></i> Gợi ý ghép</a></li>
+                    
+                    <li><a href="index4.html"><i class="fa-solid fa-handshake"></i> Cam kết hỗ trợ</a></li>
+                </ul>
+            </div>
+            
+            <div class="phan-menu">
+                <div class="tieu-de-menu">HỒ SƠ & CÀI ĐẶT</div>
+                <ul class="danh-sach-menu">
+                    <li><a href="#"><i class="fa-regular fa-user"></i> Hồ sơ</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a></li>
+                    <li><a href="#"><i class="fa-regular fa-bell"></i> Trung tâm thông báo</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Phần nội dung bên phải (MỚI - Gợi ý ghép nguồn lực) -->
+        <main class="vung-noi-dung">
+            
+            <!-- Breadcrumb và Tiêu đề -->
+            <div class="phan-dau-trang-goi-y">
+                <div class="duong-dan">
+                    Nhà tài trợ / Quản lý cung cấp / <span class="hien-tai">Gợi ý ghép nguồn lực</span>
+                </div>
+                <div class="tieu-de-trang-goi-y">
+                    <h1>Gợi ý ghép nguồn lực</h1>
+                    <span class="nhan-ai-powered"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Powered</span>
+                </div>
+                <p class="mo-ta-trang">Hệ thống AI tự động chọn nguồn lực, kiểm tra bằng chứng và tối ưu hóa cam kết hỗ trợ.</p>
+            </div>
+
+            <!-- Khu vực chính chứa các bước -->
+            <div class="khung-goi-y-ai">
+                
+                <!-- BƯỚC 1: Chọn đầu vào phân tích -->
+                <div class="the-buoc hop-the">
+                    <div class="tieu-de-buoc">
+                        <span class="so-buoc">1</span> CHỌN ĐẦU VÀO PHÂN TÍCH
+                    </div>
+                    <div class="vung-nhap-lieu-dau-vao">
+                        <div class="nhom-dau-vao">
+                            <label>Nguồn lực của bạn</label>
+                            <select class="hop-chon">
+                                <option>NL-011 - Nhu yếu phẩm - 200 bộ sẵn có</option>
+                            </select>
+                        </div>
+                        <div class="nhom-dau-vao">
+                            <label>Địa bàn ưu tiên</label>
+                            <select class="hop-chon">
+                                <option>Quảng Trị</option>
+                            </select>
+                        </div>
+                        <div class="nhom-dau-vao">
+                            <label>Giao trước</label>
+                            <input type="date" class="hop-chon" value="2026-10-15">
+                        </div>
+                    </div>
+                    <div class="hanh-dong-dau-vao">
+                        <button class="nut nut-chinh nut-tim-kiem" id="btnTimGoiY">
+                            <i class="fa-solid fa-magnifying-glass"></i> Tìm gợi ý phù hợp
+                        </button>
+                        <span class="trang-thai-tim-kiem">
+                            <span class="cham-xanh-la"></span> Đang xếp hạng khi đã bộ lọc - Kết quả gần nhất: 12/10 - 09:45
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Bố cục 2 cột cho Bước 2 và Bước 3 -->
+                <div class="bo-cuc-goi-y">
+                    
+                    <!-- Cột trái (BƯỚC 2 + Các lựa chọn khác) -->
+                    <div class="cot-trai-goi-y">
+                        
+                        <!-- BƯỚC 2: KẾT QUẢ XẾP HẠNG -->
+                        <div class="the-buoc hop-the vung-ket-qua-chinh">
+                            <div class="nhan-do-phu-hop">
+                                <i class="fa-solid fa-check"></i> Phù hợp nhất - 96/100 - Tin cậy cao
+                            </div>
+                            <div class="tieu-de-buoc">
+                                <span class="so-buoc">2</span> KẾT QUẢ XẾP HẠNG & LÝ DO
+                            </div>
+                            
+                            <div class="thong-tin-nhu-cau-chinh">
+                                <h3>NC-024 - Nhu yếu phẩm cho An Bình</h3>
+                                <p>Trạm An Bình - Hải Lăng, Quảng Trị - Hạn 15/10/2026</p>
+                            </div>
+
+                            <table class="bang-doi-chieu">
+                                <thead>
+                                    <tr>
+                                        <th>TIÊU CHÍ</th>
+                                        <th>BẰNG CHỨNG ĐỐI CHIẾU</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ten-tieu-chi">Danh mục & quy cách</td>
+                                        <td>Cùng bộ nhu yếu phẩm: gạo, dầu, muối, xà phòng</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ten-tieu-chi">Số lượng phù hợp</td>
+                                        <td>Còn thiếu 200; 100 đã giữ chỗ → chỉ đề xuất thêm 100 bộ</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ten-tieu-chi">Địa lý</td>
+                                        <td>Kho Đông Hà → Hải Lăng, cùng tỉnh, khoảng 35 km</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ten-tieu-chi">Thời gian</td>
+                                        <td>Có thể giao 14/10, trước hạn cần 15/10</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="hop-giai-thich-ai">
+                                <div class="tieu-de-giai-thich"><i class="fa-solid fa-wand-magic-sparkles"></i> Giải thích điểm gợi ý</div>
+                                <p>Danh mục 40/40, số lượng 24/25, địa bàn 16/20, thời gian 14/15. Điểm là hỗ trợ so sánh, không phải bảo đảm giao thành công.</p>
+                            </div>
+
+                            <div class="hanh-dong-ket-qua">
+                                <div class="nhom-nut-ket-qua">
+                                    <button class="nut nut-xanh-la" id="btnChapNhan">Chấp nhận</button>
+                                    <button class="nut nut-vien">Chỉnh sửa</button>
+                                    <button class="nut nut-chu-do">Từ chối</button>
+                                </div>
+                                <a href="#" class="lien-ket-luu">Lưu lựa chọn ghép &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- CÁC LỰA CHỌN KHÁC -->
+                        <div class="the-buoc hop-the">
+                            <h4 class="tieu-de-lua-chon-khac">Các lựa chọn khác</h4>
+                            
+                            <div class="danh-sach-lua-chon">
+                                <div class="muc-lua-chon">
+                                    <div class="thong-tin-muc">
+                                        <h5>NC-030 - Nhu yếu phẩm Đà Nẵng</h5>
+                                        <p>Hạn: 20/10 - Số lượng gợi ý: 150 bộ - Cùng quy cách, ngoài vùng ưu tiên</p>
+                                    </div>
+                                    <div class="diem-muc mau-xanh-duong">82 / 100</div>
+                                </div>
+
+                                <div class="muc-lua-chon">
+                                    <div class="thong-tin-muc">
+                                        <h5>NC-031 - Chăn ấm Huế</h5>
+                                        <p>Hạn: 18/10 - Số lượng gợi ý: Khó đề xuất - Khác danh mục, chọn NL-013 để so sánh</p>
+                                    </div>
+                                    <div class="diem-muc mau-cam">68 / 100</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cột phải (BƯỚC 3 + Trợ lý AI) -->
+                    <div class="cot-phai-goi-y">
+                        
+                        <!-- BƯỚC 3: ĐIỀU KHOẢN CAM KẾT -->
+                        <div class="the-buoc hop-the form-cam-ket">
+                            <div class="tieu-de-buoc">
+                                <span class="so-buoc">3</span> ĐIỀU KHOẢN CAM KẾT
+                            </div>
+                            <p class="ghi-chu-cam-ket">Đã chọn NC-024 - Chưa gửi, chưa giữ chỗ nguồn lực.</p>
+
+                            <form id="formCamKet">
+                                <div class="nhom-bieu-mau-doc">
+                                    <label>Số lượng cam kết <span>*</span></label>
+                                    <input type="text" value="100 bộ" class="input-xam">
+                                    <span class="huong-dan-nho">Tối đa 100 - 100 bộ chưa được phân bổ</span>
+                                </div>
+                                
+                                <div class="nhom-bieu-mau-doc">
+                                    <label>Ngày giao dự kiến <span>*</span></label>
+                                    <input type="date" value="2026-10-14" class="input-xam">
+                                </div>
+
+                                <div class="nhom-bieu-mau-doc">
+                                    <label>Phương thức giao <span>*</span></label>
+                                    <input type="text" value="Giao tới Trạm An Bình" class="input-xam">
+                                </div>
+
+                                <div class="nhom-bieu-mau-doc">
+                                    <label>Điều kiện / ghi chú</label>
+                                    <textarea rows="3" class="input-xam">Giao cùng chuyến đợt PB-032B, tách biên bản cho cam kết mới.</textarea>
+                                </div>
+
+                                <div class="hop-kiem-tra">
+                                    <input type="checkbox" id="checkXacNhan" checked>
+                                    <label for="checkXacNhan">Tôi đã kiểm tra quy cách và khả năng giao.</label>
+                                </div>
+
+                                <button type="button" class="nut nut-chinh rong-toan-bo nut-gui-cam-ket" id="btnGuiCamKet">
+                                    Gửi cam kết chờ xác nhận
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Thẻ Trợ lý AI -->
+                        <div class="the-tro-ly-ai hop-the">
+                            <div class="tieu-de-tro-ly">
+                                <i class="fa-solid fa-robot"></i> Trợ lý AI AidMatch
+                            </div>
+                            <p>Chỉ gửi và được xác nhận mới tạo giữ chỗ. AI không tự cam kết. CK-019 chưa được tính vào 100 bộ phân bổ hiện tại.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer (Giữ nguyên) -->
+    <footer class="chan-trang">
+        <div class="ban-quyen">© 2026 AidMatch Platform. All rights reserved.</div>
+        <div class="lien-ket-chan-trang">
+            <a href="#">Chính sách bảo mật</a>
+            <a href="#">Điều khoản sử dụng</a>
+            <a href="#">Hỗ trợ kỹ thuật</a>
+        </div>
+    </footer>
+    </div>
+    <script src="js/main3.js"></script>
+</body>
+</html>
