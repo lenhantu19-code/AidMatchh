@@ -1,0 +1,602 @@
+﻿:root {
+    --primary-color: #37699b;
+    --primary-dark: #004c99;
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --orange: #f59e0b;
+    --green: #10b981;
+    --blue: #3b82f6;
+    --sidebar-width: 280px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    background-image: linear-gradient(rgba(244, 246, 249, 0.93), rgba(244, 246, 249, 0.93)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><path fill="%230066cc" opacity="0.04" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>');
+    position: relative;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.68), rgba(117, 201, 240, 0.36)),
+        url("giuaki.jpg");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    pointer-events: none;
+}
+body > * {
+    position: relative;
+    z-index: 1;
+}
+div {
+    transition: transform 0.2s ease;
+}
+
+div:hover {
+    transform: translateY(-3px);
+}
+/* Header */
+.phan-dau {
+    height: 70px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.ben-trai-dau-trang, .ben-phai-dau-trang {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.thuong-hieu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.anh-bieu-tuong {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.phu-de-thuong-hieu {
+    display: block;
+    font-size: 11px;
+    background: #e0f2fe;
+    color: var(--primary-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.van-ban-thuong-hieu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    line-height: 1.1;
+}
+
+.ten-thuong-hieu {
+    display: block;
+}
+
+.ho-so-nguoi-dung {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.anh-dai-dien {
+    width: 36px;
+    height: 36px;
+    background: #10b981;
+    color: white;
+    border-radius: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.thong-tin-nguoi-dung .ten {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.thong-tin-nguoi-dung .vai-tro {
+    display: block;
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+
+/* Main Layout */
+.khung-chinh {
+    display: flex;
+    margin-top: 64px;
+    min-height: calc(100vh - 120px);
+    padding-bottom: 56px;
+}
+
+.thanh-ben {
+    width: 23%;
+    background: #ffffff;
+    border-right: 1px solid var(--border-color);
+    padding: 24px 16px;
+    align-self: start;
+    min-height: calc(100vh - 300px);
+    border-radius: 14px;
+    margin: 50px 20px;
+}
+
+.nhom-danh-muc {
+    margin-bottom: 24px;
+}
+
+.nhan-danh-muc {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    padding-left: 12px;
+}
+
+.muc-danh-muc {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px;
+    padding: 10px 12px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+  
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+
+.muc-danh-muc:hover {
+    background: #b9dafa;
+}
+
+.muc-danh-muc.dang-chon {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    background: var(--primary-color);
+    color: white;
+}ve i { color: var(--primary-color); }
+
+/* Workspace */
+.noi-dung-lam-viec {
+    flex: 1;
+    padding: 24px 32px;
+    max-width: 1000px;
+}
+
+.duong-dan-dieu-huong {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* Form Card */
+.the-bieu-mau {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.dau-the-bieu-mau {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+}
+
+.dau-the-bieu-mau h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nhan-trang-thai-xanh-duong {
+    background: #eff6ff;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Form Grid Layout */
+.luoi-bieu-mau {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.nhom-truong-bieu-mau {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nhom-truong-bieu-mau.rong-day {
+    width: 100%;
+}
+
+.nhom-truong-bieu-mau.nua-rong {
+    width: calc(50% - 10px);
+}
+
+.nhom-truong-bieu-mau label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.dieu-khien-bieu-mau {
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--text-main);
+    outline: none;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.dieu-khien-bieu-mau:focus {
+    border-color: var(--primary-color);
+    background: white;
+}
+
+.vung-van-ban {
+    resize: vertical;
+    height: 100px;
+}
+
+/* File Upload Box */
+.khung-tai-tep {
+    border: 2px dashed var(--border-color);
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.khung-tai-tep:hover {
+    border-color: var(--primary-color);
+    background: #f1f5f9;
+}
+
+.khung-tai-tep i {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.khung-tai-tep span {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.o-nhap-tep-an {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Form Actions */
+.hanh-dong-bieu-mau {
+    display: flex;
+    gap: 12px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.nut-chinh {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.nut-chinh:hover {
+    background: var(--primary-dark);
+}
+
+.nut-toi {
+    background: #1e293b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nut-sang {
+    background: white;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nut-sang:hover {
+    background: #f8fafc;
+}
+
+/* Footer */
+.chan-trang {
+    height: 56px;
+    background: #0f172a;
+    color: #94a3b8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.lien-ket-chan-trang {
+    display: flex;
+    gap: 20px;
+}
+
+.lien-ket-chan-trang a {
+    color: #94a3b8;
+    text-decoration: none;
+}
+
+.lien-ket-chan-trang a:hover {
+    color: white;
+}
+
+@media (max-width: 1000px) {
+    .thanh-ben {
+        width: 250px;
+        flex-shrink: 0;
+        margin: 32px 12px 24px 16px;
+    }
+
+    .noi-dung-lam-viec {
+        min-width: 0;
+        padding: 24px 20px;
+    }
+
+    .the-bieu-mau {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 800px) {
+    .phan-dau {
+        height: auto;
+        min-height: 64px;
+        padding: 10px 16px;
+    }
+
+    .khung-chinh {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 64px;
+        padding: 12px 16px 76px;
+    }
+
+    .thanh-ben {
+        width: 100%;
+        min-height: 0;
+        margin: 12px 0;
+        padding: 12px;
+        border-right: 0;
+    }
+
+    .nhom-danh-muc {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 8px;
+    }
+
+    .nhan-danh-muc {
+        flex-basis: 100%;
+        margin-bottom: 4px;
+    }
+
+    .muc-danh-muc {
+        margin: 2px;
+    }
+
+    .noi-dung-lam-viec {
+        width: 100%;
+        max-width: none;
+        padding: 16px 0;
+    }
+
+    .the-bieu-mau {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .phan-dau {
+        padding: 8px 12px;
+    }
+
+    .ben-trai-dau-trang,
+    .ben-phai-dau-trang {
+        gap: 8px;
+    }
+
+    .thuong-hieu {
+        gap: 6px;
+        font-size: 16px;
+    }
+
+    .anh-bieu-tuong {
+        width: 38px;
+        height: 38px;
+    }
+
+    .phu-de-thuong-hieu {
+        font-size: 9px;
+    }
+
+    .anh-dai-dien {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .thong-tin-nguoi-dung .vai-tro {
+        display: none;
+    }
+
+    .khung-chinh {
+        padding: 8px 12px 112px;
+    }
+
+    .thanh-ben {
+        padding: 10px;
+    }
+
+    .muc-danh-muc {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .noi-dung-lam-viec {
+        padding-top: 12px;
+    }
+
+    .duong-dan-dieu-huong {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .the-bieu-mau {
+        padding: 18px 14px;
+    }
+
+    .dau-the-bieu-mau {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .dau-the-bieu-mau h1,
+    .dau-the-bieu-mau h2 {
+        font-size: 20px;
+    }
+
+    .luoi-bieu-mau {
+        gap: 14px;
+        margin-bottom: 22px;
+    }
+
+    .nhom-truong-bieu-mau,
+    .nhom-truong-bieu-mau.rong-day,
+    .nhom-truong-bieu-mau.nua-rong {
+        width: 100%;
+    }
+
+    .khung-tai-tep {
+        padding: 18px 12px;
+    }
+
+    .hanh-dong-bieu-mau {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-top: 16px;
+    }
+
+    .hanh-dong-bieu-mau button {
+        flex: 1 1 100%;
+        min-height: 40px;
+    }
+
+    .chan-trang {
+        height: auto;
+        min-height: 56px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 16px;
+    }
+
+    .lien-ket-chan-trang {
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+}

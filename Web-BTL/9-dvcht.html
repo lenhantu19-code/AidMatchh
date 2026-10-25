@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AidMatch - Tạo nhu cầu hỗ trợ</title>
+    <link rel="stylesheet" href="9-dvcht.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="dau-trang">
+        <div class="ben-trai-dau-trang">
+            <div class="thuong-hieu">
+                <img src="div.w-10.png" alt="AidMatch logo" class="anh-bieu-tuong">
+                <div class="van-ban-thuong-hieu">
+                    <span class="ten-thuong-hieu">AidMatch</span>
+                    <span class="phu-de-thuong-hieu">CỨU TRỢ THÔNG MINH</span>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="ben-phai-dau-trang">
+            <div class="ho-so-nguoi-dung">
+                <div class="anh-dai-dien">NL</div>
+                <div class="thong-tin-nguoi-dung">
+                    <span class="ten">Nguyễn Lan</span>
+                    <span class="vai-tro">Trạm An Bình (TC-001)</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="khung-chinh">
+        
+        <aside class="thanh-ben">
+            <div class="nhom-danh-muc">
+                <div class="nhan-danh-muc">TỔNG QUAN</div>
+                <a href="6-dvcht.html" class="muc-danh-muc">                
+                    <i class="fa-solid fa-chart-pie"></i> Tổng quan
+                </a>
+                <a href="7-dvcht.html" class="muc-danh-muc">
+                    <i class="fa-solid fa-circle-plus"></i> Tạo nhu cầu
+                </a>
+                <a href="8-dvcht.html" class="muc-danh-muc">
+                    <i class="fa-solid fa-list-check"></i> Nhu cầu của tôi
+                </a>
+                <a href="9-dvcht.html" class="muc-danh-muc dang-chon">
+                    <i class="fa-solid fa-compass"></i> Khám phá nhu cầu
+                </a>
+            </div>
+
+            <div class="nhom-danh-muc">
+                <div class="nhan-danh-muc">HỒ SƠ & CÀI ĐẶT</div>
+                <a href="#" class="muc-danh-muc">
+                    <i class="fa-regular fa-id-card"></i> Hồ sơ
+                </a>
+                <a href="#" class="muc-danh-muc">
+                    <i class="fa-solid fa-gear"></i> Cài đặt
+                </a>
+                <a href="#" class="muc-danh-muc">
+                    <i class="fa-regular fa-message"></i> Trung tâm thông báo
+                </a>
+            </div>
+        </aside>
+
+        <!-- Workspace -->
+        <main class="noi-dung-lam-viec">
+            
+            <div class="vung-dau-trang">
+                <div class="duong-dan-dieu-huong">KHÔNG GIAN LÀM VIỆC / KHÁM PHÁ NHU CẦU</div>
+                <div class="hang-tieu-de-hanh-dong">
+                    <div>
+                        <h1>Khám phá nhu cầu cộng đồng</h1>
+                        <p>Tra cứu và tìm kiếm các nhu cầu cứu trợ khẩn cấp từ các đơn vị và trạm trên toàn quốc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="thanh-loc">
+                <div class="hop-tim-kiem">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm theo mã NC, tên nhu cầu hoặc khu vực...">
+                </div>
+                <div class="nhom-bo-loc">
+                    <select class="dieu-khien-chon" id="regionFilter">
+                        <option value="">Tất cả khu vực</option>
+                        <option value="Quảng Trị">Quảng Trị</option>
+                        <option value="Huế">Thừa Thiên Huế</option>
+                        <option value="Đà Nẵng">Đà Nẵng</option>
+                    </select>
+                    <select class="dieu-khien-chon" id="priorityFilter">
+                        <option value="">Mức độ ưu tiên</option>
+                        <option value="Khẩn cấp">Khẩn cấp</option>
+                        <option value="Ưu tiên cao">Ưu tiên cao</option>
+                        <option value="Bình thường">Bình thường</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Explore Grid List -->
+            <div class="danh-sach-kham-pha" id="exploreList">
+                
+                <!-- Card 1 -->
+                <div class="the-kham-pha" data-region="Quảng Trị" data-priority="Khẩn cấp">
+                    <div class="dau-the">
+                        <div class="thong-tin-ben-trai">
+                            <span class="ma-nhu-cau">NC-024</span>
+                            <h3 class="tieu-de-nhu-cau">500 bộ nhu yếu phẩm cho đồng bào vùng lũ</h3>
+                        </div>
+                        <span class="nhan-trang-thai trang-thai-do">Khẩn cấp</span>
+                    </div>
+                    <div class="thong-tin-the">
+                        <span><i class="fa-solid fa-location-dot"></i> Xã Hải An, Hải Lăng, Quảng Trị</span>
+                        <span><i class="fa-regular fa-clock"></i> Hạn nhận: 15/10/2026</span>
+                    </div>
+                    <div class="thong-tin-tien-do">
+                        <span>Tiến độ tiếp nhận</span>
+                        <span class="do-dam-600">300 / 500 bộ (60%)</span>
+                    </div>
+                    <div class="thanh-tien-do">
+                        <div class="phan-tien-do" style="width: 60%;"></div>
+                    </div>
+                    <div class="chan-the">
+                        <span class="ten-don-vi">Đơn vị: Trạm hỗ trợ cộng đồng An Bình</span>
+                        <button class="nut-vien-xanh-duong">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="the-kham-pha" data-region="Huế" data-priority="Ưu tiên cao">
+                    <div class="dau-the">
+                        <div class="thong-tin-ben-trai">
+                            <span class="ma-nhu-cau">NC-034</span>
+                            <h3 class="tieu-de-nhu-cau">60 bộ đồ dùng sinh hoạt và chăn màn</h3>
+                        </div>
+                        <span class="nhan-trang-thai trang-thai-cam">Ưu tiên cao</span>
+                    </div>
+                    <div class="thong-tin-the">
+                        <span><i class="fa-solid fa-location-dot"></i> Điểm sơ tán Bình Minh, Thừa Thiên Huế</span>
+                        <span><i class="fa-regular fa-clock"></i> Hạn nhận: 18/10/2026</span>
+                    </div>
+                    <div class="thong-tin-tien-do">
+                        <span>Tiến độ tiếp nhận</span>
+                        <span class="do-dam-600">15 / 60 bộ (25%)</span>
+                    </div>
+                    <div class="thanh-tien-do">
+                        <div class="phan-tien-do" style="width: 25%; background: var(--orange);"></div>
+                    </div>
+                    <div class="chan-the">
+                        <span class="ten-don-vi">Đơn vị: Điểm sơ tán Bình Minh</span>
+                        <button class="nut-vien-xanh-duong">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="the-kham-pha" data-region="Đà Nẵng" data-priority="Bình thường">
+                    <div class="dau-the">
+                        <div class="thong-tin-ben-trai">
+                            <span class="ma-nhu-cau">NC-035</span>
+                            <h3 class="tieu-de-nhu-cau">40 bộ sơ cứu y tế cơ bản cho đội tình nguyện</h3>
+                        </div>
+                        <span class="nhan-trang-thai trang-thai-xanh-duong">Bình thường</span>
+                    </div>
+                    <div class="thong-tin-the">
+                        <span><i class="fa-solid fa-location-dot"></i> Trạm cộng đồng Hòa Bắc, Đà Nẵng</span>
+                        <span><i class="fa-regular fa-clock"></i> Hạn nhận: 25/10/2026</span>
+                    </div>
+                    <div class="thong-tin-tien-do">
+                        <span>Tiến độ tiếp nhận</span>
+                        <span class="do-dam-600">0 / 40 bộ (0%)</span>
+                    </div>
+                    <div class="thanh-tien-do">
+                        <div class="phan-tien-do" style="width: 0%; background: var(--blue);"></div>
+                    </div>
+                    <div class="chan-the">
+                        <span class="ten-don-vi">Đơn vị: Trạm cộng đồng Hòa Bắc</span>
+                        <button class="nut-vien-xanh-duong">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="chan-trang">
+        <div>© 2026 AidMatch Platform. Điều phối nhu cầu hỗ trợ và nguồn lực cho minh bạch.</div>
+        <div class="lien-ket-chan-trang">
+            <a href="#">Điều khoản</a>
+            <a href="#">Bảo mật</a>
+            <a href="#">Hỗ trợ 24/7</a>
+        </div>
+    </footer>
+
+        <script src="9dvcht.js"></script>
+    </body>
+</html>
