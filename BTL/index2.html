@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khai báo / Sửa nguồn lực - AidMatch</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <!-- Thêm Font Awesome để dùng icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    
+    <!-- Thanh điều hướng trên cùng -->
+    <header class="thanh-dieu-huong">
+        <div class="logo">
+            <img src="assets/div.w-10 (1).png" alt="AidMatch Logo" class="anh-logo" onerror="this.src='https://via.placeholder.com/40'">
+            <div>
+                <div class="chu-logo"><strong>Aid</strong>Match</div>
+                <div class="chu-phu-logo">CỨU TRỢ THÔNG MINH</div>
+            </div>
+        </div>
+        <div class="thao-tac-nguoi-dung">
+            <span class="trang-thai-he-thong"><span class="cham-trang-thai"></span> Hệ thống trực tuyến</span>
+            <div class="ho-so-nguoi-dung">
+                <div class="anh-dai-dien">TM</div>
+                <div class="thong-tin-nguoi-dung">
+                    <a href="#" class="ten-nguoi-dung">Trần Minh</a>
+                    <span class="vai-tro-nguoi-dung">Quỹ Đồng Hành</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nội dung chính -->
+    <div class="khungvafooter">
+    <div class="khung-chinh">
+        <img src="assets/nen.jpg" class="anh-nen" alt="Nền" onerror="this.style.display='none'">
+
+        <!-- Sidebar bên trái -->
+        <aside class="thanh-ben">
+            <div class="phan-menu">
+                <div class="tieu-de-menu">Không gian làm việc</div>
+                <h4>Nhà tài trợ</h4>
+                <ul class="danh-sach-menu">
+                    <li><a href="index1.html"><i class="fa-solid fa-list-ul"></i> Nguồn lực</a></li>
+                    <li><a href="index2.html"><i class="fa-regular fa-compass"></i> Khai báo nguồn lực</a></li>
+                    <li><a href="index3.html"><i class="fa-solid fa-wand-magic-sparkles"></i> Gợi ý ghép</a></li>
+                    <li><a href="index4.html"><i class="fa-solid fa-handshake"></i> Cam kết hỗ trợ</a></li>
+                </ul>
+            </div>
+            
+            <div class="phan-menu">
+                <div class="tieu-de-menu">HỒ SƠ & CÀI ĐẶT</div>
+                <ul class="danh-sach-menu">
+                    <li><a href="#"><i class="fa-regular fa-user"></i> Hồ sơ</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a></li>
+                    <li><a href="#"><i class="fa-regular fa-bell"></i> Trung tâm thông báo</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Phần nội dung bên phải (Giao diện Khai báo / Sửa nguồn lực) -->
+        <main class="vung-noi-dung">
+            
+            <!-- Phần đầu trang -->
+            <div class="phan-dau-trang-cam-ket mb-20">
+                <div class="thong-tin-dau-trang">
+                    <h1 style="font-size: 26px;">Khai báo / Sửa nguồn lực</h1>
+                    <p>Đang sửa NL-011 • Các cam kết đã xác nhận sẽ không bị thay đổi khi lưu.</p>
+                </div>
+            </div>
+
+            <!-- Bố cục 2 cột Form và Thẻ thông tin -->
+            <div class="bo-cuc-sua-nguon-luc">
+                
+                <!-- Cột trái: Form nhập liệu -->
+                <div class="cot-trai-form">
+                    
+                    <!-- Box 1: Thông tin nguồn lực -->
+                    <div class="hop-the mb-20">
+                        <h2 class="tieu-de-form-bold mb-10">Thông tin nguồn lực</h2>
+                        <p class="text-sm text-muted mb-20">Nguồn lực có cùng quy cách mới được đối chiếu theo một đơn vị. * Bắt buộc.</p>
+
+                        <div class="form-box mb-15">
+                            <label>Tên nguồn lực *</label>
+                            <input type="text" id="tenNguonLuc" value="Bộ nhu yếu phẩm Đồng Hành">
+                        </div>
+
+                        <div class="grid-2-col mb-15">
+                            <div class="form-box">
+                                <label>Danh mục *</label>
+                                <select id="chonDanhMuc">
+                                    <option value="Nhu yếu phẩm" selected>Nhu yếu phẩm</option>
+                                    <option value="Vật tư y tế">Vật tư y tế</option>
+                                    <option value="Lương thực - Thực phẩm">Lương thực - Thực phẩm</option>
+                                    <option value="Quần áo - Chăn màn">Quần áo - Chăn màn</option>
+                                </select>
+                            </div>
+                            <div class="form-box">
+                                <label>Đơn vị *</label>
+                                <select id="chonDonVi">
+                                    <option value="Bộ" selected>Bộ</option>
+                                    <option value="Chiếc">Chiếc</option>
+                                    <option value="Thùng">Thùng</option>
+                                    <option value="Kg">Kg</option>
+                                    <option value="Suất">Suất</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid-2-col mb-15">
+                            <div class="form-box">
+                                <label>Số lượng lô ban đầu *</label>
+                                <input type="text" value="600" disabled style="color: var(--text-main);">
+                                <div class="ghi-chu-duoi-input">600 = 200 sẵn có + 100 giữ chỗ + 300 đã giao.</div>
+                            </div>
+                            
+                            <!-- Trạng thái lỗi (Số âm) -->
+                            <div class="form-box">
+                                <label>Số lượng bổ sung</label>
+                                <input type="number" id="soLuongBoSung" value="0">
+                                <div class="ghi-chu-loi">Nhập số lượng cần bổ sung thêm vào kho.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-box mb-15">
+                            <label>Quy cách / mô tả *</label>
+                            <textarea rows="2" id="moTaNguonLuc">Mỗi bộ: 5 kg gạo, 1 lít dầu ăn, 1 kg muối, 2 bánh xà phòng. Đóng gói theo từng hộ, hàng mới còn nguyên bao bì.</textarea>
+                        </div>
+
+                        <div class="grid-3-col">
+                            <div class="form-box">
+                                <label>Có thể cung cấp từ *</label>
+                                <input type="text" id="tuNgay" value="09/10/2026">
+                            </div>
+                            <div class="form-box">
+                                <label>Có thể cung cấp đến *</label>
+                                <input type="text" id="denNgay" value="20/10/2026">
+                            </div>
+                            <div class="form-box">
+                                <label>Hạn sử dụng</label>
+                                <input type="text" id="hanDung" value="31/12/2026">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box 2: Khu vực & vận chuyển -->
+                    <div class="hop-the">
+                        <h2 class="tieu-de-form-bold mb-20">Khu vực & vận chuyển</h2>
+
+                        <div class="form-box mb-15">
+                            <label>Địa chỉ kho / nhận hàng *</label>
+                            <input type="text" id="diaChiKho" value="Kho Đồng Hành, Đông Hà, Quảng Trị">
+                        </div>
+
+                        <div class="grid-2-col mb-15">
+                            <div class="form-box">
+                                <label>Khu vực hỗ trợ *</label>
+                                <select id="chonKhuVuc">
+                                    <option value="Quảng Trị, Huế" selected>Quảng Trị, Huế</option>
+                                    <option value="Đà Nẵng, Quảng Nam">Đà Nẵng, Quảng Nam</option>
+                                    <option value="Miền Trung (Toàn khu vực)">Miền Trung (Toàn khu vực)</option>
+                                    <option value="Toàn quốc">Toàn quốc</option>
+                                </select>
+                            </div>
+                            <div class="form-box">
+                                <label>Khả năng vận chuyển *</label>
+                                <select id="chonVanChuyen">
+                                    <option value="Có thể giao tận điểm tiếp nhận" selected>Có thể giao tận điểm tiếp nhận</option>
+                                    <option value="Hỗ trợ xe tải trung chuyển">Hỗ trợ xe tải trung chuyển</option>
+                                    <option value="Cần điều phối xe hỗ trợ">Cần điều phối xe hỗ trợ</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-box mb-15">
+                            <label>Điều kiện giao nhận</label>
+                            <textarea rows="2" id="dieuKienGiao">Xe tải giao tối đa 400 bộ mỗi chuyến. Cần xác nhận điểm giao và người nhận trước 24 giờ.</textarea>
+                        </div>
+
+                        <div class="grid-2-col mb-15">
+                            <div class="form-box">
+                                <label>Đầu mối liên hệ *</label>
+                                <input type="text" id="dauMoiLienHe" value="Trần Minh">
+                            </div>
+                            <div class="form-box">
+                                <label>Điện thoại *</label>
+                                <input type="text" id="dienThoai" value="0902 345 678">
+                            </div>
+                        </div>
+
+                    <!-- SAU KHI SỬA (Đổi thành 0 và bỏ class box-loi đi) -->
+<div class="form-box">
+    <label>Số lượng bổ sung</label>
+    <input type="number" id="soLuongBoSung" value="0">
+    <div class="ghi-chu-duoi-input">Nhập số lượng cần bổ sung thêm vào kho.</div>
+</div>
+                    </div>
+
+                    <!-- Box thông báo nháp -->
+                    <div class="hop-thong-bao-xanh mt-20" id="trangThaiNhapBox">
+                        <div style="font-weight: 500; margin-bottom: 5px;" id="tieuDeNhap">Bản nháp chỉnh sửa chưa được lưu</div>
+                        <span id="noiDungNhap">Dữ liệu khai báo được giữ lúc 09:40. Chưa cập nhật số lượng công khai vì trường bổ sung đang không hợp lệ.</span>
+                    </div>
+
+                    <!-- Nút thao tác -->
+                    <div class="thao-tac-form">
+                        <a href="#" class="link-thao-tac" id="btnLuuNhaps">Lưu bản nháp</a>
+                        <button class="nut nut-xam" id="btnLuuCongKhai" disabled>Lưu & công khai cập nhật</button>
+                        <a href="#" class="link-thao-tac text-danger" style="text-decoration: underline;" id="btnHuySua">Hủy chỉnh sửa</a>
+                    </div>
+
+                </div>
+
+                <!-- Cột phải: Thẻ thông tin -->
+                <div class="cot-phai-info">
+                    
+                    <!-- Thẻ 1 -->
+                    <div class="hop-the mb-20">
+                        <h2 class="tieu-de-form-bold mb-15">Giới hạn an toàn</h2>
+                        
+                        <div class="nhan-trang-thai text-sm mb-15 p-0 font-medium" style="background:none;">
+                            <span class="cham-trang-thai bg-warning mr-5"></span> Có cam kết đang hoạt động
+                        </div>
+
+                        <p class="text-sm mb-15 line-height-15">
+                            CK-018 / PB-032 đang giữ 100 bộ. Không sửa đơn vị hoặc quy cách của lô khi đang giao.
+                        </p>
+
+                        <div class="text-sm text-muted mb-20 line-height-15">
+                            Số lượng đã giao: 300 bộ<br>
+                            Sẵn có hiện tại: 200 bộ<br>
+                            Giữ chỗ hiện tại: 100 bộ
+                        </div>
+
+                        <a href="#" class="link-xem-cam-ket text-primary font-medium" style="text-decoration: underline; font-size: 13px;">Xem cam kết CK-018</a>
+                    </div>
+
+                    <!-- Thẻ 2 -->
+                    <div class="hop-the mb-20">
+                        <h2 class="tieu-de-form-bold mb-15">Điều kiện để lưu</h2>
+                        
+                        <ul class="danh-sach-kiem-tra text-sm">
+                            <li class="hop-le"><i class="fa-solid fa-check"></i> Tên, danh mục, đơn vị đầy đủ</li>
+                            <li class="hop-le"><i class="fa-solid fa-check"></i> Thời gian cung cấp hợp lệ</li>
+                            <li class="hop-le"><i class="fa-solid fa-check"></i> Có khu vực và đầu mối giao nhận</li>
+                            <li class="loi"><span class="dau-than">!</span> Số lượng bổ sung phải ≥ 0</li>
+                        </ul>
+
+                        <div class="hop-canh-bao-nho mt-15">
+                            <div class="font-medium mb-5" style="color: #b7791f;">Hành động đang khóa</div>
+                            <span style="color: #b7791f;">Sửa trường số lượng bổ sung trước khi công khai cập nhật.</span>
+                        </div>
+                    </div>
+
+                    <!-- Thẻ 3 -->
+                    <div class="hop-the">
+                        <h2 class="tieu-de-form-bold mb-15">Lịch sử khai báo</h2>
+                        
+                        <div class="danh-sach-lich-su">
+                            <div class="muc-lich-su-nho">
+                                <span class="cham-thoi-gian-den"></span>
+                                <strong>09/10</strong> · Tạo lô 600 bộ
+                            </div>
+                            <div class="muc-lich-su-nho">
+                                <span class="cham-thoi-gian-den"></span>
+                                <strong>10/10</strong> · Giữ 400 bộ cho PB-032
+                            </div>
+                            <div class="muc-lich-su-nho">
+                                <span class="cham-thoi-gian-den"></span>
+                                <strong>12/10</strong> · Giao 300 bộ
+                            </div>
+                            <div class="muc-lich-su-nho">
+                                <span class="cham-thoi-gian-den"></span>
+                                <strong>12/10</strong> · Còn 100 bộ giữ chỗ
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="chan-trang">
+        <div class="ban-quyen">© 2026 AidMatch Platform. All rights reserved.</div>
+        <div class="lien-ket-chan-trang">
+            <a href="#">Chính sách bảo mật</a>
+            <a href="#">Điều khoản sử dụng</a>
+            <a href="#">Hỗ trợ kỹ thuật</a>
+        </div>
+    </footer>
+    </div>
+    
+    <script src="js/main2.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cài đặt - AidMatch</title>
+    <!-- Phông chữ Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Thư viện Icon FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Liên kết file CSS -->
+    <link rel="stylesheet" href="css/style1(4).css">
+</head>
+<body>
+    
+    <div class="khung-bao-trang">
+        <!-- PHẦN ĐẦU TRANG (HEADER) -->
+        <header class="dau-trang">
+        <div class="logo">
+            <img src="assets/div.w-10 (1).png" alt="AidMatch Logo" class="anh-logo" onerror="this.src='https://via.placeholder.com/40'">
+            <div>
+                <div class="chu-logo"><strong>Aid</strong>Match</div>
+                <div class="chu-phu-logo">CỨU TRỢ THÔNG MINH</div>
+            </div>
+        </div>
+
+            
+            <div class="khu-vuc-nguoi-dung">
+                <div class="nut-chuc-nang">
+                    <i class="fas fa-database"></i> Dữ liệu minh họa
+                </div>
+                <div class="thong-bao-chuong">
+                    <i class="far fa-bell"></i>
+                    <span class="cham-do"></span>
+                </div>
+                <div class="ho-so-nguoi-dung">
+                    <div class="anh-dai-dien">NL</div>
+                    <div class="thong-tin-ten">
+                        <strong>Nguyễn Lan</strong>
+                        <span>Trạm An Bình</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- TIÊU ĐỀ TRANG -->
+        <div class="phan-tieu-de-trang">
+            <div class="thong-tin-tieu-de">
+                <div class="duong-dan">
+                    <i class="fas fa-briefcase"></i> KHÔNG GIAN LÀM VIỆC / ĐƠN VỊ CẦN HỖ TRỢ
+                </div>
+                <div class="tieu-de-chinh">
+                    <h2>Cài đặt <i class="fas fa-cog"></i></h2>
+                </div>
+                <p class="mo-ta-tieu-de">Quản lý tùy chọn thông báo, bảo mật tài khoản và thay đổi mật khẩu.</p>
+            </div>
+            <div class="hanh-dong-tieu-de">
+                <button class="nut-bam nut-chinh" id="nut-luu-tong"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            </div>
+        </div>
+
+        <!-- BỐ CỤC CHÍNH -->
+        <div class="bo-cuc-noi-dung">
+           <img src="assets/nen.jpg" class="anh-nen" alt="Nền" onerror="this.style.display='none'">
+            <!-- THANH BÊN (SIDEBAR) -->
+            <aside class="thanh-ben">
+                <div class="nhom-menu">
+                    <h3 class="tieu-de-menu">TỔNG QUAN</h3>
+                    <ul class="danh-sach-menu">
+                        <li><i class="fas fa-plus-circle"></i> Tạo nhu cầu</li>
+                        <li><i class="fas fa-list-ul"></i> Nhu cầu của tôi</li>
+                        <li><i class="fas fa-compass"></i> Khám phá nhu cầu</li>
+                    </ul>
+                </div>
+                
+                <div class="nhom-menu">
+                    <h3 class="tieu-de-menu">HỒ SƠ & CÀI ĐẶT</h3>
+                    <ul class="danh-sach-menu">
+                        <li><i class="far fa-id-badge"></i> Hồ sơ</li>
+                        <li class="muc-dang-chon"><i class="fas fa-sliders-h"></i> Cài đặt</li>
+                        <li><i class="far fa-bell"></i> Trung tâm thông báo</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- NỘI DUNG CHÍNH (MAIN CONTENT) -->
+            <main class="vung-noi-dung">
+                
+                <!-- Thông báo thành công -->
+                <div class="hop-thong-bao thanh-cong">
+                    <i class="fas fa-check-circle bieu-tuong-lon"></i>
+                    <div class="noi-dung-thong-bao">
+                        <strong>Đã lưu tùy chọn thông báo!</strong>
+                        <p>Cập nhật lúc 09:15 - 12/10/2026. Thông tin bảo mật chỉ thay đổi khi bạn xác nhận.</p>
+                    </div>
+                </div>
+
+                <!-- Thẻ: Tùy chọn thông báo -->
+                <div class="the-noi-dung">
+                    <div class="tieu-de-the">
+                        <i class="fas fa-bell bieu-tuong-xanh"></i>
+                        <div>
+                            <h3>Tùy chọn thông báo</h3>
+                            <p>Lựa chọn các sự kiện quan trọng cần nhận cảnh báo tức thời.</p>
+                        </div>
+                    </div>
+                    <div class="noi-dung-the">
+                        <label class="muc-kiem-tra">
+                            <input type="checkbox" checked>
+                            <span class="chu-kiem-tra">Nhu cầu được duyệt hoặc yêu cầu sửa</span>
+                        </label>
+                        <label class="muc-kiem-tra">
+                            <input type="checkbox" checked>
+                            <span class="chu-kiem-tra">Cam kết và thay đổi phân bổ nguồn lực cứu trợ</span>
+                        </label>
+                        <label class="muc-kiem-tra">
+                            <input type="checkbox" checked>
+                            <span class="chu-kiem-tra">Bàn giao cần xác nhận hoàn tất</span>
+                        </label>
+                        <label class="muc-kiem-tra">
+                            <input type="checkbox">
+                            <span class="chu-kiem-tra">Bản tin định kỳ hàng tuần tổng hợp điểm nóng</span>
+                        </label>
+
+                        <div class="nhom-nhap-lieu">
+                            <label class="nhan-truong">Kênh nhận thông báo</label>
+                            <div class="o-chon">
+                                <i class="fas fa-paper-plane bieu-tuong-nhap"></i>
+                                <select class="hop-chon">
+                                    <option>Trong ứng dụng + Email</option>
+                                    <option>Chỉ Email</option>
+                                    <option>Chỉ Trong ứng dụng</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="can-le-phai">
+                            <button class="nut-bam nut-chinh" id="nut-luu-thong-bao"><i class="fas fa-check"></i> Lưu tùy chọn</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thẻ: Bảo mật & Mật khẩu -->
+                <div class="the-noi-dung">
+                    <div class="tieu-de-the">
+                        <i class="fas fa-shield-alt bieu-tuong-cam"></i>
+                        <div>
+                            <h3>Bảo mật & Mật khẩu</h3>
+                            <p>Cập nhật mật khẩu định kỳ và quản lý phiên đăng nhập.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="noi-dung-the form-bao-mat">
+                        <div class="nhom-nhap-lieu">
+                            <label class="nhan-truong">Mật khẩu hiện tại <span class="dau-sao">*</span></label>
+                            <div class="khung-nhap">
+                                <i class="fas fa-key bieu-tuong-nhap"></i>
+                                <input type="password" class="o-nhap" value="........">
+                            </div>
+                        </div>
+
+                        <div class="nhom-nhap-lieu">
+                            <label class="nhan-truong">Mật khẩu mới <span class="dau-sao">*</span></label>
+                            <div class="khung-nhap trang-thai-loi">
+                                <i class="fas fa-lock bieu-tuong-nhap"></i>
+                                <input type="password" class="o-nhap" value="......">
+                                <i class="fas fa-exclamation-circle icon-loi"></i>
+                            </div>
+                            <span class="dong-thong-bao-loi"><i class="fas fa-times-circle"></i> Có ít nhất 8 ký tự và có chữ hoa, chữ thường, số</span>
+                        </div>
+
+                        <div class="nhom-nhap-lieu">
+                            <label class="nhan-truong">Xác nhận mật khẩu mới <span class="dau-sao">*</span></label>
+                            <div class="khung-nhap">
+                                <input type="password" class="o-nhap" placeholder="Chưa nhập">
+                            </div>
+                        </div>
+
+                        <div>
+                            <button class="nut-bam nut-phu" id="nut-doi-mat-khau"><i class="fas fa-sync-alt"></i> Đổi mật khẩu</button>
+                        </div>
+                        
+                        <hr class="duong-ke-ngang">
+
+                        <div class="phien-dang-nhap">
+                            <div class="thong-tin-phien">
+                                <strong>Phiên hiện tại: Máy tính - 12/10, 08:40</strong>
+                                <p>Đang hoạt động trên trình duyệt Chrome (IP: 27.0.0.1)</p>
+                            </div>
+                            <button class="nut-bam nut-canh-bao" id="nut-dang-xuat"><i class="fas fa-sign-out-alt"></i> Đăng xuất thiết bị khác</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+        
+        <!-- CHÂN TRANG (FOOTER) -->
+        <footer class="chan-trang">
+            <div class="ban-quyen">
+                © 2026 AidMatch Platform. Đơn giản hóa cứu trợ và nguồn lực cứu trợ minh bạch.
+            </div>
+            <div class="lien-ket-chan-trang">
+                <a href="#">Điều khoản</a>
+                <a href="#">Bảo mật</a>
+                <a href="#">Hỗ trợ 24/7</a>
+            </div>
+        </footer>
+    </div>
+        <script src="js/main1(4).js"></script>
+
+</body>
+</html>
