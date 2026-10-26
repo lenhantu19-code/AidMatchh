@@ -12,7 +12,6 @@
 </head>
 <body>
 
-    <!-- Top Navigation Header -->
     <header class="phan-dau">
      <div class="ben-trai-dau-trang">
             <div class="thuong-hieu">
@@ -24,16 +23,19 @@
             </div>
         </div>
         <div class="ben-phai-dau-trang">
-            <span class="chu-phu-dau-trang">Đã có tài khoản?</span>
-            <button class="nut-dang-nhap-vien">Đăng nhập</button>
+            <span class="chu-phu-dau-trang">
+                <i class="fa-regular fa-circle-user" aria-hidden="true"></i>
+                Đã có tài khoản?
+            </span>
+            <a href="2-chung.html" class="nut-dang-nhap-vien">
+                Đăng nhập <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
         </div>
     </header>
 
-    <!-- Main Registration Section -->
     <main class="khung-chinh">
         <div class="khung-dang-ky">
             
-            <!-- Left Info Panel -->
             <div class="bang-thong-tin">
                 <div class="nhan-xanh-duong">
                     <i class="fa-solid fa-shield-halved"></i> ĐĂNG KÝ TỔ CHỨC XÁC THỰC
@@ -78,7 +80,6 @@
                     </div>
                 </div>
 
-                <!-- Warning Box -->
                 <div class="khung-canh-bao">
                     <i class="fa-solid fa-triangle-exclamation"></i>
                     <div>
@@ -87,7 +88,6 @@
                     </div>
                 </div>
 
-                <!-- Community Card Image Banner -->
                 <div class="anh-bang-cong-dong">
                     <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800" alt="Cộng đồng">
                     <div class="lop-phu-bang">
@@ -97,13 +97,13 @@
                 </div>
             </div>
 
-            <!-- Right Registration Form Card -->
             <div class="bang-bieu-mau">
                 <div class="dau-bang-bieu-mau">
                     <h2>Thông tin đăng ký *</h2>
                     <span class="ghi-chu-bat-buoc">• Trường bắt buộc</span>
                 </div>
 
+                <form id="registerForm" novalidate>
                 <div class="nhan-chon-vai-tro">CHỌN VAI TRÒ ĐỀ NGHỊ *</div>
                 
                 <div class="luoi-the-vai-tro">
@@ -125,7 +125,6 @@
                 </div>
                 <div class="ghi-chu-vai-tro">👤 Điều phối viên • Cần xét duyệt nâng cao • ⚙️ Quản trị viên: Chỉ qua lời mời</div>
 
-                <form id="registerForm">
                     <div class="luoi-bieu-mau">
                         
                         <!-- Tên tổ chức / Đơn vị -->
@@ -133,7 +132,7 @@
                             <label>Tên tổ chức / Đơn vị *</label>
                             <div class="khung-o-nhap-co-bieu-tuong">
                                 <i class="fa-solid fa-building-columns"></i>
-                                <input type="text" class="dieu-khien-bieu-mau" value="Trạm hỗ trợ cộng đồng An Bình" required>
+                                <input type="text" name="organization" class="dieu-khien-bieu-mau" value="Trạm hỗ trợ cộng đồng An Bình" required>
                             </div>
                         </div>
 
@@ -142,26 +141,24 @@
                             <label>Người đại diện *</label>
                             <div class="khung-o-nhap-co-bieu-tuong">
                                 <i class="fa-regular fa-user"></i>
-                                <input type="text" class="dieu-khien-bieu-mau" value="Nguyễn Văn An" required>
+                                <input type="text" name="representative" class="dieu-khien-bieu-mau" value="Nguyễn Văn An" required>
                             </div>
                         </div>
 
                         <!-- Email liên hệ -->
                         <div class="nhom-truong-bieu-mau">
                             <label>Email liên hệ *</label>
-                            <input type="email" class="dieu-khien-bieu-mau" value="anlan@anbinh.org.vn" required>
+                            <input type="email" name="email" class="dieu-khien-bieu-mau" value="anlan@anbinh.org.vn" required>
                             <small class="goi-y-o-nhap">Dùng để đăng ký và nhận thông báo từ hệ thống.</small>
                         </div>
 
                         <!-- Số điện thoại (có trạng thái lỗi giống ảnh mẫu) -->
-                        <div class="nhom-truong-bieu-mau loi">
+                        <div class="nhom-truong-bieu-mau">
                             <label>Số điện thoại *</label>
                             <div class="khung-o-nhap-co-bieu-tuong">
                                 <i class="fa-solid fa-phone"></i>
-                                <input type="text" class="dieu-khien-bieu-mau" value="090123456" required>
-                                <i class="fa-solid fa-circle-exclamation bieu-tuong-loi"></i>
+                                <input type="tel" name="phone" class="dieu-khien-bieu-mau" value="0901234567" inputmode="numeric" autocomplete="tel" required>
                             </div>
-                            <small class="thong-bao-loi">⚠️ Số điện thoại phải gồm 10 chữ số hợp lệ.</small>
                         </div>
 
                         <!-- Địa chỉ trụ sở / Điểm nhận -->
@@ -169,21 +166,21 @@
                             <label>Địa chỉ trụ sở / Điểm nhận *</label>
                             <div class="khung-o-nhap-co-bieu-tuong">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <input type="text" class="dieu-khien-bieu-mau" value="Điểm tiếp nhận An Bình, xã Hải Lăng" required>
+                                <input type="text" name="address" class="dieu-khien-bieu-mau" value="Điểm tiếp nhận An Bình, xã Hải Lăng" required>
                             </div>
                         </div>
 
                         <!-- Tỉnh / Thành phố & Khu vực hoạt động -->
                         <div class="nhom-truong-bieu-mau">
                             <label>Tỉnh / Thành phố *</label>
-                            <select class="dieu-khien-bieu-mau" required>
+                            <select name="province" class="dieu-khien-bieu-mau" required>
                                 <option value="Quảng Trị" selected>📍 Quảng Trị</option>
                             </select>
                         </div>
 
                         <div class="nhom-truong-bieu-mau">
                             <label>Khu vực hoạt động *</label>
-                            <select class="dieu-khien-bieu-mau" required>
+                            <select name="region" class="dieu-khien-bieu-mau" required>
                                 <option value="Miền Trung" selected>📍 Miền Trung</option>
                             </select>
                         </div>
@@ -193,7 +190,7 @@
                             <label>Mật khẩu *</label>
                             <div class="khung-o-nhap-co-bieu-tuong">
                                 <i class="fa-solid fa-lock"></i>
-                                <input type="password" class="dieu-khien-bieu-mau" value="12345678" required>
+                                <input type="password" name="password" class="dieu-khien-bieu-mau" autocomplete="new-password" required>
                             </div>
                             <small class="goi-y-o-nhap">Tối thiểu 8 ký tự, gồm chữ và số.</small>
                         </div>
@@ -203,9 +200,8 @@
                             <label>Nhập lại mật khẩu *</label>
                             <div class="khung-o-nhap-co-bieu-tuong">
                                 <i class="fa-solid fa-lock"></i>
-                                <input type="password" class="dieu-khien-bieu-mau" value="12345678" required>
+                                <input type="password" name="confirmPassword" class="dieu-khien-bieu-mau" autocomplete="new-password" required>
                             </div>
-                            <small class="goi-y-thanh-cong">✔ Mật khẩu khớp hoàn toàn.</small>
                         </div>
 
                     </div>
@@ -213,17 +209,17 @@
                     <!-- Terms Checkbox -->
                     <div class="nhom-dieu-khoan">
                         <label class="nhan-o-chon">
-                            <input type="checkbox" checked required>
+                            <input type="checkbox" name="terms" required>
                             <span>Tôi đồng ý với <a href="#">Điều khoản sử dụng</a> và <a href="#">Chính sách quyền riêng tư</a> cho phép xử lý dữ liệu xác minh.</span>
                         </label>
                     </div>
 
                     <!-- Alert Box in Form -->
-                    <div class="khung-canh-bao-bieu-mau">
+                    <div class="khung-canh-bao-bieu-mau" id="validationSummary" role="alert" aria-live="polite" hidden>
                         <i class="fa-solid fa-triangle-exclamation"></i>
                         <div>
-                            <strong>Chưa thể gửi đăng ký:</strong>
-                            <p>Vui lòng chỉnh sửa lại số điện thoại hợp lệ ở trên. Tài khoản mới sẽ ưu tiên ở trạng thái chờ xác minh trước khi công khai nhu cầu.</p>
+                            <strong>Vui lòng kiểm tra lại thông tin:</strong>
+                            <p id="validationMessage"></p>
                         </div>
                     </div>
 

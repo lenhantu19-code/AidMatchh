@@ -1,4 +1,5 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
+    // Điều hướng mục Tổng quan về trang tổng quan của đơn vị.
     const overviewLink = document.querySelector('.thanh-ben .muc-danh-muc');
     if (overviewLink) {
         overviewLink.addEventListener('click', (e) => {
@@ -13,8 +14,6 @@
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Đã gửi yêu cầu tạo nhu cầu hỗ trợ thành công! Hệ thống đang chờ điều phối viên phê duyệt.');
-            // Có thể chuyển hướng về trang "Nhu cầu của tôi"
-            // window.location.href = 'nhu-cau-cua-toi.html';
         });
     }
 
