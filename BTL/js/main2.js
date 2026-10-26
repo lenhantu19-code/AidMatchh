@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ghiChuNoiBo: "Ưu tiên hỗ trợ trong Quảng Trị trước 15/10."
     };
 
-    // Tải dữ liệu đã lưu trước đó (nếu có trong localStorage)
+    // Tải dữ liệu đã lưu trước đó
     const savedData = JSON.parse(localStorage.getItem('kho_du_lieu_nl011'));
     if (savedData) {
         for (let key in savedData) {
