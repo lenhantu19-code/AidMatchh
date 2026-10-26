@@ -89,7 +89,7 @@ body {
   /* Thiết lập nền bằng ảnh nen.jpg kết hợp phủ lớp màu mờ */
   background-image:
     linear-gradient(rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.85)),
-    url("../images/nen.jpg");
+    url("../Web-BTL/giuaki.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

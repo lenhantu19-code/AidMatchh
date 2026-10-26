@@ -1,8 +1,3 @@
-/**
- * AidMatch - Trang 17: Theo dõi phân bổ Logic
- * Tự động kích hoạt Toast thông báo góc phải dưới giống hệt Trang 14 khi bấm nút.
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   console.log("AidMatch Trang 17 loaded successfully.");
   initButtonToastEvents();
@@ -23,7 +18,7 @@ function toggleMobileSidebar() {
   }
 }
 
-/* 2. Hệ thống Toast thông báo nổi góc phải dưới (Chuẩn Trang 14) */
+/* 2. Hệ thống Toast thông báo nổi góc phải dưới  */
 function showToast(message, type = "thong-tin") {
   let container = document.getElementById("toastContainer");
 
