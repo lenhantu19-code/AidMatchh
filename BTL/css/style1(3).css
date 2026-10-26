@@ -226,6 +226,9 @@ body {
     font-size: 14px;
     font-weight: 500;
     transition: 0.2s;
+    border: 0;
+    border-right: 3px solid transparent;
+    border-radius: 0 20px 20px 0;
     margin-right: 15px;
 }
 
