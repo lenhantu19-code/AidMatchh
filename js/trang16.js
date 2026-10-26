@@ -128,7 +128,6 @@ function updateMatchingInput() {
   showToast(`Đã tải dữ liệu nguồn lực cho nhu cầu ${selectedReq}`, "thong-tin");
 }
 
-/* 7. Toast Notification */
 function showToast(message, type = "thong-tin") {
   let container = document.getElementById("toastContainer");
 

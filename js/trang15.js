@@ -1,8 +1,3 @@
-/**
- * AidMatch - Trang 15: Detailed Review Logic
- * Separation of Concerns Implementation
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   initFormInteractions();
   initActionButtons();
@@ -114,10 +109,6 @@ function initActionButtons() {
     }, 300);
   });
 }
-
-/* ==========================================================================
-Toast Notification System
-========================================================================== */
 
 function showToast(message, type = "thong-tin") {
   const container = document.getElementById("toastContainer");
