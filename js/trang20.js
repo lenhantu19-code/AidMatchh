@@ -1,10 +1,4 @@
-/**
- * AidMatch - Organization Management Logic (Trang 20)
- * Separation of Concerns Implementation
- */
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Initial Dataset
   let orgsData = [
     {
       id: "TC-001",
@@ -136,10 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnApproveVerify = document.getElementById("btnApproveVerify");
   const btnRequestEditVerify = document.getElementById("btnRequestEditVerify");
   const btnExecuteLock = document.getElementById("btnExecuteLock");
-
-  /* ==========================================================================
-     Core Rendering Functions
-     ========================================================================== */
 
   function renderTable() {
     const filtered = orgsData.filter((org) => {

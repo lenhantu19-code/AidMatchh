@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
+  /*chuyển đổi tap*/
   function switchTab(tabKey) {
     activeTab = tabKey;
     document.querySelectorAll(".nut-the-chuyen").forEach((t) => {
@@ -487,7 +487,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3500);
   }
 
-  // Initial Execution
+  /*khởi chạy */
   updateKPIs();
   renderList();
   selectRequest(currentSelectedId);
