@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     /* ================================================================
-       1. HỆ THỐNG THÔNG BÁO INLINE (TOAST NOTIFICATION)
+       1. HỆ THỐNG THÔNG BÁO INLINE 
        ================================================================ */
     const hopThongBao = document.getElementById('thongBaoChinh');
     const bieuTuongThongBao = hopThongBao.querySelector('.bieu-tuong-lon');
