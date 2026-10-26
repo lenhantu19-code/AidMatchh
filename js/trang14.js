@@ -1,10 +1,5 @@
-/**
- * AidMatch - Coordinator Dashboard Logic
- * Separation of Concerns Implementation
- */
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Initial Dataset
+  /*khỏi tạo dữ liệu*/
   let requestsData = [
     {
       id: "NC-033",
@@ -133,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  // App State
+  /*lưu trạng thái*/
   let activeTab = "pending";
   let currentSelectedId = "NC-033";
   let searchQuery = "";
@@ -141,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let regionFilterValue = "all";
   let categoryFilterValue = "all";
 
-  // DOM Element Selectors
+  /*dom để lưu thẻ*/
   const requestListEl = document.getElementById("requestList");
   const searchInput = document.getElementById("searchInput");
   const priorityFilter = document.getElementById("priorityFilter");
@@ -149,7 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const categoryFilter = document.getElementById("categoryFilter");
   const recordCountText = document.getElementById("recordCountText");
 
-  // Detail Panel Selectors
   const detailPanelCode = document.getElementById("detailPanelCode");
   const detailOrg = document.getElementById("detailOrg");
   const detailTitle = document.getElementById("detailTitle");
@@ -161,12 +155,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const detailBadges = document.getElementById("detailBadges");
   const detailAIText = document.getElementById("detailAIText");
 
-  // Action Buttons
   const btnApprove = document.getElementById("btnApprove");
   const btnRequestEdit = document.getElementById("btnRequestEdit");
   const btnReject = document.getElementById("btnReject");
 
-  // KPI Counter Selectors
   const cntPending = document.getElementById("cnt-pending");
   const cntInfo = document.getElementById("cnt-info");
   const cntDup = document.getElementById("cnt-dup");
@@ -178,12 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const badgeTabRejected = document.getElementById("badgeTabRejected");
   const sidebarBadgePending = document.getElementById("sidebarBadgePending");
 
-  /* ==========================================================================
-       Core Rendering Logic
-       ========================================================================== */
-
+  /*lọc danh sách*/
   function renderList() {
-    // Filter logic
     const filtered = requestsData.filter((item) => {
       const matchesTab = item.status === activeTab;
       const matchesSearch =
@@ -263,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
       selectRequest(filtered[0].id);
     }
   }
-
+  /*liên kết link a*/
   function selectRequest(id) {
     currentSelectedId = id;
     const target = requestsData.find((i) => i.id === id);
@@ -322,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btnReject.disabled = false;
     }
   }
-
+  /*cập nhật thống kê*/
   function updateKPIs() {
     const pendingCount = requestsData.filter(
       (i) => i.status === "pending",
@@ -352,10 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebarBadgePending.textContent = pendingCount;
   }
 
-  /* ==========================================================================
-       Event Listeners Setup
-       ========================================================================== */
-
   // Tabs Switch Listener
   document.querySelectorAll(".nut-the-chuyen").forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -370,7 +354,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // KPI Cards Click to Filter Tab
   document.querySelectorAll(".the-kpi").forEach((card) => {
     card.addEventListener("click", () => {
       const kpiType = card.getAttribute("data-kpi");
@@ -402,7 +385,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderList();
   }
 
-  // Input Search & Dropdown Filters
   searchInput.addEventListener("input", (e) => {
     searchQuery = e.target.value;
     renderList();
@@ -484,10 +466,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showToast("Bạn có 3 thông báo mới từ hệ thống điều phối.", "thong-tin");
   });
 
-  /* ==========================================================================
-       Toast Notification System
-       ========================================================================== */
-
+  /*thông báo nổi*/
   function showToast(message, type = "thong-tin") {
     const container = document.getElementById("toastContainer");
     const toast = document.createElement("div");
