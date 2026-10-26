@@ -64,6 +64,57 @@ body > * {
     gap: 24px;
 }
 
+.ben-phai-dau-trang {
+    gap: 14px;
+    padding: 7px 8px 7px 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+}
+
+.chu-phu-dau-trang {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.chu-phu-dau-trang i {
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.nut-dang-nhap-vien {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 40px;
+    padding: 0 18px;
+    border: 1px solid var(--primary-color);
+    border-radius: 999px;
+    background: linear-gradient(135deg, #0876df, #005bb8);
+    box-shadow: 0 4px 10px rgba(0, 102, 204, 0.2);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.nut-dang-nhap-vien:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, #0066cc, #004c99);
+    box-shadow: 0 6px 14px rgba(0, 76, 153, 0.25);
+}
+
+.nut-dang-nhap-vien:focus-visible {
+    outline: 3px solid rgba(14, 165, 233, 0.45);
+    outline-offset: 3px;
+}
+
 .thuong-hieu {
     display: flex;
     align-items: center;
@@ -420,6 +471,18 @@ body > * {
     font-weight: 500;
 }
 
+.luoi-the-vai-tro.loi .the-vai-tro {
+    border-color: var(--red-error);
+}
+
+.nhom-dieu-khoan.loi {
+    color: var(--red-error);
+}
+
+.khung-canh-bao-bieu-mau[hidden] {
+    display: none;
+}
+
 .goi-y-thanh-cong {
     font-size: 10px;
     color: var(--green);
@@ -627,6 +690,11 @@ body > * {
         gap: 10px;
     }
 
+    .ben-phai-dau-trang {
+        margin-left: auto;
+        padding: 6px 7px 6px 12px;
+    }
+
     .chu-phu-dau-trang {
         font-size: 12px;
     }
@@ -707,7 +775,8 @@ body > * {
     }
 
     .nut-dang-nhap-vien {
-        padding: 7px 10px;
+        min-height: 36px;
+        padding: 0 12px;
         font-size: 12px;
     }
 

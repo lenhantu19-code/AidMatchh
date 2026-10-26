@@ -257,21 +257,21 @@ div:hover {
     margin-bottom: 32px;
 }
 
-.nhom-truong-bieu-mau {
+.truong-bieu-mau {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.nhom-truong-bieu-mau.rong-day {
+.truong-bieu-mau.chiem-toan-dong {
     width: 100%;
 }
 
-.nhom-truong-bieu-mau.nua-rong {
+.truong-bieu-mau.chiem-nua-dong {
     width: calc(50% - 10px);
 }
 
-.nhom-truong-bieu-mau label {
+.truong-bieu-mau label {
     font-size: 12px;
     font-weight: 600;
     color: var(--text-secondary);
@@ -565,9 +565,9 @@ div:hover {
         margin-bottom: 22px;
     }
 
-    .nhom-truong-bieu-mau,
-    .nhom-truong-bieu-mau.rong-day,
-    .nhom-truong-bieu-mau.nua-rong {
+    .truong-bieu-mau,
+    .truong-bieu-mau.chiem-toan-dong,
+    .truong-bieu-mau.chiem-nua-dong {
         width: 100%;
     }
 
