@@ -1,8 +1,3 @@
-/**
- * AidMatch - Trang 16: Allocation Board Logic
- * Synchronized with Trang 14 Core Dashboard Logic
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   // Lắng nghe nút thông báo
   const btnNotifications = document.getElementById("btnNotifications");
@@ -104,7 +99,6 @@ function saveDecisionNote() {
   }
   showToast("Đã lưu đề xuất ghép kèm ghi chú thành công!", "thanh-cong");
 }
-
 /* 5. Phê duyệt phân bổ (Form Submit) */
 function handleAllocationSubmit(event) {
   event.preventDefault();
@@ -120,39 +114,32 @@ function handleAllocationSubmit(event) {
   }
   showToast("Đã tạo phê duyệt phân bổ mới thành công!", "thanh-cong");
 }
-
 /* 6. Cập nhật khi chọn nhu cầu */
 function updateMatchingInput() {
   const requestSelect = document.getElementById("requestSelect");
   const selectedReq = requestSelect ? requestSelect.value : "";
   showToast(`Đã tải dữ liệu nguồn lực cho nhu cầu ${selectedReq}`, "thong-tin");
 }
-
+/*thông báo nổi */
 function showToast(message, type = "thong-tin") {
   let container = document.getElementById("toastContainer");
-
   if (!container) {
     container = document.createElement("div");
     container.id = "toastContainer";
     container.className = "khung-thong-bao-noi";
     document.body.appendChild(container);
   }
-
   const toast = document.createElement("div");
   toast.className = `thong-bao-noi thong-bao-noi-${type}`;
-
   let iconClass = "fa-info-circle";
   if (type === "thanh-cong") iconClass = "fa-circle-check";
   if (type === "canh-bao") iconClass = "fa-triangle-exclamation";
   if (type === "nguy-hiem") iconClass = "fa-circle-xmark";
-
   toast.innerHTML = `
       <i class="fa-solid ${iconClass}"></i>
       <span>${message}</span>
   `;
-
   container.appendChild(toast);
-
   setTimeout(() => {
     toast.style.opacity = "0";
     toast.style.transition = "opacity 0.3s ease";

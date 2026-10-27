@@ -242,8 +242,6 @@ document.addEventListener("DOMContentLoaded", () => {
       itemEl.addEventListener("click", () => selectRequest(item.id));
       requestListEl.appendChild(itemEl);
     });
-
-    // Auto select first item if current selection not in filtered list
     if (
       !filtered.some((i) => i.id === currentSelectedId) &&
       filtered.length > 0
@@ -372,7 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
+  /*chuyển đổi tap*/
   function switchTab(tabKey) {
     activeTab = tabKey;
     document.querySelectorAll(".nut-the-chuyen").forEach((t) => {
@@ -435,8 +433,6 @@ document.addEventListener("DOMContentLoaded", () => {
       showToast(`Đã từ chối hồ sơ ${item.id}`, "nguy-hiem");
     }
   });
-
-  // Navigation Items Interaction
   document.querySelectorAll(".muc-dieu-huong").forEach((nav) => {
     nav.addEventListener("click", (e) => {
       const href = nav.getAttribute("href");
@@ -491,7 +487,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3500);
   }
 
-  // Initial Execution
+  /*khởi chạy */
   updateKPIs();
   renderList();
   selectRequest(currentSelectedId);

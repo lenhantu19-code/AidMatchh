@@ -15,12 +15,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- CSS File -->
     <link rel="stylesheet" href="../css/trang15.css" />
   </head>
   <body>
-    <!-- Main Application Header -->
     <header class="dau-trang-ung-dung">
       <div class="khung-dau-trang">
         <div class="thuong-hieu-dau-trang">
@@ -32,7 +29,6 @@
             <span class="cham-nhap-nhay"></span> Dữ liệu minh họa
           </span>
         </div>
-
         <div class="thao-tac-dau-trang">
           <button
             type="button"
@@ -55,10 +51,7 @@
         </div>
       </div>
     </header>
-
-    <!-- Application Body Layout -->
     <div class="than-ung-dung">
-      <!-- Sidebar Navigation -->
       <aside class="thanh-ben">
         <div class="noi-dung-thanh-ben">
           <div class="phan-dieu-huong">
@@ -94,7 +87,6 @@
               </a>
             </nav>
           </div>
-
           <div class="phan-dieu-huong">
             <div class="tieu-de-phan-dieu-huong">Hệ thống</div>
             <nav class="danh-sach-dieu-huong">
@@ -135,10 +127,7 @@
           AidMatch v2.4 · Hệ thống Điều phối Khẩn cấp
         </div>
       </aside>
-
-      <!-- Main Dashboard View Area -->
       <main class="noi-dung-chinh">
-        <!-- Page Header Breadcrumb & Actions -->
         <div class="thanh-tieu-de-trang">
           <div class="nhom-tieu-de">
             <h1 class="tieu-de-trang">Chi tiết xét duyệt</h1>
@@ -163,12 +152,8 @@
             <i class="fa-solid fa-arrow-left"></i> Quay lại hàng đợi
           </button>
         </div>
-
-        <!-- Content Grid 2 Columns -->
         <div class="luoi-chi-tiet">
-          <!-- Left Column: Dossier Information & AI Comparison -->
           <div class="cot-trai">
-            <!-- CARD 1: Hồ sơ nhu cầu -->
             <section class="khung-chua khung-the">
               <div class="dau-the vach-ngan-duoi">
                 <div class="nhom-tieu-de-the">
@@ -179,7 +164,6 @@
                   <strong>Điểm cộng đồng Hải Sơn</strong> · TC-006
                 </div>
               </div>
-
               <div class="than-the">
                 <div class="luoi-thong-tin">
                   <div class="muc-thong-tin">
@@ -207,13 +191,11 @@
                     <span class="gia-tri-thong-tin">12/10/2026, 08:15</span>
                   </div>
                 </div>
-
                 <div class="o-mo-ta">
                   Cần 200 bộ gạo, dầu ăn, muối và xà phòng cho hộ gia đình tại
                   điểm Hải Sơn. Danh sách hộ đính kèm chưa có mã hộ để đối chiếu
                   liên điểm.
                 </div>
-
                 <div class="danh-sach-tep-dinh-kem">
                   <a href="#" class="muc-tep-dinh-kem">
                     <i class="fa-regular fa-file-pdf bieu-tuong-pdf"></i>
@@ -227,7 +209,6 @@
                     Xem minh chứng <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
-
                 <div class="o-da-xac-minh">
                   <div class="dau-o-xac-minh">
                     <i class="fa-solid fa-circle-check"></i>
@@ -240,8 +221,6 @@
                 </div>
               </div>
             </section>
-
-            <!-- CARD 2: AI Assistant Đối chiếu trùng lặp -->
             <section class="khung-chua khung-the">
               <div class="dau-the vach-ngan-duoi">
                 <div class="nhom-tieu-de-the">
@@ -252,7 +231,6 @@
                   <i class="fa-solid fa-wand-magic-sparkles"></i> AI Assistant
                 </div>
               </div>
-
               <div class="than-the">
                 <div class="banner-ai">
                   <div class="van-ban-banner-ai">
@@ -267,8 +245,6 @@
                     >
                   </div>
                 </div>
-
-                <!-- Comparison Table -->
                 <div class="boc-bang">
                   <table class="bang-so-sanh">
                     <thead>
@@ -302,13 +278,11 @@
                     </tbody>
                   </table>
                 </div>
-
                 <div class="giai-thich-ai">
                   <strong>Giải thích:</strong> Nội dung và quy cách gần giống,
                   cùng thời hạn; khác tổ chức và điểm tiếp nhận. Khoảng cách gần
                   không đủ để kết luận trùng người nhận.
                 </div>
-
                 <div class="o-canh-bao-ai">
                   <h4>
                     <i class="fa-solid fa-triangle-exclamation"></i> Chưa đủ dữ
@@ -319,7 +293,6 @@
                     cầu bổ sung hoặc đánh dấu không trùng kèm lý do.
                   </p>
                 </div>
-
                 <div class="thanh-thao-tac-ai">
                   <div class="nhom-nut-trai">
                     <button class="nut nut-nho nut-vien" id="btnMarkNotDup">
@@ -341,8 +314,6 @@
                 </div>
               </div>
             </section>
-
-            <!-- CARD 3: Lịch sử hồ sơ -->
             <section class="khung-chua khung-the">
               <div class="dau-the vach-ngan-duoi">
                 <div class="nhom-tieu-de-the">
@@ -529,11 +500,7 @@ Bổ sung mã hộ hoặc danh sách đối tượng để đối chiếu NC-024
         </div>
       </main>
     </div>
-
-    <!-- Toast Notifications Floating Container -->
     <div id="toastContainer" class="khung-thong-bao-noi"></div>
-
-    <!-- Application Script -->
     <script src="../js/trang15.js"></script>
   </body>
 </html>

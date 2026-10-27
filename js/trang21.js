@@ -1,7 +1,3 @@
-/**
- * AidMatch - Impact Report Interactive Script
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   // Utility for Async Action with Loading State on Buttons
   async function handleButtonAction(button, asyncFn) {
