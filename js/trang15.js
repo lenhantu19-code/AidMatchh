@@ -109,7 +109,7 @@ function initActionButtons() {
     }, 300);
   });
 }
-
+/*thông bán nổi */
 function showToast(message, type = "thong-tin") {
   const container = document.getElementById("toastContainer");
   if (!container) return;

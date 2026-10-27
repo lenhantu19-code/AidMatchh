@@ -1,8 +1,3 @@
-/**
- * AidMatch - User Management Logic (Trang 19)
- * Separation of Concerns Implementation
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   // Initial Dataset - Exactly matches image content
   let usersData = [
